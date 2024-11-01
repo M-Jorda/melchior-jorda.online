@@ -21,16 +21,50 @@ Este código está diseñado para presentar mi trabajo de manera profesional. Pa
 ## Capturas de pantalla
 Aquí hay algunas capturas de pantalla que ilustran el diseño y las funcionalidades de mi sitio:
 
+## I/Presentación
+¡Bienvenido a **melchior-jorda.online**! Soy Melchior, un apasionado del desarrollo web que siempre está buscando nuevas oportunidades para aprender y crear. Este sitio ha sido diseñado no solo para mostrar mis habilidades técnicas, sino también para ofrecer mis servicios en desarrollo web. Mi enfoque está centrado en el usuario, buscando proporcionar soluciones efectivas y estéticas. Estoy comprometido a trabajar con mis clientes para llevar a cabo sus proyectos de acuerdo con sus necesidades específicas.
+
 ![Presentación del sitio web](screenshots/Sun_Presentation.png)
+
+## II/Diagrama circular de mis habilidades
+Una de las características clave de mi sitio es el diagrama circular interactivo, que destaca mis habilidades técnicas. Cuando un usuario hace clic en el ícono de Java, el gráfico muestra mis niveles de habilidad y experiencias en este área.
+
 ![Gráfico de habilidades de Java en francés](screenshots/Sun_Competence_Java.png)
+
+Si se hace clic en HTML/CSS, el diagrama se actualiza, reflejando así mis habilidades en estos lenguajes. Esto permite a los visitantes visualizar rápidamente mi experiencia en diseño web.
+
 ![Gráfico de habilidades de HTML/CSS en francés](screenshots/Sun_Competence_HTML.png)
+
+El mismo gráfico también está disponible en inglés, lo que permite llegar a una audiencia más amplia.
+
 ![Gráfico de habilidades de HTML/CSS en inglés](screenshots/Sun_Competence_HTML_en.png)
+
+Finalmente, el gráfico también está disponible en español, asegurando que mis habilidades sean accesibles a un público hispanohablante.
+
 ![Gráfico de habilidades de HTML/CSS en español](screenshots/Sun_Competence_HTML_es.png)
-![Gráfico de habilidades de HTML/CSS en español (versión combre)](screenshots/Moon_Competence_HTML.png)
+
+Para los usuarios que prefieren una interfaz oscura, también está disponible el modo oscuro, ofreciendo una experiencia visual alternativa.
+
+![Gráfico de habilidades de HTML/CSS en español (versión oscura)](screenshots/Moon_Competence_HTML.png)
+
+Además, el gráfico está diseñado para mostrar un encabezado claro, facilitando la navegación y la comprensión de la información presentada.
+
 ![Gráfico de habilidades con el encabezado](screenshots/Moon_Competence&header.png)
+
+## III/Mis proyectos realizados
+En mi sitio, también encontrarás un carrusel interactivo que presenta mis proyectos recientes. Este carrusel permite a los visitantes desplazarse fácilmente por mis logros y explorar los diferentes aspectos de mi trabajo.
+
 ![Mis proyectos](screenshots/Sun_Projets.png)
+
+## IV/Formulario de contacto y recepción
+Finalmente, he integrado un formulario de contacto en el sitio. Este formulario permite a los visitantes enviarme mensajes formateados, facilitando así la comunicación y la retroalimentación.
+
 ![Formulario de contacto](screenshots/Sun_contact.png)
-![Recepción de correo del formulario de contacto](screenshots/Mail_received.png)
+
+Cuando se envía el formulario, recibo un correo electrónico formateado según mis preferencias, lo que me permite gestionar eficazmente las solicitudes de contacto.
+
+![Recepción por correo del formulario de contacto](screenshots/Mail_received.png)
+
 
 ## Licencias
 Este proyecto está licenciado por Melchior (yo mismo). Para cualquier pregunta o solicitud de uso, no dudes en contactarme a través del formulario de contacto en el sitio web.
