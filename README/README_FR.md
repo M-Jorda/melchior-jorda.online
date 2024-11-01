@@ -22,7 +22,7 @@ Ce code est conçu pour présenter mon travail de manière professionnelle. Pour
 Voici quelques captures d'écran qui illustrent le design et les fonctionnalités de mon site :
 
 ![Présentation du site web](screenshots/Sun_Presentation.png)
-![Compétence camembert Java en français](screenshots/Sun_Competence_java.png)
+![Compétence camembert Java en français](screenshots/Sun_Competence_Java.png)
 ![Compétence camembert HTML/CSS en français](screenshots/Sun_Competence_HTML.png)
 ![Compétence camembert HTML/CSS en anglais](screenshots/Sun_Competence_HTML_en.png)
 ![Compétence camembert HTML/CSS en espagnol](screenshots/Sun_Competence_HTML_es.png)

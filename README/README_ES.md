@@ -22,7 +22,7 @@ Este código está diseñado para presentar mi trabajo de manera profesional. Pa
 Aquí hay algunas capturas de pantalla que ilustran el diseño y las funcionalidades de mi sitio:
 
 ![Presentación del sitio web](screenshots/Sun_Presentation.png)
-![Gráfico de habilidades de Java en francés](screenshots/Sun_Competence_java.png)
+![Gráfico de habilidades de Java en francés](screenshots/Sun_Competence_Java.png)
 ![Gráfico de habilidades de HTML/CSS en francés](screenshots/Sun_Competence_HTML.png)
 ![Gráfico de habilidades de HTML/CSS en inglés](screenshots/Sun_Competence_HTML_en.png)
 ![Gráfico de habilidades de HTML/CSS en español](screenshots/Sun_Competence_HTML_es.png)

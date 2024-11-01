@@ -22,7 +22,7 @@ This code is designed to present my work in a professional manner. To view the s
 Here are some screenshots that illustrate the design and functionalities of my site:
 
 ![Website Presentation](README/screenshots/Sun_Presentation.png)
-![Java Skill Pie Chart in French](README/screenshots/Sun_Competence_java.png)
+![Java Skill Pie Chart in French](README/screenshots/Sun_Competence_Java.png)
 ![HTML/CSS Skill Pie Chart in French](README/screenshots/Sun_Competence_HTML.png)
 ![HTML/CSS Skill Pie Chart in English](README/screenshots/Sun_Competence_HTML_en.png)
 ![HTML/CSS Skill Pie Chart in Spanish](README/screenshots/Sun_Competence_HTML_es.png)
