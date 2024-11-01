@@ -1,7 +1,7 @@
 # melchior-jorda.online
 
 ## Links
-- [Version française](README/README.md)
+- [Version française](README/README_FR.md)
 - [Versión en Español](README/README_ES.md)
 - [Visit the website](https://melchior-jorda.online/index.html)
 
