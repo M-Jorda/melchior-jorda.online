@@ -1,0 +1,52 @@
+{
+  "links": {
+    "0": "About",
+    "1": "What I do",
+    "2": "Skills",
+    "3": "Projects",
+    "4": "Contact"
+  },
+  "titles": {
+    "0": "Presentation",
+    "1": "What I do",
+    "2": "Skills",
+    "3": "Click on the pie",
+    "4": "Projects",
+    "5": "Contact",
+    "6": "Contact Form"
+  },
+  "articles": {
+    "presentation": {
+      "0": "Welcome to the digital world with me, based in Biarritz, where the sea breeze sparks creativity. As a digital nomad, I offer a unique perspective to push the boundaries of the web. Let's transform your site to effectively connect with your audience.",
+      "1": "With expertise in UI/UX design and SEO, I craft visually appealing and high-performing websites. My user-centric approach supports your growth. Let's collaborate to provide engaging designs tailored to your audience's needs.",
+      "2": "Embark on a digital journey with me, your partner in this ever-evolving landscape. My passion for learning and excellence ensures an amplified voice for your community. Together, let's create a memorable and enticing digital presence for your clients."
+    },
+    "IDo": {
+      "0": "My experience spans both front-end and back-end web development. I've gained expertise in HTML, CSS, and JavaScript to create responsive interfaces, along with mastering Angular and React frameworks for dynamic user experiences. On the back-end, I'm proficient in PHP, Symfony, and Java, with solid experience in managing SQL Server and MySQL databases to ensure reliable performance and advanced functionality.",
+      "1": "I utilize a range of essential tools and software for my work in web development. From Visual Studio Code to Eclipse, as well as MAMP and Tomcat, I navigate various development environments with ease. Additionally, I excel in platforms like Figma for design and Trello for project management, enabling me to work efficiently and organized."
+    },
+    "skills": {
+      "sql": "SQL\n- 1 week SQL Server\n- 1 week PL/SQL\n- Practice during the 2 projects\n- Practice during the internship\n\nAcquired concepts :\n- Structuring data in relational databases\n- Creation, modification, and deletion of tables and data\n- Usage of SQL queries to query databases\n- Joins to combine data from multiple tables\n- Usage of SQL functions to manipulate data\n- Creation and management of database constraints\n(primary keys, foreign keys, etc.)\n\nTools mastered :\n- SQL Server Management Studio\n- Oracle SQL Developer\n- phpMyAdmin",
+      "java": "JAVA\n- 1 week Java Vanilla\n- 2 weeks Jasa SE\n- 2 weeks Java EE\n- 2 weeks project in Java (ENI-Encheres)\n\nAcquired concepts :\n- Object Oriented Programming (OOP) in Java\n- Usage of classes, objects, methods, and attributes\n- Encapsulation, inheritance, polymorphism\n- Exception handling\n- Usage of collections (List, Set, Map, etc.)\n- Layered development with Java EE (presentation,\nbusiness logic, data access)\n- Understanding of the MVC (Model-View-Controller)\nmodel for structuring web applications\n\nTools mastered :\n- Eclipse\n- Git (GitHub)\n- Tomcat application server (for Java EE development)",
+      "htmlCss": "Html/Css\n- 1 week during the training\n- Over 2 months before the training\n\nAcquired concepts :\n- Structuring web pages with HTML\n- Usage of semantic tags to enhance accessibility and\nsearch engine optimization\n- Styling and formatting HTML elements with CSS\n- Usage of CSS selectors to target and style specific elements\n- Positioning elements with Flexbox and CSS Grid\n- Adaptation of pages for different devices using techniques\nof Responsive Web Design\n\nTools mastered :\n- Visual Studio Code\n- SASS/SCSS\n- Bootstrap",
+      "javascript": "JavaScript\n- 1 week Vanilla JS\n- 1 week Angular\n- Over 2 months before training\n- NodeJs, Electron during internship (2 months)\n\nConcepts acquired :\n- Object Oriented Programming (OOP) in JavaScript\n- Manipulation of the DOM (Document Object Model)\n- Event handling\n- Use of promises and callbacks\n- Advanced concepts such as asynchronous programming and error handling\n\nTools mastered :\n- Visual Studio Code\n- Git (GitHub, bitbucket)\n- Trello\n- Angular CLI (for Angular)\n- Node.js\n- Electron",
+      "php": "PHP\n- 1 week PHP\n- 2 weeks Symfony\n- 2 weeks Symfony project\n\nAcquired concepts :\n- Usage of arrays and objects\n- Interactions with databases via PDO or ORM frameworks like Doctrine\n- Usage of Symfony: routes, controllers, views, models\n(MVC), form handling, security, etc.\n- Development of secure and scalable web applications with Symfony\n\nTools mastered :\n- PhpStorm\n- Git (GitHub)\n- Composer (for PHP dependency management)\n- Symfony CLI\n- Doctrine (ORM for Symfony)"
+    },
+    "projects": {
+      "0": "",
+      "1": ""
+    },
+    "contact": {
+      "0": "I'm here to help. Feel free to get in touch with any questions or requests for assistance",
+      "1": "Within 24 hours on business days.",
+      "2": "Follow us on social media.",
+      "3": "Supported Languages: English, French, Spanish."
+    },
+    "form": {
+      "0": "Name :",
+      "1": "E-mail :",
+      "2": "Message :",
+      "3": "Send"
+    }
+  }
+}

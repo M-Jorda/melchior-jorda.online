@@ -1,0 +1,52 @@
+{
+  "links": {
+    "0": "Sobre mí",
+    "1": "Aptitudes",
+    "2": "Habilidades",
+    "3": "Proyectos",
+    "4": "Contacto"
+  },
+  "titles": {
+    "0": "Presentación",
+    "1": "Lo que hago",
+    "2": "Mis habilidades",
+    "3": "Dale a la rueda",
+    "4": "Mis proyectos",
+    "5": "Contacto",
+    "6": "Formulario de contacto"
+  },
+  "articles": {
+    "presentation": {
+      "0": "Bienvenido al mundo digital conmigo, con sede en Biarritz, donde la brisa marina estimula la creatividad. Como nómada digital, ofrezco una perspectiva única para ampliar los límites de la web. Transformemos su sitio para conectarse eficazmente con su audiencia.",
+      "1": "Con experiencia en diseño UI/UX y SEO, creo sitios web visualmente atractivos y de alto rendimiento. Mi enfoque centrado en el usuario respalda su crecimiento. Colaboremos para ofrecer diseños atractivos adaptados a las necesidades de su audiencia.",
+      "2": "Embárquese en un viaje digital conmigo, su socio en este paisaje en constante cambio. Mi pasión por el aprendizaje y la excelencia garantiza una voz amplificada para su comunidad. Juntos, creemos una presencia digital memorable y atractiva para sus clientes."
+    },
+    "IDo": {
+      "0": "Mi experiencia abarca tanto el desarrollo front-end como el back-end de páginas web. He adquirido experiencia en HTML, CSS y JavaScript para crear interfaces receptivas, además de dominar los frameworks Angular y React para experiencias de usuario dinámicas. En el back-end, tengo habilidades en PHP, Symfony y Java, con sólida experiencia en la gestión de bases de datos SQL Server y MySQL para garantizar un rendimiento confiable y funcionalidades avanzadas.",
+      "1": "Utilizo una variedad de herramientas y software esenciales para mi trabajo en desarrollo web. Desde Visual Studio Code hasta Eclipse, así como MAMP y Tomcat, navego por diferentes entornos de desarrollo con facilidad. Además, destaco en plataformas como Figma para el diseño y Trello para la gestión de proyectos, lo que me permite trabajar de manera eficiente y organizada."
+    },
+    "skills": {
+      "sql": "SQL\n- 1 semana SQL Server\n- 1 semana PL/SQL\n- práctica durante los 2 proyectos\n- práctica durante la pasantía\n\nConceptos adquiridos :\n- Estructuración de datos en bases de datos relacionales\n- Creación, modificación y eliminación de tablas y datos\n- Uso de consultas SQL para interrogar bases de datos\n- Uniones para combinar datos de varias tablas\n- Uso de funciones SQL para manipular datos\n- Creación y gestión de restricciones de base de datos\n(claves primarias, claves foráneas, etc.)\n\nHerramientas utilizadas :\n- SQL Server Management Studio\n- Oracle SQL Developer\n- phpMyAdmin",
+      "java": "JAVA\n- 1 semana Java Vanilla\n- 2 semanas Jasa SE\n- 2 semanas Java EE\n- 2 semanas proyecto en java (ENI-Encheres)\n\nConceptos adquiridos :\n- Programación orientada a objetos (POO) en Java\n- Uso de clases, objetos, métodos y atributos\n- Encapsulamiento, herencia, polimorfismo\n- Manejo de excepciones\n- Uso de colecciones (List, Set, Map, etc.)\n- Desarrollo en capas con Java EE (presentación,\nnegocio lógico, acceso a datos)\n- Comprensión del modelo MVC (Modelo-Vista-Controlador)\npara la estructuración de aplicaciones web\n\nHerramientas utilizadas :\n- Eclipse\n- Git (GitHub)\n- Servidor de aplicaciones Tomcat (para desarrollo Java EE)",
+      "htmlCss": "Html/Css\n- 1 semana durante la formación\n- Más de 2 meses antes de la formación\n\nConceptos adquiridos :\n- Estructuración de páginas web con HTML\n- Uso de etiquetas semánticas para mejorar la accesibilidad y\nel SEO\n- Estilos y formateo de elementos HTML con CSS\n- Uso de selectores CSS para apuntar y estilizar elementos específicos\n- Posicionamiento de elementos con Flexbox y CSS Grid\n- Adaptación de páginas para diferentes dispositivos con técnicas\nde Responsive Web Design\n\nHerramientas utilizadas :\n- Visual Studio Code\n- SASS/SCSS\n- Bootstrap",
+      "javascript": "Javascript\n- 1 semana JS Vanilla\n- 1 semana Angular\n- Más de 2 meses antes de la formación\n- NodeJs, Electron en prácticas (2 meses)\n\nConceptos adquiridos :\n- Programación orientada a objetos (POO) en JavaScript\n- Manipulación del DOM (Document Object Model)\n- Manejo de eventos\n- Uso de promesas y devoluciones de llamada\n- Conceptos avanzados como la programación asíncrona y el manejo de errores\n\nHerramientas utilizadas :\n- Visual Studio Code\n- Git (GitHub, bitbucket)\n- Trello\n- Angular CLI (para Angular)\n- Node.js\n- Electron",
+      "php": "PHP\n- 1 semana PHP\n- 2 semanas Symfony\n- 2 semanas proyecto Symfony\n\nConceptos adquiridos :\n- Uso de matrices y objetos\n- Interacciones con bases de datos a través de PDO o frameworks ORM como Doctrine\n- Uso de Symfony: rutas, controladores, vistas, modelos\n(MVC), manejo de formularios, seguridad, etc.\n- Desarrollo de aplicaciones web seguras y escalables con\nSymfony\n\nHerramientas utilizadas :\n- PhpStorm\n- Git (GitHub)\n- Composer (para la gestión de dependencias PHP)\n- Symfony CLI\n- Doctrine (ORM para Symfony)"
+    },
+    "projects": {
+      "0": "Hola",
+      "1": "Hola"
+    },
+    "contact": {
+      "0": "Estoy aquí para ayudarte. No dudes en contactarme para cualquier pregunta o asistencia.",
+      "1": "Dentro de 24 horas laborables.",
+      "2": "Síguenos en las redes sociales.",
+      "3": "Idiomas admitidos: Inglés, Francés, Español."
+    },
+    "form": {
+      "0": "Nombre :",
+      "1": "Correo electrónico :",
+      "2": "mensaje :",
+      "3": "Enviar"
+    }
+  }
+}

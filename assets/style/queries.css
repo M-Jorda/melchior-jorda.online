@@ -1,0 +1,157 @@
+@media (max-width: 1200px) {
+  #pieChart {
+    .pie {
+      width: 300px;
+      height: 300px;
+    }
+
+    .pie-active {
+      transform: translateX(-80%);
+      width: 300px !important;
+      height: 300px !important;
+    }
+
+    .slice {
+      padding: 20px;
+    }
+    .slice-active {
+      transform: scale(2);
+      padding: 12px;
+      margin: 7px;
+    }
+
+    .skillActive {
+      transform: translateX(150%) translateY(-5%);
+    }
+  }
+}
+
+@media (max-width: 992px) {
+  .header a {
+    font-size: 2rem !important;
+  }
+  article {
+    height: 100%;
+  }
+
+  #navbarNav {
+    position: absolute;
+    background-color: var(--header);
+    border-radius: 0 0 10px 10px;
+    padding: 50px;
+  }
+
+  #present #main-div {
+    height: 100% !important;
+  }
+  .present article {
+    .row {
+      height: 100%;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+
+  @keyframes levitation {
+    0% {
+      transform: translateY(-10%);
+    }
+    50% {
+      transform: translateY(8%);
+    }
+    100% {
+      transform: translateY(-10%);
+    }
+  }
+
+  .pie {
+    top: 35%;
+  }
+  .pie-active {
+    transform: translateX(-60%) !important;
+  }
+
+  .skill {
+    font-size: 0.9rem;
+  }
+
+  #contact {
+    height: 113vh !important;
+  }
+}
+@media (max-width: 768px) {
+  .pie {
+    width: 30%;
+    background-image: none;
+
+    div {
+      width: 30vw;
+    }
+  }
+  .pie-active {
+    transform: translateX(0) !important;
+  }
+  .slice {
+    padding: 20px;
+  }
+  .slice:hover {
+    transform: scale(1.5);
+  }
+  .slice-active {
+    transform: scale(1.5) !important;
+    padding: 20px !important;
+    margin: 0 !important;
+  }
+  #java {
+    top: -20%;
+    left: -25%;
+    background-color: var(--java);
+  }
+
+  #htmlCss {
+    top: 10%;
+    left: -25%;
+    background-color: var(--html);
+  }
+
+  #javascript {
+    top: 40%;
+    left: -25%;
+    background-color: var(--js);
+  }
+
+  #sql {
+    top: 70%;
+    left: -25%;
+    background-color: var(--sql);
+  }
+
+  #php {
+    top: 100%;
+    left: -25%;
+    background-color: var(--php);
+  }
+  .skill {
+    font-size: 0.7rem;
+  }
+  @keyframes levitation {
+    0% {
+      transform: translateY(-5%);
+    }
+    50% {
+      transform: translateY(5%);
+    }
+    100% {
+      transform: translateY(-5%);
+    }
+  }
+
+  #contact {
+    height: 140vh !important;
+  }
+}
+@media (max-width: 575px) {
+  #navbarNav {
+    transform: translateX(-25%);
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "links": {
+    "0": "À propos",
+    "1": "Mes forces",
+    "2": "Compétences",
+    "3": "Projets",
+    "4": "Contact"
+  },
+  "titles": {
+    "0": "Présentation",
+    "1": "Ce que je fais",
+    "2": "Mes compétences",
+    "3": "cliquer sur la roue",
+    "4": "Mes projets",
+    "5": "Contact",
+    "6": "Formulaire de contact"
+  },
+  "articles": {
+    "presentation": {
+      "0": "Bienvenue dans le monde numérique avec moi, basé à Biarritz, où la brise de mer stimule la créativité. En tant que nomade numérique, je propose une perspective unique pour repousser les limites du web. Transformons votre site pour connecter efficacement avec votre public",
+      "1": "Avec une expertise en conception UI/UX et en référencement SEO, je crée des sites web visuellement attrayants et performants. Mon approche centrée sur l'utilisateur soutient votre croissance. Collaborons pour fournir des designs engageants adaptés aux besoins de votre public.",
+      "2": "Embarquez dans un voyage numérique avec moi, votre partenaire dans ce paysage en constante évolution. Ma passion pour l'apprentissage et l'excellence garantit une voix amplifiée pour votre communauté. Ensemble, créons une présence numérique mémorable et attrayante pour vos clients."
+    },
+    "IDo": {
+      "0": "Mon expérience couvre à la fois le développement front-end et back-end. Je maîtrise HTML, CSS et JavaScript pour créer des interfaces réactives, ainsi que les frameworks Angular et React pour des expériences utilisateur dynamiques. En back-end, je suis compétent en PHP, Symfony et Java, avec une solide expérience dans la gestion de bases de données SQL Server et MySQL.",
+      "1": "Pour mon travail en développement web, j'utilise une gamme d'outils et de logiciels essentiels. De Visual Studio Code à Eclipse, en passant par MAMP et Tomcat, je navigue aisément entre les environnements de développement. De plus, je maîtrise des plateformes comme Figma pour le design et Trello pour la gestion de projet, ce qui me permet de travailler de manière efficace et organisée."
+    },
+    "skills": {
+      "sql": "SQL\n- 1 semaine SQL Server\n- 1 semaine PL/SQL\n- pratique lors des 2 projets\n- pratique lors du stage\n\nConcepts acquis :\n- Structuration des données en bases de données relationnelles\n- Création, modification et suppression de tables et de données\n- Utilisation des requêtes SQL pour interroger les bases de données\n- Jointures pour combiner des données de plusieurs tables\n- Utilisation des fonctions SQL pour manipuler les données\n- Création et gestion des contraintes de base de données\n(clés primaires, clés étrangères, etc.)\n\nOutils pris en main :\n- SQL Server Management Studio\n- Oracle SQL Developer\n- phpMyAdmin",
+      "java": "JAVA\n- 1 semaine Java Vanilla\n- 2 semaines Jasa SE\n- 2 semaines Java EE\n- 2 semaines projet en java (ENI-Encheres)\n\nConcepts acquis :\n- Programmation orientée objet (POO) en Java\n- Utilisation des classes, des objets, des méthodes et des attributs\n- Encapsulation, héritage, polymorphisme\n- Gestion des exceptions\n- Utilisation des collections (List, Set, Map, etc.)\n- Développement en couches avec Java EE (présentation,\nlogique métier, accès aux données)\n- Compréhension du modèle MVC (Model-View-Controller)\npour la structuration des applications web\n\nOutils pris en main :\n- Eclipse\n- Git (GitHub)\n- Serveur d'application Tomcat (pour le développement Java EE)",
+      "htmlCss": "Html/Css\n- 1 semaine pendant la formation\n- Plus de 2 mois avant la formation\n\nConcepts acquis :\n- Structuration des pages web avec HTML\n- Utilisation des balises sémantiques pour améliorer l'accessibilité et\nle référencement\n- Styles et mise en forme des éléments HTML avec CSS\n- Utilisation des sélecteurs CSS pour cibler et styler des éléments spécifiques\n- Positionnement des éléments avec Flexbox et CSS Grid\n- Adaptation des pages pour différents appareils avec des techniques\nde Responsive Web Design\n\nOutils pris en main :\n- Visual Studio Code\n- SASS/SCSS\n- Bootstrap",
+      "javascript": "Javascript\n- 1 semaine JS Vanilla\n- 1 semaine Angular\n- Plus de 2 mois avant la formation\n- NodeJs, Electron en stage (2 mois)\n\nConcepts acquis :\n- Programmation Orientée Objet (POO) en JavaScript\n- Manipulation du DOM (Document Object Model)\n- Gestion des événements\n- Utilisation des promesses et callbacks\n- Concepts avancés tels que la programmation asynchrone et la gestion des erreurs\n\nOutils pris en main :\n- Visual Studio Code\n- Git (GitHub, bitbucket)\n- Trello\n- Angular CLI (pour Angular)\n- Node.js\n- Electron",
+      "php": "PHP\n- 1 semaine PHP\n- 2 semaine Symfony\n- 2 semaine projet Symfony\n\nConcepts acquis :\n- Utilisation des tableaux et des objets\n- Interactions avec les bases de données via PDO ou des frameworks ORM comme Doctrine\n- Utilisation de Symfony : routes, contrôleurs, vues, modèles\n(MVC), gestion des formulaires, sécurité, etc.\n- Développement d'applications web sécurisées et évolutives avec\nSymfony\n\nOutils pris en main :\n- PhpStorm\n- Git (GitHub)\n- Composer (pour la gestion des dépendances PHP)\n- Symfony CLI\n- Doctrine (ORM pour Symfony)"
+    },
+    "projects": {
+      "0": "salut",
+      "1": "hello"
+    },
+    "contact": {
+      "0": "Je suis ici pour vous aider. N'hésitez pas à me contacter pour toute question ou d'assistance.",
+      "1": "Dans les 24 heures ouvrables.",
+      "2": "Suivez-nous sur les réseaux sociaux.",
+      "3": "Langues prises en charge : Anglais, Français, Espagnol."
+    },
+    "form": {
+      "0": "Nom :",
+      "1": "E-mail :",
+      "2": "message :",
+      "3": "Envoyer"
+    }
+  }
+}
