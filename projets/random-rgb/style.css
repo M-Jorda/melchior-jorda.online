@@ -1,0 +1,16 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  background: rgb(235, 244, 242);
+  height: 100vh;
+  transition: 0.5s;
+}
+h3 {
+  padding: 15px;
+  background: rgba(30, 30, 30, 0.8);
+  color: whitesmoke;
+  border-radius: 10px;
+  transition: 1.5s;
+}
