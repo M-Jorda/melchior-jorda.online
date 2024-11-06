@@ -76,7 +76,7 @@ document.addEventListener("DOMContentLoaded", function () {
   updateSunPosition();
 });
 
-// ======================CARROUSSEL =================
+// ====================== CARROUSSEL =================
 
 const carousel = document.querySelector("#myCarousel");
 const carouselInner = carousel.querySelector(".carousel-inner");

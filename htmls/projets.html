@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projets</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css"
+    />
+    <link rel="stylesheet" href="../assets/style/style.css" />
+    <link rel="stylesheet" href="../assets/style/projets.css" />
+    <link rel="stylesheet" href="../assets/style/queries.css" />
+
+    <title>Melchior Jorda</title>
+
+    <script src="../index.js" defer></script>
+    <script src="../skills.js" defer></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.8/dist/umd/popper.min.js"
+      integrity="sha384-I7E8VVD/ismYTF4hNIPjVp/Zjvgyol6VFvRkX/vR+Vc4jQkC+hVqc2pM8ODewa9r"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js"
+      integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy"
+      crossorigin="anonymous"
+      defer
+    ></script>
+    <script src="../assets/languages/internationalisation.js" defer></script>
+  </head>
+  <body>
+    <!-- ----------------------------------------------------------
+                            HEADER 
+---------------------------------------------------------- -->
+    <header>
+      <div class="header pt-3 navbar navbar-expand-lg justify-content-between">
+        <h1 class="px-md-5 px1">
+          <a href="../index.html" class="melchior" title="home">
+            Melchior <br />
+            Jorda</a
+          >
+        </h1>
+        <nav class="d-flex align-items-center">
+          <div class="container-fluid">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#navbarNav"
+              aria-controls="navbarNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav ms-auto mx-sm-5 mx-2">
+                <li class="nav-item h3">
+                  <a href="#present" class="nav-link" title="About me">About</a>
+                </li>
+                <li class="nav-item h3">
+                  <a href="#iDo" class="nav-link" title="What can I do for you"
+                    >What I do</a
+                  >
+                </li>
+                <li class="nav-item h3">
+                  <a href="#pieChart" class="nav-link" title="My skills"
+                    >Skills</a
+                  >
+                </li>
+                <li class="nav-item h3">
+                  <a href="#projects" class="nav-link" title="My projects"
+                    >Projects</a
+                  >
+                </li>
+                <li class="nav-item h3">
+                  <a href="#contact" class="nav-link" title="Contact me"
+                    >Contact</a
+                  >
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="mx-sm-5 mx-2 d-flex">
+            <img src="../assets/img/flags/fr.png" alt="" class="flag fr mx-1" />
+            <img src="../assets/img/flags/en.png" alt="" class="flag en mx-1" />
+            <img src="../assets/img/flags/es.png" alt="" class="flag es mx-1" />
+          </div>
+          <div class="mx-sm-5 mx-2">
+            <i class="bi bi-moon-fill" id="theme-color"></i>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!--                      PROJECT 
+---------------------------------------------------------- -->
+
+    <div id="projects">
+      <article class="container my-5">
+        <div class="card">
+          <div class="card-header text-center">
+            <h1 class="title">Web projects</h1>
+          </div>
+          <div class="card-body d-flex align-items-center">
+            <div class="carousel" id="myCarousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div
+                    class="d-flex flex-column align-items-center justify-content-center my-2"
+                  >
+                    <h3>
+                      <a href="https://elsapsy-835fb.web.app/" target="_blank"
+                        >Elsa Destenabes psychologue</a
+                      >
+                    </h3>
+                    <p class="des">Description 1</p>
+                  </div>
+                  <div
+                    class="carousel-container d-flex flex-column align-items-center justify-content-start"
+                  >
+                    <a
+                      href="https://elsapsy-835fb.web.app/"
+                      target="_blank"
+                      class="d-flex align-items-center text-center justify-content-center"
+                      ><img
+                        class="img-fluid w-75"
+                        src="../assets/img/projects/elsa.png"
+                        alt="elsa"
+                    /></a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div
+                    class="d-flex flex-column align-items-center justify-content-center my-2"
+                  >
+                    <h3>
+                      <a
+                        href="https://les-planches-93fd8.firebaseapp.com/"
+                        target="_blank"
+                        >Les planches</a
+                      >
+                    </h3>
+                    <p class="des">Description 2</p>
+                  </div>
+                  <div
+                    class="carousel-container d-flex flex-column align-items-center justify-content-start"
+                  >
+                    <a
+                      href="https://les-planches-93fd8.firebaseapp.com/"
+                      target="_blank"
+                      class="d-flex align-items-center justify-content-center"
+                      ><img
+                        class="img-fluid w-75"
+                        src="../assets/img/projects/planches.png"
+                        alt="planches"
+                    /></a>
+                  </div>
+                </div>
+              </div>
+
+              <button
+                class="carousel-control-prev"
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide="prev"
+              >
+                <span
+                  class="carousel-control-prev-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden"></span>
+              </button>
+
+              <button
+                class="carousel-control-next"
+                type="button"
+                data-bs-target="#myCarousel"
+                data-bs-slide="next"
+              >
+                <span
+                  class="carousel-control-next-icon"
+                  aria-hidden="true"
+                ></span>
+                <span class="visually-hidden"></span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+
+    <!--                      PROJECT 
+---------------------------------------------------------- -->
+
+    <div id="projects">
+      <article class="container my-5">
+        <div class="card">
+          <div class="card-header text-center">
+            <h1 class="title">Little projects</h1>
+          </div>
+          <div
+            class="card-body d-flex align-items-center justify-content-center"
+          >
+            <div class="row align-items-center justify-content-center">
+              <div class="col-md-4">
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center my-2"
+                >
+                  <h3 class="text-center">
+                    <a href="../projets/random-rgb/index.html">
+                      Generateur de couleurs (random RGB)
+                    </a>
+                  </h3>
+                </div>
+                <div
+                  class="carousel-container_p d-flex flex-column align-items-center justify-content-start"
+                >
+                  <img
+                    class="img-fluid w-75 mb-5"
+                    style="height: 150px"
+                    src="../assets/img/projects/rgb_generator.png"
+                    alt="rgb_generator"
+                  />
+                  <p class="des">Description 1</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center my-2"
+                >
+                  <h3 class="text-center">
+                    <a href="../projets/random-password/index.html">
+                      Generateur de mot de passe (random pass)
+                    </a>
+                  </h3>
+                </div>
+                <div
+                  class="carousel-container_p d-flex flex-column align-items-center justify-content-start"
+                >
+                  <img
+                    class="img-fluid w-75 mb-5"
+                    style="height: 150px"
+                    src="../assets/img/projects/mdp_generator.png"
+                    alt="mdp_generator"
+                  />
+                  <p class="des">Description 2</p>
+                </div>
+              </div>
+              <div class="col-md-4">
+                <div
+                  class="d-flex flex-column align-items-center justify-content-center my-2"
+                >
+                  <h3 class="text-center"><a href="../projets/form-with-regex/index.html">
+                    Form with regex<br />live</h3>
+                  </a>
+                </div>
+                <div
+                  class="carousel-container_p d-flex flex-column align-items-center justify-content-start"
+                >
+                  <img
+                    class="img-fluid w-75 mb-5"
+                    style="height: 150px"
+                    src="../assets/img/projects/form_regex.png"
+                    alt="form_regex"
+                  />
+                  <p class="des">Description 2</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </article>
+    </div>
+  </body>
+</html>
