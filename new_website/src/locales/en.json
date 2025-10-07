@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Home",
+    "projects": "Projects",
+    "about": "About",
+    "resume": "Resume",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Hi, I'm Melchior JORDA",
+    "subtitle": "Junior Web Developer — building fast, accessible, and maintainable web apps.",
+    "see_projects": "See projects",
+    "contact_me": "Contact me"
+  },
+  "footer": {
+    "download_cv": "Download CV",
+    "linkedin": "LinkedIn"
+  },
+  "contact": {
+    "send_message": "Send message",
+    "title": "Contact",
+    "subtitle": "Send me a message — I'll reply as soon as I can.",
+    "form": {
+      "name": "Your name",
+      "name_placeholder": "Your full name",
+      "email": "Your email",
+      "email_placeholder": "you@domain.com",
+      "message": "Message",
+      "message_placeholder": "Write a short message...",
+      "send": "Send message"
+    },
+    "links": {
+      "linkedin": "LinkedIn"
+    },
+    "phone": "Phone",
+    "phone_hidden": "hidden",
+    "email_label": "Email",
+    "email_hidden": "contact at example dot com"
+  }
+  ,
+  "projects": {
+    "title": "Projects",
+    "description": "A collection of selected projects. I'll add yours when you provide them.",
+    "example_title": "Example App",
+    "example_description": "Demo: A performant SPA built with Vue and Tailwind.",
+    "featured": "Featured projects",
+    "placeholder_title": "Project Title (placeholder)",
+    "placeholder_description": "Short description of the project using modern web stack."
+  },
+  "about": {
+    "title": "About",
+    "intro": "I'm Melchior JORDA, a junior web developer based in Malaga. I specialize in building modern, accessible, and high-performance web interfaces using Vue, JavaScript, and Tailwind CSS. I am available for remote work across Europe.",
+    "skills_title": "Skills",
+    "skills": ["JavaScript / TypeScript","Vue 3 / Vue Router","Tailwind CSS, Responsive Design","Web performance & Accessibility","Version control: Git / GitHub"]
+  },
+  "resume": {
+    "title": "Resume",
+    "download": "Download my resume or view highlights below.",
+    "download_link": "Download CV (PDF)",
+    "experience_title": "Experience",
+    "experience_text": "Internships and freelance projects (details to be added)."
+  },
+  "contact_page": {
+    "title": "Contact",
+    "subtitle": "Send me a message — I'll reply as soon as I can.",
+    "label_name": "Your name",
+    "label_email": "Your email",
+    "label_message": "Message"
+  }
+}

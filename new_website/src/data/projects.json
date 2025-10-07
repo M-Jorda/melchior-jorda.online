@@ -1,0 +1,11 @@
+[
+  {
+    "id": "example-app",
+    "title": "Example App",
+    "description": "A performant single-page application built with Vue and Tailwind.",
+    "technologies": ["Vue", "Tailwind", "Vite"],
+    "thumbnail": "/assets/project-example.webp",
+    "github": "https://github.com/your/repo",
+    "live": "https://your-live.example"
+  }
+]

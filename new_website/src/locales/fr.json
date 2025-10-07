@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "projects": "Projets",
+    "about": "À propos",
+    "resume": "CV",
+    "contact": "Contact"
+  },
+  "home": {
+    "title": "Salut, je suis Melchior JORDA",
+    "subtitle": "Développeur web junior — je construis des applications rapides, accessibles et maintenables.",
+    "see_projects": "Voir les projets",
+    "contact_me": "Me contacter"
+  },
+  "footer": {
+    "download_cv": "Télécharger le CV",
+    "linkedin": "LinkedIn"
+  },
+  "contact": {
+    "send_message": "Envoyer le message",
+    "title": "Contact",
+    "subtitle": "Envoie-moi un message — je répondrai dès que possible.",
+    "form": {
+      "name": "Ton nom",
+      "name_placeholder": "Ton nom complet",
+      "email": "Ton email",
+      "email_placeholder": "toi@domaine.com",
+      "message": "Message",
+      "message_placeholder": "Écris un court message...",
+      "send": "Envoyer le message"
+    },
+    "links": {
+      "linkedin": "LinkedIn"
+    },
+    "phone": "Téléphone",
+    "phone_hidden": "masqué",
+    "email_label": "Email",
+    "email_hidden": "contact arobase exemple point com"
+  }
+  ,
+  "projects": {
+    "title": "Projets",
+    "description": "Une collection de projets sélectionnés. J'ajouterai les tiens quand tu les fourniras.",
+    "example_title": "Application Exemple",
+    "example_description": "Démo : SPA performante construite avec Vue et Tailwind.",
+    "featured": "Projets mis en avant",
+    "placeholder_title": "Titre du projet (placeholder)",
+    "placeholder_description": "Courte description du projet utilisant une stack web moderne."
+  },
+  "about": {
+    "title": "À propos",
+    "intro": "Je suis Melchior JORDA, développeur web junior basé à Malaga. Je suis spécialisé dans la création d'interfaces web modernes, accessibles et performantes avec Vue, JavaScript et Tailwind CSS. Je suis disponible pour du travail à distance à travers l'Europe.",
+    "skills_title": "Compétences",
+    "skills": ["JavaScript / TypeScript","Vue 3 / Vue Router","Tailwind CSS, Responsive Design","Performance Web & Accessibilité","Contrôle de version : Git / GitHub"]
+  },
+  "resume": {
+    "title": "CV",
+    "download": "Télécharge mon CV ou consulte les points saillants ci-dessous.",
+    "download_link": "Télécharger le CV (PDF)",
+    "experience_title": "Expérience",
+    "experience_text": "Stages et missions freelance (détails à ajouter)."
+  },
+  "contact_page": {
+    "title": "Contact",
+    "subtitle": "Envoie-moi un message — je répondrai dès que possible.",
+    "label_name": "Ton nom",
+    "label_email": "Ton email",
+    "label_message": "Message"
+  }
+}

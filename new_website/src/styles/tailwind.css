@@ -1,0 +1,126 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Container responsive avec max-width */
+.container { 
+	max-width: 1200px; 
+	width: 100%;
+}
+
+@layer base {
+	html, body {
+		height: 100%;
+		overflow: hidden;
+		margin: 0;
+		padding: 0;
+	}
+
+	/* Ensure a visible page background as a fallback when utilities are missing */
+	body {
+		background-color: #fff8f3;
+		/* Amélioration du rendu des polices sur mobile */
+		-webkit-font-smoothing: antialiased;
+		-moz-osx-font-smoothing: grayscale;
+	}
+
+	/* #app est le conteneur scrollable */
+	#app {
+		height: 100%;
+		overflow-y: auto;
+		overflow-x: hidden;
+		scroll-behavior: smooth;
+	}
+
+	/* Scrollbar personnalisée (WebKit - Chrome, Safari, Edge) */
+	#app::-webkit-scrollbar {
+		width: 10px;
+	}
+
+	#app::-webkit-scrollbar-track {
+		background: #f1f1f1;
+	}
+
+	.dark #app::-webkit-scrollbar-track {
+		background: #1e293b;
+	}
+
+	#app::-webkit-scrollbar-thumb {
+		background: #ff7a18;
+		border-radius: 5px;
+	}
+
+	#app::-webkit-scrollbar-thumb:hover {
+		background: #ff5c00;
+	}
+
+	/* Scrollbar pour Firefox */
+	#app {
+		scrollbar-width: thin;
+		scrollbar-color: #ff7a18 #f1f1f1;
+	}
+
+	.dark #app {
+		scrollbar-color: #ff7a18 #1e293b;
+	}
+}
+
+@layer components {
+	.btn {
+		@apply px-4 py-2 rounded bg-orange-500 text-white hover:bg-orange-600;
+	}
+	.btn-outline {
+		@apply px-4 py-2 rounded border border-orange-500 text-orange-500 hover:bg-orange-50;
+	}
+	.card {
+		@apply bg-white rounded shadow p-4;
+	}
+	.flag-btn {
+		@apply w-8 h-6 flex items-center justify-center rounded-md ring-0 transition-all duration-200;
+	}
+	.flag-btn:hover {
+		@apply -translate-y-0.5 shadow-lg;
+	}
+	.flag-btn[aria-pressed="true"] {
+		box-shadow: 0 6px 20px rgba(255,122,24,0.25);
+		transform: translateY(-2px) scale(1.02);
+	}
+}
+
+/* Smooth theme transitions */
+@layer utilities {
+	.theme-transition {
+		transition-property: background-color, color, border-color, box-shadow;
+		transition-duration: 300ms;
+		transition-timing-function: ease-in-out;
+	}
+}
+
+/* Dark-mode overrides (orange-centric) */
+@layer base {
+	.dark body {
+		background-color: #071024; /* deep navy */
+		color: #fff8f3;
+	}
+		.dark .card {
+			background-color: #071428; /* slightly lighter card */
+			color: #fff8f3;
+			box-shadow: 0 8px 24px rgba(2,6,23,0.6);
+		}
+		.dark .btn {
+			background-color: #ff9f43; /* orange-400 */
+			color: #0b1220; /* primary */
+		}
+		.dark .btn-outline {
+			border-color: #ff9f43; /* orange-400 */
+			color: #ffd8b0; /* light orange */
+		}
+}
+
+	/* Smooth transitions on root elements */
+	@layer base {
+		html, body, #app {
+			transition: background-color 300ms ease-in-out, color 300ms ease-in-out, border-color 300ms ease-in-out, box-shadow 300ms ease-in-out;
+		}
+	}
+

@@ -1,0 +1,70 @@
+{
+  "nav": {
+    "home": "Inicio",
+    "projects": "Proyectos",
+    "about": "Sobre mí",
+    "resume": "CV",
+    "contact": "Contacto"
+  },
+  "home": {
+    "title": "Hola, soy Melchior JORDA",
+    "subtitle": "Desarrollador web junior — construyendo aplicaciones rápidas, accesibles y mantenibles.",
+    "see_projects": "Ver proyectos",
+    "contact_me": "Contactarme"
+  },
+  "footer": {
+    "download_cv": "Descargar CV",
+    "linkedin": "LinkedIn"
+  },
+  "contact": {
+    "send_message": "Enviar mensaje",
+    "title": "Contacto",
+    "subtitle": "Envíame un mensaje — responderé tan pronto como pueda.",
+    "form": {
+      "name": "Tu nombre",
+      "name_placeholder": "Tu nombre completo",
+      "email": "Tu correo",
+      "email_placeholder": "tu@dominio.com",
+      "message": "Mensaje",
+      "message_placeholder": "Escribe un breve mensaje...",
+      "send": "Enviar mensaje"
+    },
+    "links": {
+      "linkedin": "LinkedIn"
+    },
+    "phone": "Teléfono",
+    "phone_hidden": "oculto",
+    "email_label": "Correo",
+    "email_hidden": "contacto arroba ejemplo punto com"
+  }
+  ,
+  "projects": {
+    "title": "Proyectos",
+    "description": "Una colección de proyectos seleccionados. Añadiré los tuyos cuando los proporciones.",
+    "example_title": "App de ejemplo",
+    "example_description": "Demo: una SPA eficiente construida con Vue y Tailwind.",
+    "featured": "Proyectos destacados",
+    "placeholder_title": "Título del proyecto (placeholder)",
+    "placeholder_description": "Breve descripción del proyecto usando stack web moderno."
+  },
+  "about": {
+    "title": "Sobre mí",
+    "intro": "Soy Melchior JORDA, desarrollador web junior con base en Málaga. Me especializo en construir interfaces web modernas, accesibles y de alto rendimiento con Vue, JavaScript y Tailwind CSS. Estoy disponible para trabajar de forma remota por Europa.",
+    "skills_title": "Habilidades",
+    "skills": ["JavaScript / TypeScript","Vue 3 / Vue Router","Tailwind CSS, Responsive Design","Rendimiento Web & Accesibilidad","Control de versiones: Git / GitHub"]
+  },
+  "resume": {
+    "title": "CV",
+    "download": "Descarga mi CV o consulta los puntos destacados a continuación.",
+    "download_link": "Descargar CV (PDF)",
+    "experience_title": "Experiencia",
+    "experience_text": "Pasantías y trabajos freelance (detalles por añadir)."
+  },
+  "contact_page": {
+    "title": "Contacto",
+    "subtitle": "Envíame un mensaje — responderé tan pronto como pueda.",
+    "label_name": "Tu nombre",
+    "label_email": "Tu correo",
+    "label_message": "Mensaje"
+  }
+}
