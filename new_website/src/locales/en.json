@@ -46,7 +46,78 @@
     "featured": "Featured projects",
     "placeholder_title": "Project Title (placeholder)",
     "placeholder_description": "Short description of the project using modern web stack.",
-    "view_live": "View Live"
+    "view_live": "View Live",
+    "items": {
+      "minata-portfolio": {
+        "title": "From MY Window - Minata Sartori",
+        "description": "Professional portfolio website for photographer and filmmaker Minata Sartori. Multi-page site featuring photography galleries, video projects, and radio work. Fully responsive with interactive media players."
+      },
+      "trixie-conciergerie": {
+        "title": "Trixie Conciergerie",
+        "description": "Luxury concierge services website for Saint-Tropez. Features booking system, service management, cleaning, gardening, and property maintenance. Modern responsive design with SEO optimization."
+      },
+      "miss-boat": {
+        "title": "Miss Boat",
+        "description": "Boat rental website for Cavalaire-sur-Mer (French Riviera). License-free boat rentals for ages 16+. Built with Vue.js, Vue Router, and Tailwind CSS. Features pricing page, gallery, contact information, and responsive design."
+      },
+      "elsa-psychologue": {
+        "title": "Elsa Psychologue",
+        "description": "Professional website for psychologist Elsa. Clean and calming design with appointment booking, therapy information, and contact details. Built with modern web technologies and Firebase hosting."
+      },
+      "les-planches": {
+        "title": "Les Planches",
+        "description": "Mediterranean restaurant website in Cavalaire-sur-Mer. Features animated image galleries for menu and drinks, smooth scroll effects, and responsive design. Modern tapas and wine bar near Saint-Tropez."
+      },
+      "re-fresh-earth": {
+        "title": "Re-Fresh Earth",
+        "description": "Environmental platform fighting urban heat islands using AI and satellite data. NASA Space Apps Challenge project featuring predictive machine learning, real-time thermal mapping with Landsat/Sentinel-2/MODIS, and intuitive dashboard for urban planners. Case study: Málaga."
+      },
+      "get-next-line": {
+        "title": "get_next_line",
+        "description": "Function that reads a line from a file descriptor. A challenging project that handles buffer management and memory allocation."
+      },
+      "ft-printf": {
+        "title": "ft_printf",
+        "description": "Custom implementation of the printf function in C. Handles multiple format specifiers and conversions."
+      },
+      "libft": {
+        "title": "Libft",
+        "description": "Custom C library with reimplemented standard functions. Foundation library for all future C projects."
+      },
+      "personal-libft": {
+        "title": "Personal Libft",
+        "description": "Extended version of the standard C library with additional utility functions. Enhanced libft with custom implementations for advanced string manipulation, memory management, and data structures."
+      },
+      "push-swap": {
+        "title": "push_swap",
+        "description": "Sorting algorithm project that sorts data on a stack with a limited set of instructions. Implements efficient algorithms to sort integers using two stacks and specific operations."
+      },
+      "so-long": {
+        "title": "so_long",
+        "description": "2D game project built with MiniLibX. Create a small game where a character collects items and finds an exit. Focuses on graphics programming, event handling, and game logic."
+      },
+      "random-rgb": {
+        "title": "Random RGB",
+        "description": "A generator of rgb color, see the color, and copy the rgb"
+      },
+      "form-with-regex": {
+        "title": "Form with Regex",
+        "description": "A form with regex for all the inputs."
+      },
+      "random-password": {
+        "title": "Random Password",
+        "description": "Here is a generator of random password, you can add how many letters, maj/min, numbers or special caracteres."
+      }
+      ,
+      "philosophers": {
+        "title": "Philosophers",
+        "description": "Dining philosophers concurrency project implemented in C using pthreads and mutexes. Simulation of N philosophers avoiding deadlock and starvation."
+      },
+      "minishell": {
+        "title": "Minishell",
+        "description": "A minimal shell implementation in C supporting parsing, execution, redirections, and builtins. Educational project following strict coding rules."
+      }
+    }
   },
   "about": {
     "title": "About",

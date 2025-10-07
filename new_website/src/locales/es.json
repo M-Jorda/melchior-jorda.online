@@ -46,7 +46,78 @@
     "featured": "Proyectos destacados",
     "placeholder_title": "Título del proyecto (placeholder)",
     "placeholder_description": "Breve descripción del proyecto usando stack web moderno.",
-    "view_live": "Ver en vivo"
+    "view_live": "Ver en vivo",
+    "items": {
+      "minata-portfolio": {
+        "title": "From MY Window - Minata Sartori",
+        "description": "Sitio portfolio profesional para la fotógrafa y directora Minata Sartori. Sitio multipágina con galerías de fotos, proyectos de vídeo y trabajos de radio. Totalmente responsive con reproductores multimedia interactivos."
+      },
+      "trixie-conciergerie": {
+        "title": "Trixie Conciergerie",
+        "description": "Sitio de servicios de conserjería de lujo para Saint-Tropez. Sistema de reservas, gestión de servicios, limpieza, jardinería y mantenimiento de propiedades. Diseño moderno responsive optimizado para SEO."
+      },
+      "miss-boat": {
+        "title": "Miss Boat",
+        "description": "Sitio de alquiler de barcos para Cavalaire-sur-Mer. Alquileres sin licencia desde 16 años. Construido con Vue.js, Vue Router y Tailwind CSS. Páginas de precios, galería y contacto, diseño responsive."
+      },
+      "elsa-psychologue": {
+        "title": "Elsa Psychologue",
+        "description": "Sitio profesional para la psicóloga Elsa. Diseño limpio con reserva de citas, información sobre terapias y datos de contacto. Alojado en Firebase."
+      },
+      "les-planches": {
+        "title": "Les Planches",
+        "description": "Sitio de un restaurante mediterráneo en Cavalaire-sur-Mer. Galerías animadas para el menú y bebidas, efectos de desplazamiento suaves y diseño responsive."
+      },
+      "re-fresh-earth": {
+        "title": "Re-Fresh Earth",
+        "description": "Plataforma medioambiental que combate las islas de calor urbanas usando IA y datos satelitales. Proyecto NASA Space Apps con cartografía térmica y panel para urbanistas."
+      },
+      "get-next-line": {
+        "title": "get_next_line",
+        "description": "Función que lee una línea desde un descriptor de archivo. Proyecto que maneja gestión de buffer y asignación de memoria."
+      },
+      "ft-printf": {
+        "title": "ft_printf",
+        "description": "Implementación personalizada de la función printf en C. Maneja múltiples especificadores de formato y conversiones."
+      },
+      "libft": {
+        "title": "Libft",
+        "description": "Librería C personalizada con funciones estándar reimplementadas. Base para futuros proyectos en C."
+      },
+      "personal-libft": {
+        "title": "Personal Libft",
+        "description": "Versión extendida de la librería estándar C con funciones utilitarias adicionales para manipulación de cadenas, gestión de memoria y estructuras de datos."
+      },
+      "push-swap": {
+        "title": "push_swap",
+        "description": "Proyecto de algoritmo de ordenación que ordena datos en una pila con un conjunto limitado de instrucciones. Implementa algoritmos eficientes para ordenar enteros usando dos pilas."
+      },
+      "so-long": {
+        "title": "so_long",
+        "description": "Juego 2D construido con MiniLibX. Crea un pequeño juego donde un personaje recoge objetos y encuentra la salida. Enfoque en programación gráfica, manejo de eventos y lógica del juego."
+      },
+      "random-rgb": {
+        "title": "Random RGB",
+        "description": "Generador de colores RGB: ver el color y copiar el valor RGB."
+      },
+      "form-with-regex": {
+        "title": "Form with Regex",
+        "description": "Formulario con expresiones regulares para validar todos los campos."
+      },
+      "random-password": {
+        "title": "Random Password",
+        "description": "Generador de contraseñas aleatorias, configurable en longitud, mayúsculas/minúsculas, números y caracteres especiales."
+      }
+      ,
+      "philosophers": {
+        "title": "Philosophers",
+        "description": "Proyecto de los filósofos comensales implementado en C usando pthreads y mutex. Simulación de N filósofos evitando deadlock y inanición."
+      },
+      "minishell": {
+        "title": "Minishell",
+        "description": "Implementación mínima de un shell en C que soporta parsing, ejecución, redirecciones y builtins. Proyecto educativo con reglas de código estrictas."
+      }
+    }
   },
   "about": {
     "title": "Sobre mí",

@@ -129,4 +129,21 @@
     "thumbnail": "/projects/random-password/thumbnail.png",
     "live": "/projects/random-password/index.html"
   }
+  ,
+  {
+    "id": "philosophers",
+    "title": "Philosophers",
+    "description": "Dining philosophers concurrency project implemented in C using pthreads and mutexes. Simulation of N philosophers avoiding deadlock and starvation.",
+    "technologies": ["C", "pthreads", "Mutexes"],
+    "category": "42",
+    "github": "git@github.com:M-Jorda/philosophers.git"
+  },
+  {
+    "id": "minishell",
+    "title": "Minishell",
+    "description": "A minimal shell implementation in C supporting parsing, execution, redirections, and builtins. Educational project following strict coding rules.",
+    "technologies": ["C", "Unix", "Shell"],
+    "category": "42",
+    "github": "git@github.com:M-Jorda/Minishell.git"
+  }
 ]

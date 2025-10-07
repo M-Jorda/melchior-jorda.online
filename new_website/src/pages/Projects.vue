@@ -28,10 +28,10 @@
           />
           
           <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
-            {{ project.title }}
+            {{ $t(`projects.items.${project.id}.title`) || project.title }}
           </h3>
           <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2 flex-grow">
-            {{ project.description }}
+            {{ $t(`projects.items.${project.id}.description`) || project.description }}
           </p>
           
           <div class="flex flex-wrap gap-2 mt-3">
@@ -49,7 +49,7 @@
               v-if="project.live" 
               :href="project.live" 
               target="_blank"
-              class="text-sm px-4 py-2 bg-primary dark:bg-accent-100 text-white rounded hover:opacity-80 transition-opacity"
+              class="text-sm px-4 py-2 bg-primary dark:bg-orange-400 dark:text-primary text-white rounded hover:opacity-80 transition-opacity"
             >
               {{ $t('projects.view_live') }}
             </a>
@@ -78,10 +78,10 @@
           class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6 hover:shadow-lg hover:scale-105 transition-all flex flex-col"
         >
           <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
-            {{ project.title }}
+            {{ $t(`projects.items.${project.id}.title`) || project.title }}
           </h3>
           <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2 flex-grow">
-            {{ project.description }}
+            {{ $t(`projects.items.${project.id}.description`) || project.description }}
           </p>
           
           <div class="flex flex-wrap gap-2 mt-3">
@@ -99,7 +99,7 @@
               v-if="project.live" 
               :href="project.live" 
               target="_blank"
-              class="text-sm px-4 py-2 bg-primary dark:bg-accent-100 text-white rounded hover:opacity-80 transition-opacity"
+              class="text-sm px-4 py-2 bg-primary dark:bg-orange-400 dark:text-primary text-white rounded hover:opacity-80 transition-opacity"
             >
               Try on Repl.it
             </a>
@@ -136,10 +136,10 @@
           />
           
           <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
-            {{ project.title }}
+            {{ $t(`projects.items.${project.id}.title`) || project.title }}
           </h3>
           <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2 flex-grow">
-            {{ project.description }}
+            {{ $t(`projects.items.${project.id}.description`) || project.description }}
           </p>
           
           <div class="flex flex-wrap gap-2 mt-3">
@@ -157,7 +157,7 @@
               v-if="project.live" 
               :href="project.live" 
               target="_blank"
-              class="text-sm px-4 py-2 bg-primary dark:bg-accent-100 text-white rounded hover:opacity-80 transition-opacity"
+              class="text-sm px-4 py-2 bg-primary dark:bg-orange-400 dark:text-primary text-white rounded hover:opacity-80 transition-opacity"
             >
               {{ $t('projects.view_live') }}
             </a>
