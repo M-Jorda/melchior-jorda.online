@@ -33,22 +33,31 @@
       </h2>
       
       <!-- Grille responsive: 1 colonne mobile, 2 colonnes tablette+ -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 gap-4 sm:gap-5 md:gap-6 mt-4 sm:mt-5 md:mt-6">
-        <article class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5 md:gap-6 mt-4 sm:mt-5 md:mt-6">
+        <article
+          v-for="project in featuredProjects"
+          :key="project.id"
+          class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6"
+        >
           <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
-            {{ $t('projects.placeholder_title') }}
+            {{ $t(`projects.items.${project.id}.title`) || project.title }}
           </h3>
           <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2">
-            {{ $t('projects.placeholder_description') }}
+            {{ $t(`projects.items.${project.id}.description`) || project.description }}
           </p>
-        </article>
-        <article class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6">
-          <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
-            {{ $t('projects.placeholder_title') }}
-          </h3>
-          <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2">
-            {{ $t('projects.placeholder_description') }}
-          </p>
+          <div class="mt-3">
+            <a
+              v-if="project.live"
+              :href="project.live"
+              target="_blank"
+              class="text-sm px-4 py-2 bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded hover:opacity-90 transition-opacity"
+            >
+              {{ $t('projects.view_live') }}
+            </a>
+            <router-link v-else to="/projects" class="ml-2 text-sm px-4 py-2 border border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-300 rounded">
+              {{ $t('home.see_projects') }}
+            </router-link>
+          </div>
         </article>
       </div>
     </section>
@@ -56,7 +65,22 @@
 </template>
 
 <script>
+import projectsData from '@/data/projects.json'
 export default {
   name: 'Home'
+  ,
+  data() {
+    return {
+  featuredIds: ['re-fresh-earth', 'minata-portfolio', 'so-long'],
+      projects: projectsData
+    }
+  },
+  computed: {
+    featuredProjects() {
+      return this.featuredIds
+        .map(id => this.projects.find(p => p.id === id))
+        .filter(Boolean)
+    }
+  }
 }
 </script>
