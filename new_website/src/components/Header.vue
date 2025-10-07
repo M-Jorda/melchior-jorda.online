@@ -9,8 +9,8 @@
   >
     <div class="container mx-auto px-4 flex items-center justify-between">
       <!-- Logo et titre -->
-      <div class="flex items-center gap-2 md:gap-3">
-        <img src="/favicon.svg" alt="logo" class="w-8 h-8 md:w-10 md:h-10" />
+      <router-link to="/" class="flex items-center gap-2 md:gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+        <img src="/favicon.png" alt="logo" class="w-8 h-8 md:w-10 md:h-10" />
         <div>
           <div class="text-sm md:text-lg font-semibold text-primary dark:text-accent-50">
             Melchior JORDA 
@@ -18,7 +18,7 @@
           </div>
           <div class="text-xs md:text-sm text-slate-500 dark:text-accent-200">Junior Web Developer</div>
         </div>
-      </div>
+      </router-link>
 
       <!-- Menu hamburger (visible quand le menu desktop est caché) -->
       <button 

@@ -45,7 +45,8 @@
     "example_description": "Demo: A performant SPA built with Vue and Tailwind.",
     "featured": "Featured projects",
     "placeholder_title": "Project Title (placeholder)",
-    "placeholder_description": "Short description of the project using modern web stack."
+    "placeholder_description": "Short description of the project using modern web stack.",
+    "view_live": "View Live"
   },
   "about": {
     "title": "About",

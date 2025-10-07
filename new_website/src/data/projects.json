@@ -1,11 +1,132 @@
 [
   {
-    "id": "example-app",
-    "title": "Example App",
-    "description": "A performant single-page application built with Vue and Tailwind.",
-    "technologies": ["Vue", "Tailwind", "Vite"],
-    "thumbnail": "/assets/project-example.webp",
-    "github": "https://github.com/your/repo",
-    "live": "https://your-live.example"
+    "id": "minata-portfolio",
+    "title": "From MY Window - Minata Sartori",
+    "description": "Professional portfolio website for photographer and filmmaker Minata Sartori. Multi-page site featuring photography galleries, video projects, and radio work. Fully responsive with interactive media players.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Responsive Design", "SEO"],
+    "category": "websites",
+    "github": "https://github.com/M-Jorda/Minata",
+    "live": "/minata/index.html"
+  },
+  {
+    "id": "trixie-conciergerie",
+    "title": "Trixie Conciergerie",
+    "description": "Luxury concierge services website for Saint-Tropez. Features booking system, service management, cleaning, gardening, and property maintenance. Modern responsive design with SEO optimization.",
+    "technologies": ["HTML", "CSS", "JavaScript", "SEO", "Schema.org"],
+    "category": "websites",
+    "github": "https://github.com/M-Jorda/Trixie",
+    "live": "/trixie/index.html"
+  },
+  {
+    "id": "miss-boat",
+    "title": "Miss Boat",
+    "description": "Boat rental website for Cavalaire-sur-Mer (French Riviera). License-free boat rentals for ages 16+. Built with Vue.js, Vue Router, and Tailwind CSS. Features pricing page, gallery, contact information, and responsive design.",
+    "technologies": ["Vue.js", "Vue Router", "Tailwind CSS", "Vite"],
+    "category": "websites",
+    "github": "https://github.com/M-Jorda/miss_boat",
+    "live": "/miss-boat/index.html"
+  },
+  {
+    "id": "elsa-psychologue",
+    "title": "Elsa Psychologue",
+    "description": "Professional website for psychologist Elsa. Clean and calming design with appointment booking, therapy information, and contact details. Built with modern web technologies and Firebase hosting.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Firebase"],
+    "category": "websites",
+    "github": "https://github.com/M-Jorda/Elsa_psychologue",
+    "live": "https://elsa-psychologue.firebaseapp.com"
+  },
+  {
+    "id": "les-planches",
+    "title": "Les Planches",
+    "description": "Mediterranean restaurant website in Cavalaire-sur-Mer. Features animated image galleries for menu and drinks, smooth scroll effects, and responsive design. Modern tapas and wine bar near Saint-Tropez.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Animations"],
+    "category": "websites",
+    "github": "https://github.com/M-Jorda/Les-Planches",
+    "live": "/les-planches/index.html"
+  },
+  {
+    "id": "re-fresh-earth",
+    "title": "Re-Fresh Earth",
+    "description": "Environmental platform fighting urban heat islands using AI and satellite data. NASA Space Apps Challenge project featuring predictive machine learning, real-time thermal mapping with Landsat/Sentinel-2/MODIS, and intuitive dashboard for urban planners. Case study: Málaga.",
+    "technologies": ["AI", "Machine Learning", "Satellite Data", "Environmental Tech"],
+    "category": "websites",
+    "live": "https://www.re-fresh.earth"
+  },
+  {
+    "id": "get-next-line",
+    "title": "get_next_line",
+    "description": "Function that reads a line from a file descriptor. A challenging project that handles buffer management and memory allocation.",
+    "technologies": ["C"],
+    "category": "42",
+    "github": "https://github.com/M-Jorda/get_next_line",
+    "live": "https://replit.com/@jordajfr/getnextline-1"
+  },
+  {
+    "id": "ft-printf",
+    "title": "ft_printf",
+    "description": "Custom implementation of the printf function in C. Handles multiple format specifiers and conversions.",
+    "technologies": ["C"],
+    "category": "42",
+    "github": "https://github.com/M-Jorda/ft_printf",
+    "live": "https://replit.com/@jordajfr/ftprintf?v=1"
+  },
+  {
+    "id": "libft",
+    "title": "Libft",
+    "description": "Custom C library with reimplemented standard functions. Foundation library for all future C projects.",
+    "technologies": ["C"],
+    "category": "42",
+    "github": "https://github.com/M-Jorda/libft.a"
+  },
+  {
+    "id": "personal-libft",
+    "title": "Personal Libft",
+    "description": "Extended version of the standard C library with additional utility functions. Enhanced libft with custom implementations for advanced string manipulation, memory management, and data structures.",
+    "technologies": ["C"],
+    "category": "42",
+    "github": "https://github.com/M-Jorda/personal_libft"
+  },
+  {
+    "id": "push-swap",
+    "title": "push_swap",
+    "description": "Sorting algorithm project that sorts data on a stack with a limited set of instructions. Implements efficient algorithms to sort integers using two stacks and specific operations.",
+    "technologies": ["C", "Algorithms"],
+    "category": "42",
+    "github": "https://github.com/M-Jorda/push_swap"
+  },
+  {
+    "id": "so-long",
+    "title": "so_long",
+    "description": "2D game project built with MiniLibX. Create a small game where a character collects items and finds an exit. Focuses on graphics programming, event handling, and game logic.",
+    "technologies": ["C", "MiniLibX", "Graphics"],
+    "category": "42",
+    "github": "https://github.com/M-Jorda/so_long"
+  },
+  {
+    "id": "random-rgb",
+    "title": "Random RGB",
+    "description": "A generator of rgb color, see the color, and copy the rgb",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "category": "applications",
+    "thumbnail": "/projects/random-rgb/thumbnail.png",
+    "live": "/projects/random-rgb/index.html"
+  },
+  {
+    "id": "form-with-regex",
+    "title": "Form with Regex",
+    "description": "A form with regex for all the inputs.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Regex"],
+    "category": "applications",
+    "thumbnail": "/projects/form-with-regex/thumbnail.png",
+    "live": "/projects/form-with-regex/index.html"
+  },
+  {
+    "id": "random-password",
+    "title": "Random Password",
+    "description": "Here is a generator of random password, you can add how many letters, maj/min, numbers or special caracteres.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "category": "applications",
+    "thumbnail": "/projects/random-password/thumbnail.png",
+    "live": "/projects/random-password/index.html"
   }
 ]
