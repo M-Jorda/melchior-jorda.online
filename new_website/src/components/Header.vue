@@ -80,7 +80,7 @@
     <transition name="mobile-menu">
       <div 
         v-if="isMobileMenuOpen" 
-        class="lg:hidden fixed inset-0 top-[73px] bg-white dark:bg-primary z-50 overflow-y-auto"
+        class="lg:hidden fixed inset-0 top-[73px] bg-[#ffedd5] dark:bg-[#0f172a] z-50 overflow-y-auto"
       >
         <nav class="container mx-auto px-4 py-6">
           <ul class="flex flex-col gap-4">
@@ -189,18 +189,18 @@ export default {
   },
   computed: {
     headerStyle() {
-      const baseOpacity = this.lastScrollPosition > this.scrollThreshold ? 0.85 : 0.65
+      const baseOpacity = this.lastScrollPosition > this.scrollThreshold ? 0.90 : 0.75
       const blurAmount = this.lastScrollPosition > this.scrollThreshold ? '20px' : '16px'
       
       if (this.isDark) {
         return {
-          background: `rgba(7, 16, 36, ${baseOpacity})`,
+          background: `rgba(15, 23, 42, ${baseOpacity})`,
           backdropFilter: `blur(${blurAmount}) saturate(180%)`,
           WebkitBackdropFilter: `blur(${blurAmount}) saturate(180%)`
         }
       } else {
         return {
-          background: `rgba(255, 248, 243, ${baseOpacity})`,
+          background: `rgba(255, 237, 213, ${baseOpacity})`,
           backdropFilter: `blur(${blurAmount}) saturate(180%)`,
           WebkitBackdropFilter: `blur(${blurAmount}) saturate(180%)`
         }
