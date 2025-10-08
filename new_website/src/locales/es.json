@@ -37,8 +37,8 @@
     "phone_hidden": "Haz clic para revelar",
     "email_label": "Correo",
     "email_hidden": "Haz clic para revelar",
-    "success_title": "Abriendo cliente de correo...",
-    "success_message": "Por favor, haz clic en 'Enviar' en tu cliente de correo para completar el envío. La página se recargará en unos segundos."
+    "success_title": "¡Mensaje enviado con éxito!",
+    "success_message": "Tu mensaje ha sido enviado. ¡Te responderé lo antes posible!"
   }
   ,
   "projects": {

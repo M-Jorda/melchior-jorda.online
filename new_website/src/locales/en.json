@@ -37,8 +37,8 @@
     "phone_hidden": "Click to reveal",
     "email_label": "Email",
     "email_hidden": "Click to reveal",
-    "success_title": "Email client opening...",
-    "success_message": "Please click 'Send' in your email client to complete the message. The page will reload in a few seconds."
+    "success_title": "Message sent successfully!",
+    "success_message": "Your message has been sent. I'll get back to you as soon as possible!"
   }
   ,
   "projects": {

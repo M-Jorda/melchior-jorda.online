@@ -69,20 +69,25 @@
       </a>
     </div>
 
-    <!-- Message de succès -->
-    <transition name="fade">
-      <div v-if="showSuccessMessage" class="mt-6 sm:mt-8 p-4 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 rounded-lg">
-        <div class="flex items-center">
-          <svg class="w-6 h-6 text-green-600 dark:text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <!-- Message de succès flottant (Teleport pour sortir du flux) -->
+    <Teleport to="body">
+      <div v-if="showSuccessMessage" class="notification-wrapper">
+        <div class="flex items-start notification-content">
+          <svg class="w-6 h-6 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
           </svg>
-          <div>
-            <h3 class="font-semibold text-green-800 dark:text-green-200">{{ $t('contact.success_title') }}</h3>
-            <p class="text-sm text-green-700 dark:text-green-300">{{ $t('contact.success_message') }}</p>
+          <div class="flex-1">
+            <h3 class="font-bold text-base notification-title">{{ $t('contact.success_title') }}</h3>
+            <p class="text-sm mt-1 notification-message">{{ $t('contact.success_message') }}</p>
           </div>
+          <button @click="showSuccessMessage = false" class="ml-3 transition-colors flex-shrink-0 notification-close">
+            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
+            </svg>
+          </button>
         </div>
       </div>
-    </transition>
+    </Teleport>
 
     <!-- Formulaire responsive avec max-width adaptative -->
     <div class="mt-8 sm:mt-10">
@@ -160,6 +165,9 @@
 </template>
 
 <script>
+import emailjs from '@emailjs/browser'
+import { emailjsConfig } from '../config/emailjs.config.js'
+
 export default { 
   name: 'Contact',
   data() {
@@ -222,58 +230,58 @@ export default {
         window.location.href = this.phoneLink
       })
     },
-    handleSubmit(event) {
+    async handleSubmit(event) {
       // Protection anti-bot : si le champ honeypot est rempli, c'est un bot
       if (this.formData.website) {
         console.warn('Bot detected - honeypot field filled')
         return // Ne rien faire si c'est un bot
       }
       
-      const formData = new FormData(event.target)
-      const email = `${this.emailPart1}@${this.emailPart2}`
-      const subject = `Contact from ${formData.get('name')}`
-      const body = `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\nMessage:\n${formData.get('message')}`
-      
-      // Afficher le message de succès immédiatement
+      try {
+        // Paramètres du template
+        const templateParams = {
+          from_name: this.formData.name,
+          from_email: this.formData.email,
+          message: this.formData.message,
+          to_email: `${this.emailPart1}@${this.emailPart2}` // Votre email
+        }
+        
+        // Envoi de l'email via EmailJS
+        await emailjs.send(
+          emailjsConfig.serviceID, 
+          emailjsConfig.templateID, 
+          templateParams, 
+          emailjsConfig.publicKey
+        )
+        
+        // Sauvegarder dans sessionStorage pour afficher après rechargement
+        sessionStorage.setItem('emailSent', 'true')
+        
+        // Recharger la page
+        window.location.reload()
+        
+      } catch (error) {
+        console.error('Erreur lors de l\'envoi:', error)
+        alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.')
+      }
+    }
+  },
+  mounted() {
+    // Vérifier si un email vient d'être envoyé
+    if (sessionStorage.getItem('emailSent') === 'true') {
+      sessionStorage.removeItem('emailSent')
       this.showSuccessMessage = true
       
-      // Attendre un peu avant d'ouvrir le client email
+      // Masquer le message après 6 secondes
       setTimeout(() => {
-        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
-      }, 1000)
-      
-      // Recharger la page après 8 secondes (temps de lire le message et ouvrir le client)
-      setTimeout(() => {
-        window.location.reload()
-      }, 8000)
+        this.showSuccessMessage = false
+      }, 6000)
     }
   }
 }
 </script>
 
 <style scoped>
-/* Animation pour le message de succès */
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.5s ease, transform 0.5s ease;
-}
-
-.fade-enter-from {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.fade-leave-to {
-  opacity: 0;
-  transform: translateY(-20px);
-}
-
-.fade-enter-to,
-.fade-leave-from {
-  opacity: 1;
-  transform: translateY(0);
-}
-
 /* Honeypot anti-bot - complètement invisible */
 .hidden-field {
   position: absolute;
@@ -282,5 +290,91 @@ export default {
   height: 1px;
   opacity: 0;
   pointer-events: none;
+}
+
+/* Notification de succès flottante */
+.notification-wrapper {
+  position: fixed;
+  top: 80px;
+  right: 20px;
+  z-index: 9999;
+  max-width: 420px;
+  padding: 1rem 1.25rem;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 253, 244, 0.98));
+  border: 2px solid #10b981;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5), 0 0 0 1px rgba(16, 185, 129, 0.1);
+  backdrop-filter: blur(10px);
+  animation: fadeInNotification 0.5s ease-out forwards;
+}
+
+/* Couleurs du contenu en light mode */
+.notification-content svg {
+  color: #15803d; /* green-700 */
+}
+
+.notification-title {
+  color: #14532d; /* green-900 */
+}
+
+.notification-message {
+  color: #166534; /* green-800 */
+}
+
+.notification-close {
+  color: #15803d; /* green-700 */
+}
+
+.notification-close:hover {
+  color: #14532d; /* green-900 */
+}
+
+@keyframes fadeInNotification {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  .notification-wrapper {
+    background: linear-gradient(135deg, rgba(6, 78, 59, 0.98), rgba(4, 120, 87, 0.98));
+    border-color: #059669;
+    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+  }
+  
+  /* Couleurs du contenu en dark mode */
+  .notification-content svg {
+    color: #4ade80; /* green-400 */
+  }
+  
+  .notification-title {
+    color: #bbf7d0; /* green-200 */
+  }
+  
+  .notification-message {
+    color: #86efac; /* green-300 */
+  }
+  
+  .notification-close {
+    color: #4ade80; /* green-400 */
+  }
+  
+  .notification-close:hover {
+    color: #bbf7d0; /* green-200 */
+  }
+}
+
+/* Responsive pour mobile */
+@media (max-width: 640px) {
+  .notification-wrapper {
+    top: 70px;
+    right: 16px;
+    left: 16px;
+    max-width: calc(100vw - 32px);
+    padding: 0.875rem 1rem;
+  }
 }
 </style>

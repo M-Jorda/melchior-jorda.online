@@ -37,8 +37,8 @@
     "phone_hidden": "Cliquez pour révéler",
     "email_label": "Email",
     "email_hidden": "Cliquez pour révéler",
-    "success_title": "Ouverture du client email...",
-    "success_message": "Veuillez cliquer sur 'Envoyer' dans votre client email pour finaliser l'envoi. La page se rechargera dans quelques secondes."
+    "success_title": "Message envoyé avec succès !",
+    "success_message": "Votre message a bien été envoyé. Je vous répondrai dès que possible !"
   }
   ,
   "projects": {
