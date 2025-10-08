@@ -45,6 +45,14 @@
     "live": "/les-planches/index.html"
   },
   {
+    "id": "portfolio-v0",
+    "title": "Portfolio v0.3.4",
+    "description": "My previous personal portfolio website. Classic design with dark/light mode, multilingual support (EN/FR/ES), and project showcase. Built with vanilla JavaScript before migrating to Vue.js.",
+    "technologies": ["HTML", "CSS", "JavaScript", "Responsive Design"],
+    "category": "websites",
+    "live": "/version_0.3.4/index.html"
+  },
+  {
     "id": "re-fresh-earth",
     "title": "Re-Fresh Earth",
     "description": "Environmental platform fighting urban heat islands using AI and satellite data. NASA Space Apps Challenge project featuring predictive machine learning, real-time thermal mapping with Landsat/Sentinel-2/MODIS, and intuitive dashboard for urban planners. Case study: Málaga.",

@@ -43,7 +43,7 @@
   ,
   "projects": {
     "title": "Proyectos",
-    "description": "Una colección de proyectos seleccionados. Añadiré los tuyos cuando los proporciones.",
+    "description": "Una colección de mis proyectos de desarrollo web, ingeniería de software y aplicaciones.",
     "example_title": "App de ejemplo",
     "example_description": "Demo: una SPA eficiente construida con Vue y Tailwind.",
     "featured": "Proyectos destacados",
@@ -100,18 +100,29 @@
         "description": "Juego 2D construido con MiniLibX. Crea un pequeño juego donde un personaje recoge objetos y encuentra la salida. Enfoque en programación gráfica, manejo de eventos y lógica del juego."
       },
       "random-rgb": {
-        "title": "Random RGB",
-        "description": "Generador de colores RGB: ver el color y copiar el valor RGB."
+        "title": "Generador RGB Aleatorio",
+        "description": "Generador interactivo de colores RGB que crea combinaciones aleatorias. Muestra una vista previa en tiempo real y permite copiar los valores RGB con un clic para usar en proyectos de diseño."
       },
       "form-with-regex": {
-        "title": "Form with Regex",
-        "description": "Formulario con expresiones regulares para validar todos los campos."
+        "title": "Validación de Formulario con Regex",
+        "description": "Sistema avanzado de validación de formularios usando expresiones regulares. Demuestra validación en tiempo real para emails, números de teléfono, contraseñas y otros campos comunes con patrones regex personalizados."
       },
       "random-password": {
-        "title": "Random Password",
-        "description": "Generador de contraseñas aleatorias, configurable en longitud, mayúsculas/minúsculas, números y caracteres especiales."
-      }
-      ,
+        "title": "Generador de Contraseñas Seguras",
+        "description": "Generador de contraseñas personalizable con opciones configurables. Crea contraseñas robustas y seguras eligiendo la longitud y tipos de caracteres: mayúsculas, minúsculas, números y caracteres especiales."
+      },
+      "projet-sortir": {
+        "title": "Projet Sortir",
+        "description": "Plataforma de gestión de eventos construida con Symfony. Permite a los usuarios crear, gestionar y unirse a eventos sociales. Características: autenticación de usuarios, filtrado de eventos y operaciones CRUD con base de datos MySQL."
+      },
+      "series-manager": {
+        "title": "Gestor de Series",
+        "description": "Aplicación de seguimiento de series de TV construida con Symfony. Gestiona tus series favoritas, haz seguimiento de episodios vistos y descubre nuevas series. Integración de API para datos de series y listas de visualización de usuarios."
+      },
+      "portfolio-v0": {
+        "title": "Portfolio v0.3.4",
+        "description": "Mi anterior sitio web de portfolio personal. Diseño clásico con modo oscuro/claro, soporte multilingüe (EN/FR/ES) y presentación de proyectos. Construido con JavaScript vanilla antes de migrar a Vue.js."
+      },
       "philosophers": {
         "title": "Philosophers",
         "description": "Proyecto de los filósofos comensales implementado en C usando pthreads y mutex. Simulación de N filósofos evitando deadlock y inanición."
