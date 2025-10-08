@@ -357,6 +357,8 @@ export default {
         document.documentElement.classList.remove('dark')
         localStorage.setItem('theme', 'light')
       }
+      // Fermer le menu mobile après changement de thème
+      this.closeMobileMenu()
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen
