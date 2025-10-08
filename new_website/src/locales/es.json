@@ -18,24 +18,25 @@
   },
   "contact": {
     "send_message": "Enviar mensaje",
-    "title": "Contacto",
-    "subtitle": "Envíame un mensaje — responderé tan pronto como pueda.",
+    "title": "Contactar",
+    "subtitle": "¡Colaboremos! Contáctame vía LinkedIn, correo o teléfono — o usa el formulario de abajo.",
+    "form_title": "Enviar un Mensaje",
     "form": {
-      "name": "Tu nombre",
-      "name_placeholder": "Tu nombre completo",
-      "email": "Tu correo",
-      "email_placeholder": "tu@dominio.com",
+      "name": "Nombre",
+      "name_placeholder": "Juan Pérez",
+      "email": "Correo",
+      "email_placeholder": "juan@ejemplo.com",
       "message": "Mensaje",
-      "message_placeholder": "Escribe un breve mensaje...",
-      "send": "Enviar mensaje"
+      "message_placeholder": "Cuéntame sobre tu proyecto u oportunidad...",
+      "send": "Enviar Mensaje"
     },
     "links": {
       "linkedin": "LinkedIn"
     },
     "phone": "Teléfono",
-    "phone_hidden": "oculto",
+    "phone_hidden": "Haz clic para revelar",
     "email_label": "Correo",
-    "email_hidden": "contacto arroba ejemplo punto com"
+    "email_hidden": "Haz clic para revelar"
   }
   ,
   "projects": {
@@ -129,8 +130,74 @@
     "title": "CV",
     "download": "Descarga mi CV o consulta los puntos destacados a continuación.",
     "download_link": "Descargar CV (PDF)",
-    "experience_title": "Experiencia",
-    "experience_text": "Pasantías y trabajos freelance (detalles por añadir)."
+    "profile": {
+      "title": "Perfil",
+      "description": "Desde joven, la programación ha dado vida a mis ideas. Mi experiencia culinaria me hizo versátil y aprendo rápido, con habilidades en organización, creatividad, trabajo en equipo y atención al detalle."
+    },
+    "experience": {
+      "title": "Experiencia Profesional",
+      "game_tester": {
+        "title": "Probador de Videojuegos – Localsoft",
+        "description": "Como probador LQA en Localsoft, analicé errores, redacté informes de prueba y colaboré con equipos de desarrollo usando herramientas del cliente, perfeccionando mi atención al detalle y metodologías de prueba."
+      },
+      "internship": {
+        "title": "Prácticas - Desarrollador Web",
+        "description": "Mejoré en gestión de proyectos, autonomía y vigilancia tecnológica. Utilicé VSCode, Bitbucket, Trello, Node.js, Electron.js, jQuery y MySQL. También reforcé mi trabajo en equipo. Desarrollé una aplicación de quiz y un sitio web para eventos."
+      },
+      "chef": {
+        "title": "Chef",
+        "description": "Mi experiencia culinaria perfeccionó mi gestión del tiempo y atención al detalle."
+      },
+      "various": {
+        "title": "Diversos Roles",
+        "description": "Mis experiencias en atención domiciliaria y trabajo socioeducativo reforzaron mi adaptabilidad y resolución de problemas."
+      }
+    },
+    "projects": {
+      "title": "Proyectos Informáticos",
+      "auction": {
+        "title": "Sitio de Subastas en Línea",
+        "description": "Desarrollado con HTML, Bootstrap, Java y JavaScript: Este proyecto mejoró mi comprensión de la Programación Orientada a Objetos (POO)."
+      },
+      "event": {
+        "title": "Aplicación de Organización de Eventos",
+        "description": "Construida con Symfony, desarrollé habilidades en PHP, Twig, MySQL y herramientas como Figma, Trello, PhpStorm y PhpMyAdmin, reforzando mi conocimiento en desarrollo web."
+      }
+    },
+    "skills": {
+      "title": "Habilidades de Programación",
+      "frontend": {
+        "title": "Frontend",
+        "description": "Experiencia en HTML/CSS, Javascript, Bootstrap y Angular para crear interfaces dinámicas y responsive."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Competente en PHP, Symfony, MySQL, Java y C, con experiencia en POO para desarrollo de software."
+      },
+      "tools": {
+        "title": "Herramientas",
+        "description": "Uso de Github, Bitbucket, Trello, Figma y SEO para gestión de proyectos y diseños optimizados."
+      },
+      "languages": {
+        "title": "Idiomas",
+        "description": "Francés (Nativo), Inglés (Fluido), Español (Intermedio)."
+      }
+    },
+    "education": {
+      "title": "Educación",
+      "eni": {
+        "title": "Título de Desarrollador Web y Móvil",
+        "description": "Escuela de Informática ENI"
+      },
+      "school42": {
+        "title": "Tronco Común - Escuela 42",
+        "description": "Mayor red de escuelas de informática del mundo"
+      }
+    },
+    "hobbies": {
+      "title": "Pasatiempos",
+      "description": "Apasionado por el beach-volley, viajes (Asia, Oceanía, Europa) y videojuegos, especialmente juegos de gestión y desarrollo con Unreal Engine."
+    }
   },
   "contact_page": {
     "title": "Contacto",

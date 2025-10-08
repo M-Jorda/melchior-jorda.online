@@ -8,78 +8,200 @@
       {{ $t('contact.subtitle') }}
     </p>
 
-    <!-- Formulaire responsive avec max-width adaptative -->
-    <form class="mt-4 sm:mt-5 md:mt-6 w-full max-w-full sm:max-w-lg" action="https://formspree.io/f/{your_form_id}" method="POST">
-      <label class="block mt-3 sm:mt-4">
-        <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
-          {{ $t('contact.form.name') }}
-        </span>
-        <input 
-          name="name" 
-          placeholder="{{ $t('contact.form.name_placeholder') }}" 
-          class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none" 
-          required 
-        />
-      </label>
-      
-      <label class="block mt-3 sm:mt-4">
-        <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
-          {{ $t('contact.form.email') }}
-        </span>
-        <input 
-          name="email" 
-          type="email" 
-          placeholder="{{ $t('contact.form.email_placeholder') }}" 
-          class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none" 
-          required 
-        />
-      </label>
-      
-      <label class="block mt-3 sm:mt-4">
-        <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
-          {{ $t('contact.form.message') }}
-        </span>
-        <textarea 
-          name="message" 
-          rows="5" 
-          placeholder="{{ $t('contact.form.message_placeholder') }}" 
-          class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none resize-y min-h-[120px]" 
-          required
-        ></textarea>
-      </label>
-      
-      <button 
-        class="mt-4 sm:mt-5 w-full sm:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium" 
-        type="submit"
+    <!-- Contact Links Cards -->
+    <div class="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
+      <!-- LinkedIn Card -->
+      <a 
+        :href="linkedinUrl" 
+        target="_blank"
+        rel="noopener noreferrer"
+        class="bg-accent-50 dark:bg-slate-800 p-5 rounded-lg relative group transition-all duration-300 hover:shadow-lg overflow-hidden block"
       >
-        {{ $t('contact.form.send') }}
-      </button>
-    </form>
+        <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
+        <div class="flex items-start">
+          <!-- LinkedIn icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-orange-500 dark:text-orange-400 mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.32 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.79M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z"/>
+          </svg>
+          <div>
+            <h3 class="text-base font-semibold text-primary dark:text-accent-50">LinkedIn</h3>
+            <p class="text-sm text-slate-600 dark:text-accent-200 mt-1">Melchior-jorda</p>
+          </div>
+        </div>
+      </a>
 
-    <!-- Informations de contact responsive -->
-    <div class="mt-6 sm:mt-8 md:mt-10 text-sm sm:text-base text-slate-600 dark:text-accent-200 space-y-2 sm:space-y-3">
-      <p>
-        <span class="font-medium">{{ $t('contact.links.linkedin') }}:</span> 
-        <a 
-          class="text-orange-500 dark:text-orange-400 hover:text-orange-600 dark:hover:text-orange-300 transition-colors duration-300 underline" 
-          href="https://www.linkedin.com/in/melchior-jorda" 
-          target="_blank"
+      <!-- Email Card -->
+      <a 
+        :href="emailLink"
+        @click.prevent="revealEmail"
+        class="bg-accent-50 dark:bg-slate-800 p-5 rounded-lg relative group transition-all duration-300 hover:shadow-lg overflow-hidden block cursor-pointer"
+      >
+        <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
+        <div class="flex items-start">
+          <!-- Email icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-orange-500 dark:text-orange-400 mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+            <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+          </svg>
+          <div>
+            <h3 class="text-base font-semibold text-primary dark:text-accent-50">Email</h3>
+            <p class="text-sm text-slate-600 dark:text-accent-200 mt-1">{{ displayEmail }}</p>
+          </div>
+        </div>
+      </a>
+
+      <!-- Phone Card -->
+      <a 
+        :href="phoneLink"
+        @click.prevent="revealPhone"
+        class="bg-accent-50 dark:bg-slate-800 p-5 rounded-lg relative group transition-all duration-300 hover:shadow-lg overflow-hidden block cursor-pointer"
+      >
+        <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
+        <div class="flex items-start">
+          <!-- Phone icon -->
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-orange-500 dark:text-orange-400 mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+            <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/>
+          </svg>
+          <div>
+            <h3 class="text-base font-semibold text-primary dark:text-accent-50">{{ $t('contact.phone') }}</h3>
+            <p class="text-sm text-slate-600 dark:text-accent-200 mt-1">{{ displayPhone }}</p>
+          </div>
+        </div>
+      </a>
+    </div>
+
+    <!-- Formulaire responsive avec max-width adaptative -->
+    <div class="mt-8 sm:mt-10">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-primary dark:text-accent-50 mb-4">
+        {{ $t('contact.form_title') }}
+      </h2>
+      <form @submit.prevent="handleSubmit" class="w-full">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
+          <!-- Left Column: Name and Email -->
+          <div class="space-y-3 sm:space-y-4">
+            <label class="block">
+              <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
+                {{ $t('contact.form.name') }}
+              </span>
+              <input 
+                v-model="formData.name"
+                name="name" 
+                :placeholder="$t('contact.form.name_placeholder')" 
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none" 
+                required 
+              />
+            </label>
+            
+            <label class="block">
+              <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
+                {{ $t('contact.form.email') }}
+              </span>
+              <input 
+                v-model="formData.email"
+                name="email" 
+                type="email" 
+                :placeholder="$t('contact.form.email_placeholder')" 
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none" 
+                required 
+              />
+            </label>
+          </div>
+
+          <!-- Right Column: Message -->
+          <div class="flex flex-col h-full">
+            <label class="block flex-1 flex flex-col">
+              <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
+                {{ $t('contact.form.message') }}
+              </span>
+              <textarea 
+                v-model="formData.message"
+                name="message" 
+                :placeholder="$t('contact.form.message_placeholder')" 
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none resize-none flex-1" 
+                required
+              ></textarea>
+            </label>
+          </div>
+        </div>
+        
+        <button 
+          class="mt-4 sm:mt-5 w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium" 
+          type="submit"
         >
-          /melchior-jorda
-        </a>
-      </p>
-      <p>
-        <span class="font-medium">{{ $t('contact.phone') }}:</span> 
-        <span id="phone">+34 · <em>{{ $t('contact.phone_hidden') }}</em></span>
-      </p>
-      <p>
-        <span class="font-medium">{{ $t('contact.email_label') }}:</span> 
-        <span id="email">{{ $t('contact.email_hidden') }}</span>
-      </p>
+          {{ $t('contact.form.send') }}
+        </button>
+      </form>
     </div>
   </section>
 </template>
 
 <script>
-export default { name: 'Contact' }
+export default { 
+  name: 'Contact',
+  data() {
+    return {
+      linkedinUrl: 'https://www.linkedin.com/in/melchior-jorda-354a31270',
+      // Email obfuscation - split to avoid scraping
+      emailPart1: 'jorda.j.fr',
+      emailPart2: 'gmail.com',
+      emailRevealed: false,
+      // Phone obfuscation
+      phoneParts: ['+33', '6', '66', '00', '81', '27'],
+      phoneRevealed: false,
+      // Form data
+      formData: {
+        name: '',
+        email: '',
+        message: ''
+      }
+    }
+  },
+  computed: {
+    emailLink() {
+      if (this.emailRevealed) {
+        return `mailto:${this.emailPart1}@${this.emailPart2}`
+      }
+      return '#'
+    },
+    displayEmail() {
+      if (this.emailRevealed) {
+        return `${this.emailPart1}@${this.emailPart2}`
+      }
+      return this.$t('contact.email_hidden')
+    },
+    phoneLink() {
+      if (this.phoneRevealed) {
+        return `tel:${this.phoneParts.join('')}`
+      }
+      return '#'
+    },
+    displayPhone() {
+      if (this.phoneRevealed) {
+        return `${this.phoneParts[0]} ${this.phoneParts[1]} ${this.phoneParts[2]} ${this.phoneParts[3]} ${this.phoneParts[4]} ${this.phoneParts[5]}`
+      }
+      return this.$t('contact.phone_hidden')
+    }
+  },
+  methods: {
+    revealEmail() {
+      this.emailRevealed = true
+      this.$nextTick(() => {
+        window.location.href = this.emailLink
+      })
+    },
+    revealPhone() {
+      this.phoneRevealed = true
+      this.$nextTick(() => {
+        window.location.href = this.phoneLink
+      })
+    },
+    handleSubmit(event) {
+      const formData = new FormData(event.target)
+      const email = `${this.emailPart1}@${this.emailPart2}`
+      const subject = `Contact from ${formData.get('name')}`
+      const body = `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\nMessage:\n${formData.get('message')}`
+      
+      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+    }
+  }
+}
 </script>

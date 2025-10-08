@@ -18,24 +18,25 @@
   },
   "contact": {
     "send_message": "Send message",
-    "title": "Contact",
-    "subtitle": "Send me a message — I'll reply as soon as I can.",
+    "title": "Get in Touch",
+    "subtitle": "Let's collaborate! Reach out via LinkedIn, email, or phone — or use the form below to send me a message.",
+    "form_title": "Send a Message",
     "form": {
-      "name": "Your name",
-      "name_placeholder": "Your full name",
-      "email": "Your email",
-      "email_placeholder": "you@domain.com",
+      "name": "Name",
+      "name_placeholder": "John Doe",
+      "email": "Email",
+      "email_placeholder": "john@example.com",
       "message": "Message",
-      "message_placeholder": "Write a short message...",
-      "send": "Send message"
+      "message_placeholder": "Tell me about your project or opportunity...",
+      "send": "Send Message"
     },
     "links": {
       "linkedin": "LinkedIn"
     },
     "phone": "Phone",
-    "phone_hidden": "hidden",
+    "phone_hidden": "Click to reveal",
     "email_label": "Email",
-    "email_hidden": "contact at example dot com"
+    "email_hidden": "Click to reveal"
   }
   ,
   "projects": {
@@ -129,8 +130,74 @@
     "title": "Resume",
     "download": "Download my resume or view highlights below.",
     "download_link": "Download CV (PDF)",
-    "experience_title": "Experience",
-    "experience_text": "Internships and freelance projects (details to be added)."
+    "profile": {
+      "title": "Profile",
+      "description": "From a young age, programming has brought my ideas to life. My culinary background made me versatile and I am a fast learner, with skills in organisation, creativity, teamwork and attention to detail."
+    },
+    "experience": {
+      "title": "Professional Experience",
+      "game_tester": {
+        "title": "Video Game Tester – Localsoft",
+        "description": "As a LQA Tester at Localsoft, I analyzed bugs, wrote test reports, and collaborated with dev teams using client tools, sharpening my attention to detail and testing methodologies."
+      },
+      "internship": {
+        "title": "Internship - Web Developer",
+        "description": "I improved in project management, autonomy and technology watch. I used VSCode, Bitbucket, Trello, Node.js, Electron.js, jQuery and MySQL. I also strengthened my teamwork. I developed a quiz app and a website for events."
+      },
+      "chef": {
+        "title": "Chef",
+        "description": "My culinary experience honed my time management, attention to detail."
+      },
+      "various": {
+        "title": "Various Roles",
+        "description": "My experiences in home care and socio-educational work strengthened my adaptability and problem-solving skills."
+      }
+    },
+    "projects": {
+      "title": "IT Projects",
+      "auction": {
+        "title": "Online Auction Site",
+        "description": "Developed with HTML, Bootstrap, Java and JavaScript: This project improved my understanding of Object Oriented Programming (OOP)."
+      },
+      "event": {
+        "title": "Event Organisation Application",
+        "description": "Built with Symfony, I developed skills in PHP, Twig, MySQL and tools like Figma, Trello, PhpStorm and PhpMyAdmin, strengthening my knowledge in web development."
+      }
+    },
+    "skills": {
+      "title": "Programming Skills",
+      "frontend": {
+        "title": "Frontend",
+        "description": "Experience in HTML/CSS, Javascript, Bootstrap and Angular to create dynamic and responsive interfaces."
+      },
+      "backend": {
+        "title": "Backend",
+        "description": "Proficient in PHP, Symfony, MySQL, Java and C, with experience in OOP for software development."
+      },
+      "tools": {
+        "title": "Tools",
+        "description": "Use of Github, Bitbucket, Trello, Figma and SEO for project management and optimised designs."
+      },
+      "languages": {
+        "title": "Languages",
+        "description": "French (Native), English (Fluent), Spanish (Intermediate)."
+      }
+    },
+    "education": {
+      "title": "Education",
+      "eni": {
+        "title": "Web and Mobile Developer Degree",
+        "description": "ENI School of Informatic"
+      },
+      "school42": {
+        "title": "Common Core - School 42",
+        "description": "Largest network of IT schools in the world"
+      }
+    },
+    "hobbies": {
+      "title": "Hobbies",
+      "description": "Passionate about beach-volley, travel (Asia, Oceania, Europe) and video games, especially management games and development with Unreal Engine."
+    }
   },
   "contact_page": {
     "title": "Contact",

@@ -42,11 +42,11 @@ export default {
   data() {
     return {
       year: new Date().getFullYear(),
-      linkedin: 'https://www.linkedin.com/in/melchior-jorda',
+      linkedin: 'https://www.linkedin.com/in/melchior-jorda-354a31270',
       cv: '/assets/Melchior-JORDA-CV.pdf',
-      // simple obfuscation for scraping bots
-      mailUser: 'melchior.jorda',
-      mailHost: 'example.com'
+      // Email obfuscation - split to avoid scraping bots
+      mailUser: 'jorda.j.fr',
+      mailHost: 'gmail.com'
     }
   },
   computed: {
