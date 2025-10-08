@@ -1,5 +1,12 @@
 <template>
   <section>
+    <MetaTags 
+      title="Resume & CV | Melchior JORDA"
+      :description="$t('resume.profile.description')"
+      keywords="Melchior JORDA, Resume, CV, Experience, Education, Skills, Web Developer, Software Developer, École 42, ENI School, Game Tester, Chef, Frontend, Backend"
+      url="/resume"
+    />
+    
     <!-- Titre responsive -->
     <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-primary dark:text-accent-50">
       {{ $t('resume.title') }}
@@ -320,5 +327,12 @@
 </template>
 
 <script>
-export default { name: 'Resume' }
+import MetaTags from '@/components/MetaTags.vue'
+
+export default { 
+  name: 'Resume',
+  components: {
+    MetaTags
+  }
+}
 </script>

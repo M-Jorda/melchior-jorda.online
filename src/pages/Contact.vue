@@ -1,5 +1,12 @@
 <template>
   <section>
+    <MetaTags 
+      title="Contact | Melchior JORDA"
+      :description="$t('contact.subtitle')"
+      keywords="Contact, Melchior JORDA, Web Developer, Get in Touch, Hire Developer, LinkedIn, Email, Remote Work, Freelance Developer"
+      url="/contact"
+    />
+    
     <!-- Titre responsive -->
     <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-primary dark:text-accent-50">
       {{ $t('contact.title') }}
@@ -167,9 +174,13 @@
 <script>
 import emailjs from '@emailjs/browser'
 import { emailjsConfig } from '../config/emailjs.config.js'
+import MetaTags from '@/components/MetaTags.vue'
 
 export default { 
   name: 'Contact',
+  components: {
+    MetaTags
+  },
   data() {
     return {
       linkedinUrl: 'https://www.linkedin.com/in/melchior-jorda-354a31270',

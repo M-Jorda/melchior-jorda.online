@@ -1,5 +1,12 @@
 <template>
   <section>
+    <MetaTags 
+      :title="$t('home.title')"
+      :description="$t('home.subtitle')"
+      keywords="Melchior JORDA, Web Developer, Software Developer, Vue.js, JavaScript, TypeScript, C Programming, Portfolio, Projects, Frontend, Backend, Málaga"
+      url="/"
+    />
+    
     <!-- Hero section responsive -->
     <header class="text-center py-8 sm:py-10 md:py-12 bg-accent-100 dark:bg-slate-800 rounded-lg p-4 sm:p-6 transition-colors duration-300">
       <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary dark:text-accent-50">
@@ -72,9 +79,13 @@
 
 <script>
 import projectsData from '@/data/projects.json'
+import MetaTags from '@/components/MetaTags.vue'
+
 export default {
-  name: 'Home'
-  ,
+  name: 'Home',
+  components: {
+    MetaTags
+  },
   data() {
     return {
   featuredIds: ['re-fresh-earth', 'minata-portfolio', 'so-long'],

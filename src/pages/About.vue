@@ -1,5 +1,12 @@
 <template>
   <section>
+    <MetaTags 
+      :title="$t('about.title')"
+      :description="$t('about.intro')"
+      keywords="Melchior JORDA, About, Skills, Experience, École 42, Web Developer, Software Developer, Vue.js, JavaScript, C Programming, Frontend, Backend, PHP, Symfony, Málaga, Spain"
+      url="/about"
+    />
+    
     <!-- Titre responsive -->
     <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-primary dark:text-accent-50">
       {{ $t('about.title') }}
@@ -112,5 +119,12 @@
 </template>
 
 <script>
-export default { name: 'About' }
+import MetaTags from '@/components/MetaTags.vue'
+
+export default { 
+  name: 'About',
+  components: {
+    MetaTags
+  }
+}
 </script>

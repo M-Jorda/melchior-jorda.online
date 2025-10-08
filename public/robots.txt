@@ -1,3 +1,31 @@
+# robots.txt for https://melchior-jorda.online/
+# Generated on 2025-10-08
+
+# Allow all bots to crawl everything
 User-agent: *
 Allow: /
-Sitemap: https://your-domain.example/sitemap.xml
+Disallow: /config/
+Disallow: /*.json$
+
+# Crawl-delay for polite bots (optional)
+Crawl-delay: 0
+
+# Sitemap location
+Sitemap: https://melchior-jorda.online/sitemap.xml
+
+# Specific rules for major search engines
+User-agent: Googlebot
+Allow: /
+Disallow: /config/
+
+User-agent: Bingbot
+Allow: /
+Disallow: /config/
+
+User-agent: Slurp
+Allow: /
+Disallow: /config/
+
+# Block bad bots (optional, uncomment if needed)
+# User-agent: BadBot
+# Disallow: /
