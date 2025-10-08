@@ -69,6 +69,21 @@
       </a>
     </div>
 
+    <!-- Message de succès -->
+    <transition name="fade">
+      <div v-if="showSuccessMessage" class="mt-6 sm:mt-8 p-4 bg-green-100 dark:bg-green-900 border border-green-400 dark:border-green-600 rounded-lg">
+        <div class="flex items-center">
+          <svg class="w-6 h-6 text-green-600 dark:text-green-400 mr-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <div>
+            <h3 class="font-semibold text-green-800 dark:text-green-200">{{ $t('contact.success_title') }}</h3>
+            <p class="text-sm text-green-700 dark:text-green-300">{{ $t('contact.success_message') }}</p>
+          </div>
+        </div>
+      </div>
+    </transition>
+
     <!-- Formulaire responsive avec max-width adaptative -->
     <div class="mt-8 sm:mt-10">
       <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-primary dark:text-accent-50 mb-4">
@@ -123,6 +138,16 @@
           </div>
         </div>
         
+        <!-- Honeypot anti-bot (champ invisible) -->
+        <input 
+          v-model="formData.website"
+          type="text" 
+          name="website" 
+          class="hidden-field"
+          tabindex="-1"
+          autocomplete="off"
+        />
+        
         <button 
           class="mt-4 sm:mt-5 w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium" 
           type="submit"
@@ -151,8 +176,11 @@ export default {
       formData: {
         name: '',
         email: '',
-        message: ''
-      }
+        message: '',
+        website: '' // Honeypot - doit rester vide
+      },
+      // Message de confirmation
+      showSuccessMessage: false
     }
   },
   computed: {
@@ -195,13 +223,64 @@ export default {
       })
     },
     handleSubmit(event) {
+      // Protection anti-bot : si le champ honeypot est rempli, c'est un bot
+      if (this.formData.website) {
+        console.warn('Bot detected - honeypot field filled')
+        return // Ne rien faire si c'est un bot
+      }
+      
       const formData = new FormData(event.target)
       const email = `${this.emailPart1}@${this.emailPart2}`
       const subject = `Contact from ${formData.get('name')}`
       const body = `Name: ${formData.get('name')}\nEmail: ${formData.get('email')}\n\nMessage:\n${formData.get('message')}`
       
-      window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      // Afficher le message de succès immédiatement
+      this.showSuccessMessage = true
+      
+      // Attendre un peu avant d'ouvrir le client email
+      setTimeout(() => {
+        window.location.href = `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+      }, 1000)
+      
+      // Recharger la page après 8 secondes (temps de lire le message et ouvrir le client)
+      setTimeout(() => {
+        window.location.reload()
+      }, 8000)
     }
   }
 }
 </script>
+
+<style scoped>
+/* Animation pour le message de succès */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-enter-from {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.fade-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}
+
+.fade-enter-to,
+.fade-leave-from {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Honeypot anti-bot - complètement invisible */
+.hidden-field {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  pointer-events: none;
+}
+</style>

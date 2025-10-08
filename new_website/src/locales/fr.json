@@ -36,7 +36,9 @@
     "phone": "Téléphone",
     "phone_hidden": "Cliquez pour révéler",
     "email_label": "Email",
-    "email_hidden": "Cliquez pour révéler"
+    "email_hidden": "Cliquez pour révéler",
+    "success_title": "Ouverture du client email...",
+    "success_message": "Veuillez cliquer sur 'Envoyer' dans votre client email pour finaliser l'envoi. La page se rechargera dans quelques secondes."
   }
   ,
   "projects": {
