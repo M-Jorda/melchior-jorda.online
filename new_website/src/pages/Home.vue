@@ -37,24 +37,30 @@
         <article
           v-for="project in featuredProjects"
           :key="project.id"
-          class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6"
+          class="card bg-accent-50 dark:bg-slate-800 rounded-lg p-5 sm:p-6 relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden flex flex-col"
         >
+          <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
+          
           <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
             {{ $t(`projects.items.${project.id}.title`) || project.title }}
           </h3>
-          <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2">
+          <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2 flex-grow">
             {{ $t(`projects.items.${project.id}.description`) || project.description }}
           </p>
-          <div class="mt-3">
+          <div class="mt-4">
             <a
               v-if="project.live"
               :href="project.live"
               target="_blank"
-              class="text-sm px-4 py-2 bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded hover:opacity-90 transition-opacity"
+              class="inline-block text-sm px-4 py-2 bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300"
             >
               {{ $t('projects.view_live') }}
             </a>
-            <router-link v-else to="/projects" class="ml-2 text-sm px-4 py-2 border border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-300 rounded">
+            <router-link 
+              v-else 
+              to="/projects" 
+              class="inline-block text-sm px-4 py-2 border border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-300 rounded hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300"
+            >
               {{ $t('home.see_projects') }}
             </router-link>
           </div>
