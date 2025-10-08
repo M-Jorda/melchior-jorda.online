@@ -25,7 +25,7 @@
       "name": "Nombre",
       "name_placeholder": "Juan Pérez",
       "email": "Correo",
-      "email_placeholder": "juan@ejemplo.com",
+      "email_placeholder": "juan{'@'}ejemplo.com",
       "message": "Mensaje",
       "message_placeholder": "Cuéntame sobre tu proyecto u oportunidad...",
       "send": "Enviar Mensaje"

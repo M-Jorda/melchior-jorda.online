@@ -25,7 +25,7 @@
       "name": "Name",
       "name_placeholder": "John Doe",
       "email": "Email",
-      "email_placeholder": "john@example.com",
+      "email_placeholder": "john{'@'}example.com",
       "message": "Message",
       "message_placeholder": "Tell me about your project or opportunity...",
       "send": "Send Message"
