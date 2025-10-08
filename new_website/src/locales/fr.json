@@ -121,10 +121,49 @@
     }
   },
   "about": {
-    "title": "À propos",
-    "intro": "Je suis Melchior JORDA, développeur web junior basé à Malaga. Je suis spécialisé dans la création d'interfaces web modernes, accessibles et performantes avec Vue, JavaScript et Tailwind CSS. Je suis disponible pour du travail à distance à travers l'Europe.",
-    "skills_title": "Compétences",
-    "skills": ["JavaScript / TypeScript","Vue 3 / Vue Router","Tailwind CSS, Responsive Design","Performance Web & Accessibilité","Contrôle de version : Git / GitHub"]
+    "title": "À propos de Moi",
+    "intro": "Je suis Melchior JORDA, développeur logiciel et web junior basé à Málaga, en Espagne. Passionné par la création de solutions numériques efficaces et évolutives, je combine l'expertise technique de l'École 42 avec une expérience pratique en développement web et test de jeux vidéo. Mon parcours diversifié dans les arts culinaires a renforcé mon attention aux détails, ma gestion du temps et mes compétences en travail d'équipe.",
+    "experience_title": "Expérience Professionnelle",
+    "experience": {
+      "game_tester": {
+        "title": "Testeur de Jeux Vidéo chez Localsoft",
+        "description": "Tests d'assurance qualité pour jeux vidéo, rapports de bugs, collaboration avec les équipes de développement et respect des méthodologies de test strictes."
+      },
+      "web_dev": {
+        "title": "Projets de Développement Web",
+        "description": "Création de sites web professionnels pour des clients incluant photographes, restaurants et prestataires de services. Spécialisé en Vue.js, design responsive et technologies web modernes."
+      }
+    },
+    "skills_title": "Compétences Techniques",
+    "skills": {
+      "frontend": {
+        "title": "Développement Frontend",
+        "description": "Vue.js, JavaScript/TypeScript, HTML5/CSS3, Tailwind CSS, Design Responsive, Accessibilité Web"
+      },
+      "backend": {
+        "title": "Backend & Systèmes",
+        "description": "C, PHP, Symfony, MySQL, Node.js, Développement d'API, Programmation Système"
+      },
+      "tools": {
+        "title": "Outils & Méthodes",
+        "description": "Git/GitHub, VS Code, Tests & QA, Méthodologies Agiles, Optimisation SEO"
+      },
+      "languages": {
+        "title": "Langues",
+        "description": "Français (Natif), Anglais (Courant), Espagnol (Intermédiaire)"
+      }
+    },
+    "education_title": "Formation",
+    "education": {
+      "school42": {
+        "title": "École 42 — Tronc Commun (2024-2025)",
+        "description": "Apprentissage peer-to-peer en programmation système, algorithmes et développement logiciel. Projets incluant minishell, philosophers et divers défis en C."
+      },
+      "eni": {
+        "title": "ENI School — Diplôme Développeur Web et Mobile (2023-2024)",
+        "description": "Formation complète en développement web et mobile, incluant frontend, backend, bases de données et gestion de projet."
+      }
+    }
   },
   "resume": {
     "title": "CV",

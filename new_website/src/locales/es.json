@@ -121,10 +121,49 @@
     }
   },
   "about": {
-    "title": "Sobre mí",
-    "intro": "Soy Melchior JORDA, desarrollador web junior con base en Málaga. Me especializo en construir interfaces web modernas, accesibles y de alto rendimiento con Vue, JavaScript y Tailwind CSS. Estoy disponible para trabajar de forma remota por Europa.",
-    "skills_title": "Habilidades",
-    "skills": ["JavaScript / TypeScript","Vue 3 / Vue Router","Tailwind CSS, Responsive Design","Rendimiento Web & Accesibilidad","Control de versiones: Git / GitHub"]
+    "title": "Sobre Mí",
+    "intro": "Soy Melchior JORDA, desarrollador de software y web junior con base en Málaga, España. Apasionado por crear soluciones digitales eficientes y escalables, combino la experiencia técnica de la Escuela 42 con experiencia práctica en desarrollo web y pruebas de videojuegos. Mi experiencia diversa en artes culinarias ha fortalecido mi atención al detalle, gestión del tiempo y habilidades de trabajo en equipo.",
+    "experience_title": "Experiencia Profesional",
+    "experience": {
+      "game_tester": {
+        "title": "Probador de Videojuegos en Localsoft",
+        "description": "Pruebas de aseguramiento de calidad para videojuegos, informes de errores, colaboración con equipos de desarrollo y cumplimiento de metodologías de prueba estrictas."
+      },
+      "web_dev": {
+        "title": "Proyectos de Desarrollo Web",
+        "description": "Creación de sitios web profesionales para clientes incluyendo fotógrafos, restaurantes y proveedores de servicios. Especializado en Vue.js, diseño responsive y tecnologías web modernas."
+      }
+    },
+    "skills_title": "Habilidades Técnicas",
+    "skills": {
+      "frontend": {
+        "title": "Desarrollo Frontend",
+        "description": "Vue.js, JavaScript/TypeScript, HTML5/CSS3, Tailwind CSS, Diseño Responsive, Accesibilidad Web"
+      },
+      "backend": {
+        "title": "Backend & Sistemas",
+        "description": "C, PHP, Symfony, MySQL, Node.js, Desarrollo de API, Programación de Sistemas"
+      },
+      "tools": {
+        "title": "Herramientas & Métodos",
+        "description": "Git/GitHub, VS Code, Pruebas & QA, Metodologías Ágiles, Optimización SEO"
+      },
+      "languages": {
+        "title": "Idiomas",
+        "description": "Francés (Nativo), Inglés (Fluido), Español (Intermedio)"
+      }
+    },
+    "education_title": "Educación",
+    "education": {
+      "school42": {
+        "title": "Escuela 42 — Tronco Común (2024-2025)",
+        "description": "Aprendizaje entre pares en programación de sistemas, algoritmos y desarrollo de software. Proyectos incluyendo minishell, philosophers y varios desafíos en C."
+      },
+      "eni": {
+        "title": "ENI School — Título Desarrollador Web y Móvil (2023-2024)",
+        "description": "Formación completa en desarrollo web y móvil, incluyendo frontend, backend, bases de datos y gestión de proyectos."
+      }
+    }
   },
   "resume": {
     "title": "CV",

@@ -121,10 +121,49 @@
     }
   },
   "about": {
-    "title": "About",
-    "intro": "I'm Melchior JORDA, a junior web developer based in Malaga. I specialize in building modern, accessible, and high-performance web interfaces using Vue, JavaScript, and Tailwind CSS. I am available for remote work across Europe.",
-    "skills_title": "Skills",
-    "skills": ["JavaScript / TypeScript","Vue 3 / Vue Router","Tailwind CSS, Responsive Design","Web performance & Accessibility","Version control: Git / GitHub"]
+    "title": "About Me",
+    "intro": "I'm Melchior JORDA, a junior software and web developer based in Málaga, Spain. Passionate about creating efficient and scalable digital solutions, I combine technical expertise from École 42 with hands-on experience in web development and video game testing. My diverse background in culinary arts has strengthened my attention to detail, time management, and teamwork skills.",
+    "experience_title": "Professional Experience",
+    "experience": {
+      "game_tester": {
+        "title": "Video Game Tester at Localsoft",
+        "description": "Quality assurance testing for video games, bug reporting, collaboration with development teams, and adherence to strict testing methodologies."
+      },
+      "web_dev": {
+        "title": "Web Development Projects",
+        "description": "Created professional websites for clients including photographers, restaurants, and service providers. Specialized in Vue.js, responsive design, and modern web technologies."
+      }
+    },
+    "skills_title": "Technical Skills",
+    "skills": {
+      "frontend": {
+        "title": "Frontend Development",
+        "description": "Vue.js, JavaScript/TypeScript, HTML5/CSS3, Tailwind CSS, Responsive Design, Web Accessibility"
+      },
+      "backend": {
+        "title": "Backend & Systems",
+        "description": "C, PHP, Symfony, MySQL, Node.js, API Development, System Programming"
+      },
+      "tools": {
+        "title": "Tools & Methods",
+        "description": "Git/GitHub, VS Code, Testing & QA, Agile Methodologies, SEO Optimization"
+      },
+      "languages": {
+        "title": "Languages",
+        "description": "French (Native), English (Fluent), Spanish (Intermediate)"
+      }
+    },
+    "education_title": "Education",
+    "education": {
+      "school42": {
+        "title": "École 42 — Common Core (2024-2025)",
+        "description": "Peer-to-peer learning in systems programming, algorithms, and software development. Projects include minishell, philosophers, and various C programming challenges."
+      },
+      "eni": {
+        "title": "ENI School — Web & Mobile Developer Degree (2023-2024)",
+        "description": "Comprehensive training in web and mobile development, including frontend, backend, databases, and project management."
+      }
+    }
   },
   "resume": {
     "title": "Resume",
