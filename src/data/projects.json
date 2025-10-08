@@ -104,8 +104,8 @@
   },
   {
     "id": "random-rgb",
-    "title": "Random RGB",
-    "description": "A generator of rgb color, see the color, and copy the rgb",
+    "title": "Random RGB Generator",
+    "description": "Interactive RGB color generator that creates random color combinations. Displays the color preview in real-time and provides one-click copying of RGB values for easy use in design projects.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "category": "applications",
     "thumbnail": "/projects/random-rgb/thumbnail.png",
@@ -113,8 +113,8 @@
   },
   {
     "id": "form-with-regex",
-    "title": "Form with Regex",
-    "description": "A form with regex for all the inputs.",
+    "title": "Form Validation with Regex",
+    "description": "Advanced form validation system using regular expressions. Demonstrates real-time input validation for email, phone numbers, passwords, and other common form fields with custom regex patterns.",
     "technologies": ["HTML", "CSS", "JavaScript", "Regex"],
     "category": "applications",
     "thumbnail": "/projects/form-with-regex/thumbnail.png",
@@ -122,12 +122,28 @@
   },
   {
     "id": "random-password",
-    "title": "Random Password",
-    "description": "Here is a generator of random password, you can add how many letters, maj/min, numbers or special caracteres.",
+    "title": "Secure Password Generator",
+    "description": "Customizable password generator with configurable options. Create strong, secure passwords by choosing the length and character types: uppercase, lowercase, numbers, and special characters.",
     "technologies": ["HTML", "CSS", "JavaScript"],
     "category": "applications",
     "thumbnail": "/projects/random-password/thumbnail.png",
     "live": "/projects/random-password/index.html"
+  },
+  {
+    "id": "projet-sortir",
+    "title": "Projet Sortir",
+    "description": "Event management platform built with Symfony. Allows users to create, manage, and join social events. Features user authentication, event filtering, and CRUD operations with MySQL database.",
+    "technologies": ["PHP", "Symfony", "MySQL", "Doctrine", "Twig"],
+    "category": "applications",
+    "github": "https://github.com/M-Jorda/ProjetSortir"
+  },
+  {
+    "id": "series-manager",
+    "title": "Series Manager",
+    "description": "TV series tracking application built with Symfony. Manage your favorite shows, track watched episodes, and discover new series. Features API integration for series data and user watchlists.",
+    "technologies": ["PHP", "Symfony", "MySQL", "API Integration"],
+    "category": "applications",
+    "github": "https://github.com/M-Jorda/Series"
   }
   ,
   {
