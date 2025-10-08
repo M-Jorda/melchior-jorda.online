@@ -17,8 +17,9 @@
         <article 
           v-for="project in websiteProjects" 
           :key="project.id"
-          class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6 hover:shadow-lg hover:scale-105 transition-all flex flex-col"
+          class="card bg-accent-50 dark:bg-slate-800 rounded-lg p-5 sm:p-6 relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden flex flex-col"
         >
+          <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
           <img 
             v-if="project.thumbnail" 
             :src="project.thumbnail" 
@@ -75,8 +76,9 @@
         <article 
           v-for="project in school42Projects" 
           :key="project.id"
-          class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6 hover:shadow-lg hover:scale-105 transition-all flex flex-col"
+          class="card bg-accent-50 dark:bg-slate-800 rounded-lg p-5 sm:p-6 relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden flex flex-col"
         >
+          <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
           <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
             {{ $t(`projects.items.${project.id}.title`) || project.title }}
           </h3>
@@ -125,8 +127,9 @@
         <article 
           v-for="project in applicationProjects" 
           :key="project.id"
-          class="card bg-accent-50 dark:bg-slate-800 transition-colors duration-300 p-5 sm:p-6 hover:shadow-lg hover:scale-105 transition-all flex flex-col"
+          class="card bg-accent-50 dark:bg-slate-800 rounded-lg p-5 sm:p-6 relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden flex flex-col"
         >
+          <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
           <img 
             v-if="project.thumbnail" 
             :src="project.thumbnail" 
