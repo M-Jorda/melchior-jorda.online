@@ -43,7 +43,7 @@
   ,
   "projects": {
     "title": "Proyectos",
-    "description": "Una colección de proyectos seleccionados. Añadiré los tuyos cuando los proporciones.",
+    "description": "Explora mi portfolio de proyectos de desarrollo web, desde sitios web profesionales para clientes hasta desafíos técnicos y aplicaciones. Cada proyecto demuestra diferentes habilidades y tecnologías.",
     "example_title": "App de ejemplo",
     "example_description": "Demo: una SPA eficiente construida con Vue y Tailwind.",
     "featured": "Proyectos destacados",
@@ -119,6 +119,18 @@
       "minishell": {
         "title": "Minishell",
         "description": "Implementación mínima de un shell en C que soporta parsing, ejecución, redirecciones y builtins. Proyecto educativo con reglas de código estrictas."
+      },
+      "series-tracker": {
+        "title": "Series Tracker",
+        "description": "Aplicación de seguimiento de series de TV para gestionar tu lista de visualización. Rastrea episodios, temporadas y tu progreso con una interfaz intuitiva."
+      },
+      "enchere": {
+        "title": "Enchere (Sitio de Subastas)",
+        "description": "Plataforma de subastas en línea desarrollada durante la formación ENI. Características de autenticación de usuarios, sistema de pujas y gestión de subastas en tiempo real con backend Java."
+      },
+      "portfolio-v034": {
+        "title": "Portfolio v0.3.4",
+        "description": "Versión anterior de este portfolio. La iteración anterior de mi portfolio personal mostrando mi evolución como desarrollador."
       }
     }
   },

@@ -103,6 +103,22 @@
     "github": "https://github.com/M-Jorda/so_long"
   },
   {
+    "id": "series-tracker",
+    "title": "Series Tracker",
+    "description": "TV series tracking application for managing your watchlist. Keep track of episodes, seasons, and your viewing progress with an intuitive interface.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "category": "applications",
+    "github": "https://github.com/M-Jorda/Series"
+  },
+  {
+    "id": "enchere",
+    "title": "Enchere (Auction Site)",
+    "description": "Online auction platform developed during ENI training. Features user authentication, bidding system, and real-time auction management with Java backend.",
+    "technologies": ["Java", "HTML", "Bootstrap", "JavaScript"],
+    "category": "applications",
+    "github": "https://github.com/M-Jorda/enchere"
+  },
+  {
     "id": "random-rgb",
     "title": "Random RGB",
     "description": "A generator of rgb color, see the color, and copy the rgb",
@@ -128,6 +144,14 @@
     "category": "applications",
     "thumbnail": "/projects/random-password/thumbnail.png",
     "live": "/projects/random-password/index.html"
+  },
+  {
+    "id": "portfolio-v034",
+    "title": "Portfolio v0.3.4",
+    "description": "Previous version of this portfolio website. The older iteration of my personal portfolio showcasing my evolution as a developer.",
+    "technologies": ["HTML", "CSS", "JavaScript"],
+    "category": "websites",
+    "live": "/version_0.3.4/index.html"
   }
   ,
   {

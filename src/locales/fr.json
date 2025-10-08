@@ -43,7 +43,7 @@
   ,
   "projects": {
     "title": "Projets",
-    "description": "Une collection de projets sélectionnés. J'ajouterai les tiens quand tu les fourniras.",
+    "description": "Explorez mon portfolio de projets de développement web, des sites clients professionnels aux défis techniques et applications. Chaque projet démontre différentes compétences et technologies.",
     "example_title": "Application Exemple",
     "example_description": "Démo : SPA performante construite avec Vue et Tailwind.",
     "featured": "Projets mis en avant",
@@ -119,6 +119,18 @@
       "minishell": {
         "title": "Minishell",
         "description": "Implémentation minimale d'un shell en C supportant le parsing, l'exécution, les redirections et les builtins. Projet pédagogique avec règles de code strictes."
+      },
+      "series-tracker": {
+        "title": "Series Tracker",
+        "description": "Application de suivi de séries TV pour gérer votre liste de visionnage. Suivez vos épisodes, saisons et votre progression avec une interface intuitive."
+      },
+      "enchere": {
+        "title": "Enchere (Site d'Enchères)",
+        "description": "Plateforme d'enchères en ligne développée durant la formation ENI. Fonctionnalités d'authentification utilisateur, système d'enchères et gestion en temps réel avec backend Java."
+      },
+      "portfolio-v034": {
+        "title": "Portfolio v0.3.4",
+        "description": "Version précédente de ce portfolio. L'ancienne itération de mon portfolio personnel montrant mon évolution en tant que développeur."
       }
     }
   },
