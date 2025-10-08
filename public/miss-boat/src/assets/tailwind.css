@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom small helpers */
+.container {
+  max-width: 1100px;
+}
+
+/* Small utility for hero fallback */
+.hero-fallback { background: linear-gradient(180deg, rgba(0,198,207,0.12), rgba(3,86,90,0.06)); }

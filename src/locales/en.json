@@ -43,7 +43,7 @@
   ,
   "projects": {
     "title": "Projects",
-    "description": "A curated collection of my web development, software engineering, and application projects.",
+    "description": "A collection of selected projects. I'll add yours when you provide them.",
     "example_title": "Example App",
     "example_description": "Demo: A performant SPA built with Vue and Tailwind.",
     "featured": "Featured projects",
@@ -100,29 +100,18 @@
         "description": "2D game project built with MiniLibX. Create a small game where a character collects items and finds an exit. Focuses on graphics programming, event handling, and game logic."
       },
       "random-rgb": {
-        "title": "Random RGB Generator",
-        "description": "Interactive RGB color generator that creates random color combinations. Displays the color preview in real-time and provides one-click copying of RGB values for easy use in design projects."
+        "title": "Random RGB",
+        "description": "A generator of rgb color, see the color, and copy the rgb"
       },
       "form-with-regex": {
-        "title": "Form Validation with Regex",
-        "description": "Advanced form validation system using regular expressions. Demonstrates real-time input validation for email, phone numbers, passwords, and other common form fields with custom regex patterns."
+        "title": "Form with Regex",
+        "description": "A form with regex for all the inputs."
       },
       "random-password": {
-        "title": "Secure Password Generator",
-        "description": "Customizable password generator with configurable options. Create strong, secure passwords by choosing the length and character types: uppercase, lowercase, numbers, and special characters."
-      },
-      "projet-sortir": {
-        "title": "Projet Sortir",
-        "description": "Event management platform built with Symfony. Allows users to create, manage, and join social events. Features user authentication, event filtering, and CRUD operations with MySQL database."
-      },
-      "series-manager": {
-        "title": "Series Manager",
-        "description": "TV series tracking application built with Symfony. Manage your favorite shows, track watched episodes, and discover new series. Features API integration for series data and user watchlists."
-      },
-      "portfolio-v0": {
-        "title": "Portfolio v0.3.4",
-        "description": "My previous personal portfolio website. Classic design with dark/light mode, multilingual support (EN/FR/ES), and project showcase. Built with vanilla JavaScript before migrating to Vue.js."
-      },
+        "title": "Random Password",
+        "description": "Here is a generator of random password, you can add how many letters, maj/min, numbers or special caracteres."
+      }
+      ,
       "philosophers": {
         "title": "Philosophers",
         "description": "Dining philosophers concurrency project implemented in C using pthreads and mutexes. Simulation of N philosophers avoiding deadlock and starvation."

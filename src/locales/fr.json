@@ -43,7 +43,7 @@
   ,
   "projects": {
     "title": "Projets",
-    "description": "Une collection de mes projets de développement web, ingénierie logicielle et applications.",
+    "description": "Une collection de projets sélectionnés. J'ajouterai les tiens quand tu les fourniras.",
     "example_title": "Application Exemple",
     "example_description": "Démo : SPA performante construite avec Vue et Tailwind.",
     "featured": "Projets mis en avant",
@@ -100,29 +100,18 @@
         "description": "Jeu 2D créé avec MiniLibX. Le joueur collecte des objets et trouve une sortie. Concentre sur la programmation graphique, gestion d'événements et logique de jeu."
       },
       "random-rgb": {
-        "title": "Générateur RGB Aléatoire",
-        "description": "Générateur interactif de couleurs RGB créant des combinaisons aléatoires. Affiche un aperçu en temps réel et permet de copier les valeurs RGB en un clic pour vos projets de design."
+        "title": "Random RGB",
+        "description": "Générateur de couleurs RGB : voir la couleur et copier la valeur RGB."
       },
       "form-with-regex": {
-        "title": "Validation de Formulaire avec Regex",
-        "description": "Système avancé de validation de formulaire utilisant les expressions régulières. Démontre la validation en temps réel pour emails, numéros de téléphone, mots de passe et autres champs courants."
+        "title": "Form with Regex",
+        "description": "Formulaire avec expressions régulières pour valider tous les champs."
       },
       "random-password": {
-        "title": "Générateur de Mots de Passe Sécurisés",
-        "description": "Générateur de mots de passe personnalisable avec options configurables. Créez des mots de passe robustes en choisissant la longueur et les types de caractères : majuscules, minuscules, chiffres et caractères spéciaux."
-      },
-      "projet-sortir": {
-        "title": "Projet Sortir",
-        "description": "Plateforme de gestion d'événements construite avec Symfony. Permet aux utilisateurs de créer, gérer et rejoindre des événements sociaux. Fonctionnalités : authentification, filtrage d'événements et opérations CRUD avec base MySQL."
-      },
-      "series-manager": {
-        "title": "Gestionnaire de Séries",
-        "description": "Application de suivi de séries TV construite avec Symfony. Gérez vos séries favorites, suivez les épisodes visionnés et découvrez de nouvelles séries. Intégration API pour les données de séries et listes de visionnage personnalisées."
-      },
-      "portfolio-v0": {
-        "title": "Portfolio v0.3.4",
-        "description": "Mon ancien site portfolio personnel. Design classique avec mode sombre/clair, support multilingue (EN/FR/ES) et présentation de projets. Construit en JavaScript vanilla avant la migration vers Vue.js."
-      },
+        "title": "Random Password",
+        "description": "Générateur de mots de passe aléatoires, configurable en longueur, majuscules/minuscules, chiffres et caractères spéciaux."
+      }
+      ,
       "philosophers": {
         "title": "Philosophers",
         "description": "Projet des philosophes dînant implémenté en C utilisant pthreads et mutex. Simulation de N philosophes évitant deadlock et famine."
