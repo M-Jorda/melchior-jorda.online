@@ -10,6 +10,21 @@ export default defineConfig({
     }
   },
   build: {
-    outDir: 'dist'
+    outDir: 'dist',
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules/vue-i18n') || id.includes('node_modules/@intlify')) {
+            return 'i18n'
+          }
+          if (id.includes('node_modules/vue-router')) {
+            return 'router'
+          }
+          if (id.includes('node_modules/vue') || id.includes('node_modules/@vue')) {
+            return 'vue'
+          }
+        }
+      }
+    }
   }
 })

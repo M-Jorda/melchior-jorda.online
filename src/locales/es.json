@@ -1,4 +1,7 @@
 {
+  "header": {
+    "job_title": "Desarrollador Full-Stack"
+  },
   "nav": {
     "home": "Inicio",
     "projects": "Proyectos",
@@ -7,14 +10,20 @@
     "contact": "Contacto"
   },
   "home": {
-    "title": "Melchior JORDA — Desarrollador Web & Software Junior",
-    "subtitle": "Creando soluciones digitales eficientes, escalables y centradas en el usuario.",
+    "title": "Melchior JORDA — Desarrollador Full-Stack",
+    "subtitle": "Apasionado por la programación de sistemas (C/C++) y el desarrollo web (Vue.js, PHP, Symfony). Sólidas bases en algoritmia, multithreading y diseño de aplicaciones adquiridas en École 42.",
     "see_projects": "Ver proyectos",
     "contact_me": "Contactarme"
   },
   "footer": {
     "download_cv": "Descargar CV",
     "linkedin": "LinkedIn"
+  },
+  "theme": {
+    "dark": "Oscuro",
+    "light": "Claro",
+    "dark_mode": "Modo Oscuro",
+    "light_mode": "Modo Claro"
   },
   "contact": {
     "send_message": "Enviar mensaje",
@@ -28,7 +37,8 @@
       "email_placeholder": "juan{'@'}ejemplo.com",
       "message": "Mensaje",
       "message_placeholder": "Cuéntame sobre tu proyecto u oportunidad...",
-      "send": "Enviar Mensaje"
+      "send": "Enviar Mensaje",
+      "sending": "Enviando..."
     },
     "links": {
       "linkedin": "LinkedIn"
@@ -50,6 +60,13 @@
     "placeholder_title": "Título del proyecto (placeholder)",
     "placeholder_description": "Breve descripción del proyecto usando stack web moderno.",
     "view_live": "Ver en vivo",
+    "try_replit": "Probar en Repl.it",
+    "categories": {
+      "all": "Todos",
+      "websites": "Sitios Web",
+      "school42": "Proyectos Escuela 42",
+      "applications": "Aplicaciones"
+    },
     "items": {
       "minata-portfolio": {
         "title": "From MY Window - Minata Sartori",
@@ -136,31 +153,31 @@
   },
   "about": {
     "title": "Sobre Mí",
-    "intro": "Soy Melchior JORDA, desarrollador de software y web junior con base en Málaga, España. Apasionado por crear soluciones digitales eficientes y escalables, combino la experiencia técnica de la Escuela 42 con experiencia práctica en desarrollo web y pruebas de videojuegos. Mi experiencia diversa en artes culinarias ha fortalecido mi atención al detalle, gestión del tiempo y habilidades de trabajo en equipo.",
+    "intro": "Soy Melchior JORDA, Desarrollador Full-Stack apasionado por la programación de sistemas (C/C++) y el desarrollo web (Vue.js, PHP, Symfony). Con sólidas bases en algoritmia, multithreading y diseño de aplicaciones adquiridas en École 42, combino experiencia técnica con práctica en desarrollo web y pruebas de aseguramiento de calidad.",
     "experience_title": "Experiencia Profesional",
     "experience": {
       "game_tester": {
-        "title": "Probador de Videojuegos en Localsoft",
-        "description": "Pruebas de aseguramiento de calidad para videojuegos, informes de errores, colaboración con equipos de desarrollo y cumplimiento de metodologías de prueba estrictas."
+        "title": "Tester LQA en Localsoft",
+        "description": "Pruebas de Aseguramiento de Calidad Lingüística en más de 15 proyectos de localización: errores de traducción, inconsistencias culturales y problemas de visualización. Colaboración con equipos internacionales y coordinación de equipo (5-6 miembros)."
       },
       "web_dev": {
-        "title": "Proyectos de Desarrollo Web",
-        "description": "Creación de sitios web profesionales para clientes incluyendo fotógrafos, restaurantes y proveedores de servicios. Especializado en Vue.js, diseño responsive y tecnologías web modernas."
+        "title": "Desarrollador Full-Stack – NainVert",
+        "description": "Diseño y desarrollo full-stack de una plataforma e-commerce de streetwear psicodélico con Vue.js y Firebase: gestión de inventario en tiempo real, pasarela de pago segura, autenticación basada en roles y panel de administración."
       }
     },
     "skills_title": "Habilidades Técnicas",
     "skills": {
       "frontend": {
         "title": "Desarrollo Frontend",
-        "description": "Vue.js, JavaScript/TypeScript, HTML5/CSS3, Tailwind CSS, Diseño Responsive, Accesibilidad Web"
+        "description": "Vue.js, Angular, JavaScript (ES6+, async/await), TypeScript, HTML5/CSS3, Bootstrap, APIs RESTful"
       },
       "backend": {
         "title": "Backend & Sistemas",
-        "description": "C, PHP, Symfony, MySQL, Node.js, Desarrollo de API, Programación de Sistemas"
+        "description": "C, C++ (STL, templates, POO), PHP, Symfony (Doctrine, Twig, Security), Node.js, Threads POSIX, sincronización mutex, llamadas al sistema Unix"
       },
       "tools": {
-        "title": "Herramientas & Métodos",
-        "description": "Git/GitHub, VS Code, Pruebas & QA, Metodologías Ágiles, Optimización SEO"
+        "title": "Herramientas & Bases de Datos",
+        "description": "Git/GitHub, Docker, nociones de AWS, Valgrind, GDB, Firebase, MySQL, PostgreSQL, Firestore (NoSQL)"
       },
       "languages": {
         "title": "Idiomas",
@@ -170,12 +187,12 @@
     "education_title": "Educación",
     "education": {
       "school42": {
-        "title": "Escuela 42 — Tronco Común (2024-2025)",
-        "description": "Aprendizaje entre pares en programación de sistemas, algoritmos y desarrollo de software. Proyectos incluyendo minishell, philosophers y varios desafíos en C."
+        "title": "École 42 Málaga — Ingeniería de Software (Círculo 4)",
+        "description": "Currículo intensivo peer-to-peer: sistemas C/C++, algoritmos, Unix, gráficos 3D, programación concurrente y de red. Proyectos: Minishell, Philosophers, cub3D, Módulos C++."
       },
       "eni": {
         "title": "ENI School — Título Desarrollador Web y Móvil (2023-2024)",
-        "description": "Formación completa en desarrollo web y móvil, incluyendo frontend, backend, bases de datos y gestión de proyectos."
+        "description": "PHP/Symfony, Angular, Java, MySQL, HTML/CSS. Proyectos: gestión de eventos y plataforma de subastas full-stack."
       }
     }
   },
@@ -185,66 +202,95 @@
     "download_link": "Descargar CV (PDF)",
     "profile": {
       "title": "Perfil",
-      "description": "Desde joven, la programación ha dado vida a mis ideas. Mi experiencia culinaria me hizo versátil y aprendo rápido, con habilidades en organización, creatividad, trabajo en equipo y atención al detalle."
+      "description": "Desarrollador full-stack apasionado por la programación de sistemas (C/C++) y el desarrollo web (Vue.js, PHP, Symfony). Sólidas bases en algoritmia, multithreading y diseño de aplicaciones adquiridas en École 42. Buscando oportunidades en desarrollo de software."
     },
     "experience": {
       "title": "Experiencia Profesional",
-      "game_tester": {
-        "title": "Probador de Videojuegos – Localsoft",
-        "description": "Como probador LQA en Localsoft, analicé errores, redacté informes de prueba y colaboré con equipos de desarrollo usando herramientas del cliente, perfeccionando mi atención al detalle y metodologías de prueba."
+      "lqa_tester": {
+        "title": "Tester LQA – Localsoft, Málaga",
+        "date": "Ene 2025 – Presente",
+        "description": "Pruebas LQA en más de 15 proyectos de localización: errores de traducción, inconsistencias culturales y problemas de visualización. Colaboración con equipos internacionales. Coordinación de equipo (5-6 miembros) durante ausencias gerenciales."
+      },
+      "nainvert": {
+        "title": "Desarrollador Full-Stack – NainVert (E-Commerce)",
+        "date": "Jul 2025 – Presente",
+        "description": "Diseño y desarrollo full-stack con Vue.js y Firebase: gestión de inventario en tiempo real, pasarela de pago segura, autenticación basada en roles y panel de administración completo. Optimización de rendimiento via lazy loading y consultas Firestore."
       },
       "internship": {
-        "title": "Prácticas - Desarrollador Web",
-        "description": "Mejoré en gestión de proyectos, autonomía y vigilancia tecnológica. Utilicé VSCode, Bitbucket, Trello, Node.js, Electron.js, jQuery y MySQL. También reforcé mi trabajo en equipo. Desarrollé una aplicación de quiz y un sitio web para eventos."
-      },
-      "chef": {
-        "title": "Chef",
-        "description": "Mi experiencia culinaria perfeccionó mi gestión del tiempo y atención al detalle."
-      },
-      "various": {
-        "title": "Diversos Roles",
-        "description": "Mis experiencias en atención domiciliaria y trabajo socioeducativo reforzaron mi adaptabilidad y resolución de problemas."
+        "title": "Prácticas Desarrollador Web – ENI School",
+        "date": "Ene 2024 – Mar 2024",
+        "description": "Desarrollo de una aplicación de quiz y sitio de gestión de eventos (Node.js, Electron.js, jQuery, MySQL). Gestión autónoma del proyecto de principio a fin, colaboración via Bitbucket y Trello con metodología ágil."
       }
     },
     "projects": {
-      "title": "Proyectos Informáticos",
-      "auction": {
-        "title": "Sitio de Subastas en Línea",
-        "description": "Desarrollado con HTML, Bootstrap, Java y JavaScript: Este proyecto mejoró mi comprensión de la Programación Orientada a Objetos (POO)."
+      "title": "Proyectos Técnicos Clave (École 42)",
+      "minishell": {
+        "title": "Minishell – Implementación de Shell Unix",
+        "date": "Jun – Oct 2025",
+        "description": "Shell Unix funcional en C: parsing de comandos, pipes, redirecciones, gestión de procesos (fork/exec) y señales (SIGINT, SIGQUIT)."
       },
-      "event": {
-        "title": "Aplicación de Organización de Eventos",
-        "description": "Construida con Symfony, desarrollé habilidades en PHP, Twig, MySQL y herramientas como Figma, Trello, PhpStorm y PhpMyAdmin, reforzando mi conocimiento en desarrollo web."
+      "philosophers": {
+        "title": "Philosophers – Programación Concurrente",
+        "date": "Oct – Nov 2025",
+        "description": "Problema de los filósofos comensales con threads POSIX, mutexes y semáforos: prevención de deadlocks y gestión de condiciones de carrera."
+      },
+      "cub3d": {
+        "title": "cub3D – Motor Gráfico 3D por Raycasting",
+        "date": "Nov 2025",
+        "description": "Motor de renderizado 3D en C (estilo Wolfenstein): mapeo de texturas, detección de colisiones, transformaciones matemáticas (~4000 líneas)."
+      },
+      "cpp_modules": {
+        "title": "Módulos POO C++ (CPP00-04)",
+        "date": "Dic 2025 – Ene 2026",
+        "description": "Dominio de fundamentos C++: herencia, polimorfismo, templates, STL, manejo de excepciones y patrones de diseño."
+      }
+    },
+    "hackathons": {
+      "title": "Hackathons y Competiciones",
+      "nasa": {
+        "title": "1er Premio – NASA Space Apps Challenge Málaga 2025",
+        "date": "Oct 2025",
+        "description": "1er lugar con 'Re-Fresh Earth': herramienta de planificación urbana inteligente usando datos satelitales NASA para monitorear recursos naturales e infraestructuras. En línea: re-fresh.earth"
       }
     },
     "skills": {
-      "title": "Habilidades de Programación",
-      "frontend": {
-        "title": "Frontend",
-        "description": "Experiencia en HTML/CSS, Javascript, Bootstrap y Angular para crear interfaces dinámicas y responsive."
+      "title": "Habilidades Técnicas",
+      "languages_prog": {
+        "title": "Lenguajes de Programación",
+        "description": "C, C++ (STL, templates, POO), JavaScript (ES6+, async/await), PHP, TypeScript, Java"
       },
-      "backend": {
-        "title": "Backend",
-        "description": "Competente en PHP, Symfony, MySQL, Java y C, con experiencia en POO para desarrollo de software."
+      "web": {
+        "title": "Tecnologías Web",
+        "description": "Vue.js, Angular, Symfony (Doctrine, Twig, Security), Node.js, HTML5, CSS3, Bootstrap, APIs RESTful"
+      },
+      "databases": {
+        "title": "Bases de Datos",
+        "description": "Firestore (NoSQL), MySQL, PostgreSQL, optimización de bases de datos, diseño de esquemas"
+      },
+      "systems": {
+        "title": "Programación de Sistemas",
+        "description": "Threads POSIX, sincronización mutex, gestión de procesos, llamadas al sistema Unix, gestión de memoria"
       },
       "tools": {
-        "title": "Herramientas",
-        "description": "Uso de Github, Bitbucket, Trello, Figma y SEO para gestión de proyectos y diseños optimizados."
+        "title": "Herramientas de Desarrollo",
+        "description": "Git, GitHub, Docker, nociones de AWS, Valgrind, GDB, Apache, Firebase, Bitbucket, Trello, Figma"
       },
       "languages": {
         "title": "Idiomas",
-        "description": "Francés (Nativo), Inglés (Fluido), Español (Intermedio)."
+        "description": "Francés (Nativo), Inglés (Fluido), Español (Intermedio)"
       }
     },
     "education": {
       "title": "Educación",
-      "eni": {
-        "title": "Título de Desarrollador Web y Móvil",
-        "description": "Escuela de Informática ENI"
-      },
       "school42": {
-        "title": "Tronco Común - Escuela 42",
-        "description": "Mayor red de escuelas de informática del mundo"
+        "title": "École 42 Málaga – Ingeniería de Software (Círculo 4)",
+        "date": "Sep 2024 – Presente",
+        "description": "Currículo intensivo peer-to-peer: sistemas C/C++, algoritmos, Unix, gráficos 3D, programación concurrente y de red."
+      },
+      "eni": {
+        "title": "ENI School – Título Desarrollador Web y Móvil",
+        "date": "2023 – 2024",
+        "description": "PHP/Symfony, Angular, Java, MySQL, HTML/CSS. Proyectos: gestión de eventos y plataforma de subastas full-stack."
       }
     },
     "hobbies": {
@@ -258,5 +304,12 @@
     "label_name": "Tu nombre",
     "label_email": "Tu correo",
     "label_message": "Mensaje"
+  },
+  "notfound": {
+    "title": "Página No Encontrada",
+    "message": "¡Ups! La página que buscas no existe o ha sido movida. Volvamos al camino correcto.",
+    "back_home": "Volver al Inicio",
+    "view_projects": "Ver Proyectos",
+    "looking_for": "Quizás estés buscando:"
   }
 }

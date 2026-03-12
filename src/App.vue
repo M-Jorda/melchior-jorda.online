@@ -1,8 +1,15 @@
 <template>
   <div class="bg-accent-50 dark:bg-slate-900 text-slate-900 dark:text-accent-50 font-sans transition-colors duration-300">
+    <!-- Skip to content link for accessibility -->
+    <a
+      href="#main-content"
+      class="sr-only focus:not-sr-only focus:absolute focus:top-4 focus:left-4 focus:z-50 focus:px-4 focus:py-2 focus:bg-orange-500 focus:text-white focus:rounded-lg focus:outline-none"
+    >
+      Skip to content
+    </a>
     <Header />
     <!-- Padding-top pour compenser la navbar fixe (hauteur approximative: 73px) -->
-    <main class="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 pt-[85px] sm:pt-[90px] md:pt-[95px] min-h-screen">
+    <main id="main-content" class="container mx-auto px-4 sm:px-6 md:px-8 py-6 sm:py-8 md:py-10 pt-[85px] sm:pt-[90px] md:pt-[95px] min-h-screen">
       <router-view v-slot="{ Component, route }">
         <transition name="page" mode="out-in">
           <component :is="Component" :key="route.path" />

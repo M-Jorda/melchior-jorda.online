@@ -87,7 +87,7 @@
             <h3 class="font-bold text-base notification-title">{{ $t('contact.success_title') }}</h3>
             <p class="text-sm mt-1 notification-message">{{ $t('contact.success_message') }}</p>
           </div>
-          <button @click="showSuccessMessage = false" class="ml-3 transition-colors flex-shrink-0 notification-close">
+          <button @click="showSuccessMessage = false" class="ml-3 transition-colors flex-shrink-0 notification-close" aria-label="Close notification">
             <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
@@ -105,45 +105,48 @@
         <div class="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6">
           <!-- Left Column: Name and Email -->
           <div class="space-y-3 sm:space-y-4">
-            <label class="block">
+            <label class="block" for="contact-name">
               <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
                 {{ $t('contact.form.name') }}
               </span>
-              <input 
+              <input
+                id="contact-name"
                 v-model="formData.name"
-                name="name" 
-                :placeholder="$t('contact.form.name_placeholder')" 
-                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none" 
-                required 
+                name="name"
+                :placeholder="$t('contact.form.name_placeholder')"
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none"
+                required
               />
             </label>
-            
-            <label class="block">
+
+            <label class="block" for="contact-email">
               <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
                 {{ $t('contact.form.email') }}
               </span>
-              <input 
+              <input
+                id="contact-email"
                 v-model="formData.email"
-                name="email" 
-                type="email" 
-                :placeholder="$t('contact.form.email_placeholder')" 
-                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none" 
-                required 
+                name="email"
+                type="email"
+                :placeholder="$t('contact.form.email_placeholder')"
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none"
+                required
               />
             </label>
           </div>
 
           <!-- Right Column: Message -->
           <div class="flex flex-col h-full">
-            <label class="block flex-1 flex flex-col">
+            <label class="block flex-1 flex flex-col" for="contact-message">
               <span class="text-xs sm:text-sm font-medium text-primary dark:text-accent-50">
                 {{ $t('contact.form.message') }}
               </span>
-              <textarea 
+              <textarea
+                id="contact-message"
                 v-model="formData.message"
-                name="message" 
-                :placeholder="$t('contact.form.message_placeholder')" 
-                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none resize-none flex-1" 
+                name="message"
+                :placeholder="$t('contact.form.message_placeholder')"
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none resize-none flex-1"
                 required
               ></textarea>
             </label>
@@ -160,11 +163,16 @@
           autocomplete="off"
         />
         
-        <button 
-          class="mt-4 sm:mt-5 w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium" 
+        <button
+          class="mt-4 sm:mt-5 w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
           type="submit"
+          :disabled="isLoading"
         >
-          {{ $t('contact.form.send') }}
+          <svg v-if="isLoading" class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
+          </svg>
+          {{ isLoading ? $t('contact.form.sending') : $t('contact.form.send') }}
         </button>
       </form>
     </div>
@@ -189,7 +197,7 @@ export default {
       emailPart2: 'gmail.com',
       emailRevealed: false,
       // Phone obfuscation
-      phoneParts: ['+33', '6', '66', '00', '81', '27'],
+      phoneParts: ['+34', '6', '14', '31', '58', '55'],
       phoneRevealed: false,
       // Form data
       formData: {
@@ -199,7 +207,8 @@ export default {
         website: '' // Honeypot - doit rester vide
       },
       // Message de confirmation
-      showSuccessMessage: false
+      showSuccessMessage: false,
+      isLoading: false
     }
   },
   computed: {
@@ -242,51 +251,43 @@ export default {
       })
     },
     async handleSubmit(event) {
-      // Protection anti-bot : si le champ honeypot est rempli, c'est un bot
       if (this.formData.website) {
         console.warn('Bot detected - honeypot field filled')
-        return // Ne rien faire si c'est un bot
+        return
       }
-      
+
+      this.isLoading = true
+
       try {
-        // Paramètres du template
         const templateParams = {
           from_name: this.formData.name,
           from_email: this.formData.email,
           message: this.formData.message,
-          to_email: `${this.emailPart1}@${this.emailPart2}` // Votre email
+          to_email: `${this.emailPart1}@${this.emailPart2}`
         }
-        
-        // Envoi de l'email via EmailJS
+
         await emailjs.send(
-          emailjsConfig.serviceID, 
-          emailjsConfig.templateID, 
-          templateParams, 
+          emailjsConfig.serviceID,
+          emailjsConfig.templateID,
+          templateParams,
           emailjsConfig.publicKey
         )
-        
-        // Sauvegarder dans sessionStorage pour afficher après rechargement
-        sessionStorage.setItem('emailSent', 'true')
-        
-        // Recharger la page
-        window.location.reload()
-        
+
+        this.formData.name = ''
+        this.formData.email = ''
+        this.formData.message = ''
+        this.showSuccessMessage = true
+
+        setTimeout(() => {
+          this.showSuccessMessage = false
+        }, 6000)
+
       } catch (error) {
         console.error('Erreur lors de l\'envoi:', error)
         alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.')
+      } finally {
+        this.isLoading = false
       }
-    }
-  },
-  mounted() {
-    // Vérifier si un email vient d'être envoyé
-    if (sessionStorage.getItem('emailSent') === 'true') {
-      sessionStorage.removeItem('emailSent')
-      this.showSuccessMessage = true
-      
-      // Masquer le message après 6 secondes
-      setTimeout(() => {
-        this.showSuccessMessage = false
-      }, 6000)
     }
   }
 }
@@ -349,33 +350,32 @@ export default {
   }
 }
 
-@media (prefers-color-scheme: dark) {
-  .notification-wrapper {
-    background: linear-gradient(135deg, rgba(6, 78, 59, 0.98), rgba(4, 120, 87, 0.98));
-    border-color: #059669;
-    box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
-  }
-  
-  /* Couleurs du contenu en dark mode */
-  .notification-content svg {
-    color: #4ade80; /* green-400 */
-  }
-  
-  .notification-title {
-    color: #bbf7d0; /* green-200 */
-  }
-  
-  .notification-message {
-    color: #86efac; /* green-300 */
-  }
-  
-  .notification-close {
-    color: #4ade80; /* green-400 */
-  }
-  
-  .notification-close:hover {
-    color: #bbf7d0; /* green-200 */
-  }
+/* Dark mode (class-based) */
+:global(.dark) .notification-wrapper {
+  background: linear-gradient(135deg, rgba(6, 78, 59, 0.98), rgba(4, 120, 87, 0.98));
+  border-color: #059669;
+  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
+}
+
+/* Couleurs du contenu en dark mode */
+:global(.dark) .notification-content svg {
+  color: #4ade80; /* green-400 */
+}
+
+:global(.dark) .notification-title {
+  color: #bbf7d0; /* green-200 */
+}
+
+:global(.dark) .notification-message {
+  color: #86efac; /* green-300 */
+}
+
+:global(.dark) .notification-close {
+  color: #4ade80; /* green-400 */
+}
+
+:global(.dark) .notification-close:hover {
+  color: #bbf7d0; /* green-200 */
 }
 
 /* Responsive pour mobile */

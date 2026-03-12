@@ -2,21 +2,16 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import App from './App.vue'
 import Home from './pages/Home.vue'
-import Projects from './pages/Projects.vue'
-import About from './pages/About.vue'
-import Contact from './pages/Contact.vue'
-import Resume from './pages/Resume.vue'
-import NotFound from './pages/NotFound.vue'
 import './styles/tailwind.css'
 import i18n from './i18n'
 
 const routes = [
   { path: '/', component: Home, meta: { titleKey: 'home.title' } },
-  { path: '/projects', component: Projects, meta: { titleKey: 'projects.title' } },
-  { path: '/about', component: About, meta: { titleKey: 'about.title' } },
-  { path: '/resume', component: Resume, meta: { titleKey: 'resume.title' } },
-  { path: '/contact', component: Contact, meta: { titleKey: 'contact.title' } },
-  { path: '/:pathMatch(.*)*', component: NotFound, meta: { titleKey: 'nav.not_found' } }
+  { path: '/projects', component: () => import('./pages/Projects.vue'), meta: { titleKey: 'projects.title' } },
+  { path: '/about', component: () => import('./pages/About.vue'), meta: { titleKey: 'about.title' } },
+  { path: '/resume', component: () => import('./pages/Resume.vue'), meta: { titleKey: 'resume.title' } },
+  { path: '/contact', component: () => import('./pages/Contact.vue'), meta: { titleKey: 'contact.title' } },
+  { path: '/:pathMatch(.*)*', component: () => import('./pages/NotFound.vue'), meta: { titleKey: 'nav.not_found' } }
 ]
 
 const router = createRouter({ history: createWebHistory(), routes })

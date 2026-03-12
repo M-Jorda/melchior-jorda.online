@@ -7,31 +7,42 @@
         <div class="text-center md:text-left">© {{ year }} Melchior JORDA</div>
         
         <!-- Liens -->
-        <div class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center text-center">
-          <a 
-            :href="linkedin" 
-            target="_blank" 
-            rel="noopener" 
+        <nav class="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center text-center" aria-label="Footer links">
+          <a
+            :href="linkedin"
+            target="_blank"
+            rel="noopener noreferrer"
             class="text-orange-200 dark:text-orange-400 hover:text-orange-300 dark:hover:text-orange-300 transition-colors duration-300"
+            aria-label="Visit LinkedIn profile"
           >
             {{ $t('footer.linkedin') }}
           </a>
-          <a 
-            :href="cv" 
-            target="_blank" 
-            rel="noopener" 
+          <a
+            :href="github"
+            target="_blank"
+            rel="noopener noreferrer"
             class="text-orange-200 dark:text-orange-400 hover:text-orange-300 dark:hover:text-orange-300 transition-colors duration-300"
+            aria-label="Visit GitHub profile"
+          >
+            GitHub
+          </a>
+          <a
+            :href="cvPath"
+            :download="cvFilename"
+            class="text-orange-200 dark:text-orange-400 hover:text-orange-300 dark:hover:text-orange-300 transition-colors duration-300"
+            aria-label="Download CV as PDF"
           >
             {{ $t('footer.download_cv') }}
           </a>
-          <a 
-            :href="mailtoObfuscated" 
-            @click.prevent="openMail" 
+          <a
+            :href="mailtoObfuscated"
+            @click.prevent="openMail"
             class="text-neutral dark:text-accent-50 hover:text-orange-200 dark:hover:text-orange-300 transition-colors duration-300"
+            aria-label="Send email"
           >
             Email
           </a>
-        </div>
+        </nav>
       </div>
     </div>
   </footer>
@@ -43,13 +54,22 @@ export default {
     return {
       year: new Date().getFullYear(),
       linkedin: 'https://www.linkedin.com/in/melchior-jorda-354a31270',
-      cv: '/assets/Melchior-JORDA-CV.pdf',
-      // Email obfuscation - split to avoid scraping bots
+      github: 'https://github.com/M-Jorda',
       mailUser: 'jorda.j.fr',
       mailHost: 'gmail.com'
     }
   },
   computed: {
+    cvPath() {
+      const map = { fr: 'FR', en: 'EN', es: 'ES' }
+      const code = map[this.$i18n.locale] || 'EN'
+      return `/assets/Melchior_Jorda_FullStack_${code}.pdf`
+    },
+    cvFilename() {
+      const map = { fr: 'FR', en: 'EN', es: 'ES' }
+      const code = map[this.$i18n.locale] || 'EN'
+      return `Melchior_Jorda_FullStack_${code}.pdf`
+    },
     mailtoObfuscated() {
       return `mailto:${this.mailUser}@${this.mailHost}`
     }

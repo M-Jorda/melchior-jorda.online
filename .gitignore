@@ -25,3 +25,13 @@ dist-ssr
 
 # EmailJS Configuration (contains API keys)
 src/config/emailjs.config.js
+
+# Internal documentation (not for public)
+CAHIER_DES_CHARGES.md
+Resume/
+
+# Firebase deployment cache
+.firebase/
+
+# Claude Code local settings
+.claude/

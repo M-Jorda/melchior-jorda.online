@@ -11,12 +11,12 @@
     <div class="container mx-auto px-4 flex items-center justify-between">
       <!-- Logo et titre -->
       <router-link @click="closeMobileMenu" to="/" class="flex items-center gap-2 md:gap-3 cursor-pointer hover:opacity-80 transition-opacity">
-        <img src="/favicon.png" alt="logo" class="w-8 h-8 md:w-10 md:h-10" />
+        <img src="/favicon.png" alt="Melchior JORDA" class="w-8 h-8 md:w-10 md:h-10" />
         <div>
           <div class="text-sm md:text-lg font-semibold text-primary dark:text-accent-50">
             Melchior JORDA
           </div>
-          <div class="text-xs md:text-sm text-slate-500 dark:text-accent-200">Junior Web Developer</div>
+          <div class="text-xs md:text-sm text-slate-500 dark:text-accent-200">{{ $t('header.job_title') }}</div>
         </div>
       </router-link>
 
@@ -47,8 +47,8 @@
           <li class="relative">
             <div class="lang-dropdown">
               <!-- Drapeau actif (toujours visible) -->
-              <button @click.prevent="toggleLangMenu" class="flag-btn flag-active" :title="currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'Français' : 'Español'">
-                <svg v-if="currentLang === 'en'" width="20" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+              <button @click.prevent="toggleLangMenu" class="flag-btn flag-active" :title="currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'Français' : 'Español'" :aria-label="'Current language: ' + (currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'French' : 'Spanish') + '. Click to change'" aria-haspopup="true" :aria-expanded="langMenuOpen">
+                <svg v-if="currentLang === 'en'" width="20" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                   <clipPath id="t"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
                   <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
                   <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
@@ -56,12 +56,12 @@
                   <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
                   <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
                 </svg>
-                <svg v-else-if="currentLang === 'fr'" width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <svg v-else-if="currentLang === 'fr'" width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                   <rect width="6.66" height="14" x="0" fill="#0b5fff" />
                   <rect width="6.66" height="14" x="6.66" fill="#fff" />
                   <rect width="6.68" height="14" x="13.32" fill="#ff4b3e" />
                 </svg>
-                <svg v-else width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                <svg v-else width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                   <rect width="20" height="14" fill="#ffdd00" />
                   <rect y="3" width="20" height="8" fill="#c60b1e" />
                 </svg>
@@ -69,9 +69,9 @@
               
               <!-- Menu déroulant avec les autres drapeaux -->
               <transition name="lang-menu">
-                <div v-if="langMenuOpen" class="lang-menu">
-                  <button v-if="currentLang !== 'en'" @click.prevent="onLang('en')" class="flag-btn" title="English">
-                    <svg width="20" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                <div v-if="langMenuOpen" class="lang-menu" role="menu" aria-label="Language selection">
+                  <button v-if="currentLang !== 'en'" @click.prevent="onLang('en')" class="flag-btn" aria-label="Switch to English" role="menuitem">
+                    <svg width="20" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                       <clipPath id="t2"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
                       <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
                       <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
@@ -80,15 +80,15 @@
                       <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
                     </svg>
                   </button>
-                  <button v-if="currentLang !== 'fr'" @click.prevent="onLang('fr')" class="flag-btn" title="Français">
-                    <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <button v-if="currentLang !== 'fr'" @click.prevent="onLang('fr')" class="flag-btn" aria-label="Passer en Français" role="menuitem">
+                    <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                       <rect width="6.66" height="14" x="0" fill="#0b5fff" />
                       <rect width="6.66" height="14" x="6.66" fill="#fff" />
                       <rect width="6.68" height="14" x="13.32" fill="#ff4b3e" />
                     </svg>
                   </button>
-                  <button v-if="currentLang !== 'es'" @click.prevent="onLang('es')" class="flag-btn" title="Español">
-                    <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <button v-if="currentLang !== 'es'" @click.prevent="onLang('es')" class="flag-btn" aria-label="Cambiar a Español" role="menuitem">
+                    <svg width="20" height="14" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                       <rect width="20" height="14" fill="#ffdd00" />
                       <rect y="3" width="20" height="8" fill="#c60b1e" />
                     </svg>
@@ -101,7 +101,7 @@
           <li>
             <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="px-2 xl:px-3 py-1 text-sm rounded border border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300">
               <span class="sr-only">Toggle theme</span>
-              <span aria-hidden="true">{{ isDark ? 'Dark' : 'Light' }}</span>
+              <span aria-hidden="true">{{ isDark ? $t('theme.dark') : $t('theme.light') }}</span>
             </button>
           </li>
         </ul>
@@ -168,8 +168,8 @@
               <div class="text-sm text-slate-500 dark:text-accent-200 mb-2">Language</div>
               <div class="lang-dropdown-mobile">
                 <!-- Drapeau actif (toujours visible) -->
-                <button @click.prevent="toggleLangMenuMobile" class="flag-btn flag-active mb-2" :title="currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'Français' : 'Español'">
-                  <svg v-if="currentLang === 'en'" width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                <button @click.prevent="toggleLangMenuMobile" class="flag-btn flag-active mb-2" :aria-label="'Current language: ' + (currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'French' : 'Spanish') + '. Click to change language'">
+                  <svg v-if="currentLang === 'en'" width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                     <clipPath id="t-mobile"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
                     <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
                     <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
@@ -177,12 +177,12 @@
                     <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
                     <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
                   </svg>
-                  <svg v-else-if="currentLang === 'fr'" width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <svg v-else-if="currentLang === 'fr'" width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                     <rect width="6.66" height="14" x="0" fill="#0b5fff" />
                     <rect width="6.66" height="14" x="6.66" fill="#fff" />
                     <rect width="6.68" height="14" x="13.32" fill="#ff4b3e" />
                   </svg>
-                  <svg v-else width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                  <svg v-else width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                     <rect width="20" height="14" fill="#ffdd00" />
                     <rect y="3" width="20" height="8" fill="#c60b1e" />
                   </svg>
@@ -191,8 +191,8 @@
                 <!-- Menu déroulant avec les autres drapeaux -->
                 <transition name="lang-menu">
                   <div v-if="langMenuOpenMobile" class="flex gap-3">
-                    <button v-if="currentLang !== 'en'" @click.prevent="onLang('en')" class="flag-btn" title="English">
-                      <svg width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg">
+                    <button v-if="currentLang !== 'en'" @click.prevent="onLang('en')" class="flag-btn" aria-label="Switch to English">
+                      <svg width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
                         <clipPath id="t-mobile2"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
                         <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
                         <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
@@ -201,15 +201,15 @@
                         <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
                       </svg>
                     </button>
-                    <button v-if="currentLang !== 'fr'" @click.prevent="onLang('fr')" class="flag-btn" title="Français">
-                      <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <button v-if="currentLang !== 'fr'" @click.prevent="onLang('fr')" class="flag-btn" aria-label="Passer en Français">
+                      <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                         <rect width="6.66" height="14" x="0" fill="#0b5fff" />
                         <rect width="6.66" height="14" x="6.66" fill="#fff" />
                         <rect width="6.68" height="14" x="13.32" fill="#ff4b3e" />
                       </svg>
                     </button>
-                    <button v-if="currentLang !== 'es'" @click.prevent="onLang('es')" class="flag-btn" title="Español">
-                      <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none">
+                    <button v-if="currentLang !== 'es'" @click.prevent="onLang('es')" class="flag-btn" aria-label="Cambiar a Español">
+                      <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                         <rect width="20" height="14" fill="#ffdd00" />
                         <rect y="3" width="20" height="8" fill="#c60b1e" />
                       </svg>
@@ -223,7 +223,7 @@
             <li class="py-3">
               <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="w-full px-4 py-2 rounded border border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300">
                 <span class="sr-only">Toggle theme</span>
-                <span aria-hidden="true">{{ isDark ? '🌙 Dark Mode' : '☀️ Light Mode' }}</span>
+                <span aria-hidden="true">{{ isDark ? '🌙 ' + $t('theme.dark_mode') : '☀️ ' + $t('theme.light_mode') }}</span>
               </button>
             </li>
           </ul>
