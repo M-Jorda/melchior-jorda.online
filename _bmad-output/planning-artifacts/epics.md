@@ -22,7 +22,7 @@ FR3: Visitors can browse projects organized by category (client sites, 42 projec
 FR4: Visitors can see visuals for each client project
 FR5: Visitors can understand the types of sites Mel builds (showcase, e-commerce, multi-page)
 FR6: Visitors can identify the targeted client profiles (artisans, restaurateurs, liberal professions, e-commerce)
-FR7: Visitors can see the price range for freelance services
+FR7: Visitors can identify the accessibility of Mel's freelance offer through the targeted client profile and the "free quote within 48h" promise
 FR8: Visitors see the NASA Space Apps Challenge result (1st place Málaga 2025 + national qualification) featured on the home page
 FR9: Visitors can understand what École 42 training is and what it signifies (rigor, autonomy, peer validation)
 FR10: Visitors can access Mel's complete career path (training, projects, skills)
@@ -104,11 +104,11 @@ UX-DR12: `About.vue` — rewrite tone to center client value first (not chronolo
 | FR4 | Epic 1 | Visuels projets sur ProjectCard |
 | FR5 | Epic 2 | Types de sites dans OffreBlock |
 | FR6 | Epic 2 | Profils clients cibles dans OffreBlock |
-| FR7 | Epic 2 | Fourchette tarifaire dans OffreBlock |
+| FR7 | Epic 2 | Signal d'accessibilité (profil client + devis gratuit sous 48h) dans OffreBlock |
 | FR8 | Epic 2 | NASA badge dans Home hero |
 | FR9 | Epic 4 | Explication 42 dans FortyTwo.vue |
 | FR10 | Epic 5 | Parcours complet dans About.vue |
-| FR11 | Epic 4 | Visualisation animée push_swap (Viz42) |
+| FR11 | Epic 4 | Vidéo démo push_swap via ProjectVideo.vue |
 | FR12 | Epic 4 | Explication technique profonde dans FortyTwo.vue |
 | FR13 | Epic 1 | Distinction visuelle 42 / clients via ProjectFilter |
 | FR14 | Epic 3 | Message depuis n'importe quelle page (CTA sticky) |
@@ -132,7 +132,7 @@ Les visiteurs (Sophie, Marc) parcourent les projets clients avec le contexte mé
 **FRs covered:** FR1, FR2, FR3, FR4, FR13, FR20, FR21, FR22
 
 ### Epic 2: Page d'accueil — signal fort
-Un visiteur qui arrive sur la home comprend en 5 secondes ce que Mel fait, pour qui, et à quel prix approximatif — grâce au badge NASA, au hero reformulé et à la section offre freelance.
+Un visiteur qui arrive sur la home comprend en 5 secondes ce que Mel fait et pour qui — grâce au badge NASA, au hero reformulé et à la section offre freelance avec profils clients ciblés et CTA devis gratuit.
 **FRs covered:** FR5, FR6, FR7, FR8
 
 ### Epic 3: Contact accessible depuis n'importe quelle page
@@ -140,7 +140,7 @@ N'importe quel visiteur atteint le formulaire de contact en ≤ 2 clics, reçoit
 **FRs covered:** FR14, FR15, FR16, FR17
 
 ### Epic 4: Vitrine technique pour recruteurs (Projets 42)
-Thomas navigue vers l'onglet 42 dédié, voit la visualisation animée de push_swap avec une explication technique profonde, et télécharge le CV.
+Thomas navigue vers l'onglet 42 dédié, voit les vidéos démo des projets 42 avec une explication technique profonde, et télécharge le CV.
 **FRs covered:** FR9, FR11, FR12
 
 ### Epic 5: Profil complet et services additionnels
@@ -334,8 +334,8 @@ So that I immediately understand what Mel does, for whom, and that he has proven
 ### Story 2.2: Création de `OffreBlock.vue` — section offre freelance
 
 As a visitor (Sophie / Marc),
-I want to see the types of sites Mel builds, who they are for, and a rough price signal,
-So that I can immediately self-qualify ("is this for me?") without asking.
+I want to see the types of sites Mel builds and who they are for, with a clear call to get a free quote,
+So that I can immediately self-qualify ("is this for me?") and know the next step without friction.
 
 **Acceptance Criteria:**
 
@@ -457,7 +457,7 @@ So that I am confident my message was received and I trust Mel with my informati
 
 ## Epic 4: Vitrine technique pour recruteurs (Projets 42)
 
-Thomas navigue vers l'onglet 42 dédié, voit la visualisation animée de push_swap avec une explication technique profonde, et télécharge le CV.
+Thomas navigue vers l'onglet 42 dédié, voit les vidéos démo des projets 42 avec une explication technique profonde, et télécharge le CV.
 
 ### Story 4.1: Création de la route `/42` et de la page `FortyTwo.vue`
 
@@ -523,41 +523,9 @@ So that I can see the project in action without leaving the site.
 **When** a 42 project has a `video` field in `projects.json`,
 **Then** `ProjectVideo` is rendered for that project with the correct `src`, `srcWebm`, and `poster` paths
 
-### Story 4.3: Création de `Viz42.vue` — visualisation animée push_swap
+### ~~Story 4.3: Viz42.vue — visualisation animée push_swap~~
 
-As a visitor (Thomas),
-I want to see an animated visualization of the push_swap algorithm with a technical explanation,
-So that I understand Mel's thought process and problem-solving ability, not just that he completed the project.
-
-**Acceptance Criteria:**
-
-**Given** `Viz42.vue` is rendered in `FortyTwo.vue` for the push_swap project,
-**When** the component enters the viewport (IntersectionObserver),
-**Then** the animation starts playing (state: `playing`)
-
-**Given** the animation is playing,
-**When** it runs,
-**Then** it visualizes stack operations (push/pop between stack a and stack b) using CSS `@keyframes` or native canvas — no external library, no dependency > 50kb
-
-**Given** a user's system has `prefers-reduced-motion: reduce`,
-**When** `Viz42.vue` renders,
-**Then** a static snapshot is shown instead of the animation, and no motion plays
-
-**Given** the component,
-**When** rendered,
-**Then** it has `aria-label="Visualisation animée de l'algorithme push_swap"` and all CSS is scoped
-
-**Given** the technical explanation section below the visualization,
-**When** rendered,
-**Then** it includes at minimum: the problem constraints, the algorithm approach chosen, and key learnings
-
-**Given** the explanation text,
-**When** rendered in any language,
-**Then** all strings use i18n keys in `en.json`, `fr.json`, `es.json`
-
-**Given** a Lighthouse performance audit after adding `Viz42.vue`,
-**When** run on the `/42` page,
-**Then** the Lighthouse Performance score does not drop more than 5 points compared to baseline (NFR3)
+> **Décision 2026-03-14 :** Story supprimée. La visualisation de push_swap est couverte par `ProjectVideo.vue` (Story 4.2) via une vidéo locale mp4/webm. L'animation CSS custom a été écartée au profit des vidéos — approche plus fiable, sans risque performance, et cohérente avec l'architecture. FR11 (≥ 1 projet 42 avec visualisation animée) est satisfait par la vidéo démo.
 
 ## Epic 5: Profil complet et services additionnels
 

@@ -212,7 +212,7 @@ SPA Vue 3 (Options API) · Vite 7 · Tailwind CSS 3 · vue-router 4 (history mod
 
 - **FR5 :** Les visiteurs peuvent comprendre les types de sites que Mel réalise (vitrine, e-commerce, multi-pages)
 - **FR6 :** Les visiteurs peuvent identifier les profils clients ciblés (artisans, restaurateurs, professions libérales, e-commerçants)
-- **FR7 :** Les visiteurs peuvent voir la fourchette tarifaire pour les services freelance
+- **FR7 :** Les visiteurs peuvent identifier l'accessibilité de l'offre freelance via le profil client ciblé et la promesse de devis gratuit sous 48h
 
 ### Signaux de Crédibilité
 
