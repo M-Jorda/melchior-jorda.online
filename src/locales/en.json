@@ -154,27 +154,27 @@
       },
       "get-next-line": {
         "title": "get_next_line",
-        "description": "Function that reads a line from a file descriptor. A challenging project that handles buffer management and memory allocation."
+        "description": "A function that reads one line at a time from a file descriptor, across multiple calls. The real challenge: managing a static buffer between calls without leaking memory, and handling edge cases like partial reads and EOF correctly."
       },
       "ft-printf": {
         "title": "ft_printf",
-        "description": "Custom implementation of the printf function in C. Handles multiple format specifiers and conversions."
+        "description": "A reimplementation of printf in C using variadic arguments. I handled all the standard conversions (%s, %d, %i, %u, %x, %X, %p, %c, %%) with proper width and precision support — no libft shortcuts, just raw parsing."
       },
       "libft": {
         "title": "Libft",
-        "description": "Custom C library with reimplemented standard functions. Foundation library for all future C projects."
+        "description": "The foundation of everything at 42: reimplementing the C standard library from scratch with no libc allowed. String manipulation, memory functions, linked lists — written once, reused in every project that followed."
       },
       "personal-libft": {
         "title": "Personal Libft",
-        "description": "Extended version of the standard C library with additional utility functions. Enhanced libft with custom implementations for advanced string manipulation, memory management, and data structures."
+        "description": "My personal extension of libft, grown throughout the cursus. Each project taught me something new I added back here — extra string utilities, linked list helpers, and memory tools I kept reaching for."
       },
       "push-swap": {
         "title": "push_swap",
-        "description": "Sorting algorithm project that sorts data on a stack with a limited set of instructions. Implements efficient algorithms to sort integers using two stacks and specific operations."
+        "description": "Sort a stack of integers using two stacks (a and b) and a fixed set of operations, in the fewest moves possible. I implemented a chunk-based algorithm that hits the performance targets for both small and large inputs."
       },
       "so-long": {
         "title": "so_long",
-        "description": "2D game project built with MiniLibX. Create a small game where a character collects items and finds an exit. Focuses on graphics programming, event handling, and game logic."
+        "description": "A top-down 2D game built with MiniLibX. Map parsing from a .ber file, sprite rendering, collision detection, collectibles, and a win condition. My first real experience with graphics programming and event loops in C."
       },
       "random-rgb": {
         "title": "Random RGB",
@@ -191,11 +191,11 @@
       ,
       "philosophers": {
         "title": "Philosophers",
-        "description": "Dining philosophers concurrency project implemented in C using pthreads and mutexes. Simulation of N philosophers avoiding deadlock and starvation."
+        "description": "The classic dining philosophers problem in C: N threads share forks (mutexes) and must eat, sleep, and think without ever deadlocking or starving. The tricky part is getting the timing and synchronization tight enough to pass the automated tests."
       },
       "minishell": {
         "title": "Minishell",
-        "description": "A minimal shell implementation in C supporting parsing, execution, redirections, and builtins. Educational project following strict coding rules."
+        "description": "A Unix shell written in C — tokenizer, parser, and executor with fork/exec, pipes, redirections, signal handling (SIGINT, SIGQUIT), environment variables, and all the required builtins. One of the most complex projects in the cursus, built with a partner."
       },
       "series-tracker": {
         "title": "Series Tracker",
@@ -376,6 +376,6 @@
     "pageTitle": "École 42 Projects",
     "pageSubtitle": "Explore the technical projects built at École 42 Málaga.",
     "schoolTitle": "What is École 42?",
-    "schoolExplanation": "École 42 is a software engineering school with no lectures and no teachers. Projects are peer-validated, covering C/C++ systems, algorithms, Unix, networking, and graphics. Mel is at Circle 4."
+    "schoolExplanation": "École 42 is a software engineering school with no lectures and no teachers — projects are peer-validated. I'm in the older curriculum, focused on C/C++ systems, algorithms, Unix, networking, and graphics programming, and I'm currently at Circle 4."
   }
 }

@@ -30,12 +30,12 @@
       {{ projectTitle }}
     </h3>
 
-    <!-- Client context -->
+    <!-- Client context or description fallback -->
     <p
-      v-if="clientContext"
+      v-if="clientContext || projectDescription"
       class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2 flex-grow"
     >
-      {{ clientContext }}
+      {{ clientContext || projectDescription }}
     </p>
 
     <!-- Result (green) -->
@@ -127,6 +127,10 @@ export default {
     },
     clientContext() {
       const key = 'projects.items.' + this.project.id + '.clientContext'
+      return this.$te(key) ? this.$t(key) : null
+    },
+    projectDescription() {
+      const key = 'projects.items.' + this.project.id + '.description'
       return this.$te(key) ? this.$t(key) : null
     },
     projectResult() {

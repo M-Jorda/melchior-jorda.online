@@ -44,7 +44,7 @@ export default {
   components: { MetaTags, ProjectCard },
   computed: {
     fortyTwoProjects() {
-      return projectsData.projects.filter(p => p.category === '42')
+      return projectsData.filter(p => p.category === '42')
     }
   }
 }

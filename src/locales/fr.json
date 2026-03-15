@@ -154,27 +154,27 @@
       },
       "get-next-line": {
         "title": "get_next_line",
-        "description": "Fonction qui lit une ligne depuis un descripteur de fichier. Projet axé sur la gestion de buffer et l'allocation mémoire."
+        "description": "Une fonction qui lit une ligne à la fois depuis un descripteur de fichier, sur plusieurs appels successifs. Le vrai défi : gérer un buffer statique entre les appels sans fuite mémoire, et traiter correctement les lectures partielles et l'EOF."
       },
       "ft-printf": {
         "title": "ft_printf",
-        "description": "Implémentation personnalisée de la fonction printf en C. Gère plusieurs spécificateurs de format et conversions."
+        "description": "Réimplémentation de printf en C avec des arguments variadiques. J'ai géré toutes les conversions standard (%s, %d, %i, %u, %x, %X, %p, %c, %%) avec largeur et précision — sans raccourcis, juste du parsing brut."
       },
       "libft": {
         "title": "Libft",
-        "description": "Bibliothèque C personnalisée réimplémentant des fonctions standard. Base pour les projets C futurs."
+        "description": "La base de tout à 42 : réimplémenter la bibliothèque standard C depuis zéro, sans libc. Manipulation de chaînes, fonctions mémoire, listes chaînées — écrit une fois, réutilisé dans tous les projets suivants."
       },
       "personal-libft": {
         "title": "Personal Libft",
-        "description": "Version étendue de la bibliothèque standard C avec fonctions utilitaires additionnelles pour manipulation de chaînes, gestion mémoire et structures de données."
+        "description": "Mon extension personnelle de libft, enrichie au fil du cursus. Chaque projet m'a appris quelque chose que j'ai ajouté ici — utilitaires de chaînes, helpers listes chaînées, et outils mémoire que je cherchais sans cesse."
       },
       "push-swap": {
         "title": "push_swap",
-        "description": "Projet d'algorithme de tri utilisant deux piles et un ensemble d'instructions limitées. Implémente des algorithmes efficaces pour trier des entiers."
+        "description": "Trier une pile d'entiers avec deux piles (a et b) et un jeu d'instructions fixe, en un minimum d'opérations. J'ai implémenté un algorithme par blocs qui atteint les seuils de performance pour les petites et grandes entrées."
       },
       "so-long": {
         "title": "so_long",
-        "description": "Jeu 2D créé avec MiniLibX. Le joueur collecte des objets et trouve une sortie. Concentre sur la programmation graphique, gestion d'événements et logique de jeu."
+        "description": "Un jeu 2D top-down avec MiniLibX. Parsing de map depuis un fichier .ber, rendu de sprites, détection de collisions, collectibles et condition de victoire. Ma première vraie expérience avec la programmation graphique et les boucles d'événements en C."
       },
       "random-rgb": {
         "title": "Random RGB",
@@ -191,11 +191,11 @@
       ,
       "philosophers": {
         "title": "Philosophers",
-        "description": "Projet des philosophes dînant implémenté en C utilisant pthreads et mutex. Simulation de N philosophes évitant deadlock et famine."
+        "description": "Le problème classique des philosophes dînants en C : N threads partagent des fourchettes (mutex) et doivent manger, dormir et penser sans jamais se retrouver en deadlock ou en famine. La difficulté : avoir un timing et une synchronisation suffisamment précis pour passer les tests automatisés."
       },
       "minishell": {
         "title": "Minishell",
-        "description": "Implémentation minimale d'un shell en C supportant le parsing, l'exécution, les redirections et les builtins. Projet pédagogique avec règles de code strictes."
+        "description": "Un shell Unix en C — tokenizer, parser et exécuteur avec fork/exec, pipes, redirections, gestion des signaux (SIGINT, SIGQUIT), variables d'environnement et tous les builtins requis. L'un des projets les plus complexes du cursus, réalisé en binôme."
       },
       "series-tracker": {
         "title": "Series Tracker",
@@ -376,6 +376,6 @@
     "pageTitle": "Projets École 42",
     "pageSubtitle": "Découvre les projets techniques réalisés à l'École 42 Málaga.",
     "schoolTitle": "C'est quoi l'École 42 ?",
-    "schoolExplanation": "L'École 42 est une formation en ingénierie logicielle sans cours magistraux ni professeurs. Les projets sont validés par les pairs, les cursus couvrent C/C++ systèmes, algorithmique, Unix, réseau et programmation graphique. Mel est au Cercle 4."
+    "schoolExplanation": "L'École 42 est une formation en ingénierie logicielle sans cours magistraux ni professeurs — les projets sont validés par les pairs. Je suis dans l'ancien cursus, axé sur C/C++ systèmes, algorithmique, Unix, réseau et programmation graphique, et j'en suis au Cercle 4."
   }
 }
