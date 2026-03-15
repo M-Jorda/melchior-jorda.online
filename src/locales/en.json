@@ -23,6 +23,22 @@
       "subtitle": "I build clean, fast websites that attract your clients — free quote within 48h.",
       "ctaPrimary": "See my projects",
       "ctaSecondary": "Free quote"
+    },
+    "offreBlock": {
+      "title": "What I build",
+      "vitrine": {
+        "title": "Showcase website",
+        "profiles": "Craftspeople · Restaurateurs · Independent professionals"
+      },
+      "ecommerce": {
+        "title": "E-commerce website",
+        "profiles": "Shops · Creators · Local e-commerce"
+      },
+      "multipage": {
+        "title": "Multi-page website",
+        "profiles": "Concierge services · Portfolios · Professional services"
+      },
+      "cta": "Free quote within 48h"
     }
   },
   "footer": {

@@ -23,6 +23,22 @@
       "subtitle": "Je conçois des sites clairs et rapides qui attirent vos clients — devis gratuit sous 48h.",
       "ctaPrimary": "Voir mes projets",
       "ctaSecondary": "Devis gratuit"
+    },
+    "offreBlock": {
+      "title": "Ce que je construis",
+      "vitrine": {
+        "title": "Site vitrine",
+        "profiles": "Artisans · Restaurateurs · Professions libérales"
+      },
+      "ecommerce": {
+        "title": "Site e-commerce",
+        "profiles": "Boutiques · Créateurs · E-commerçants locaux"
+      },
+      "multipage": {
+        "title": "Site multi-pages",
+        "profiles": "Conciergeries · Portfolios · Services professionnels"
+      },
+      "cta": "Devis gratuit sous 48h"
     }
   },
   "footer": {

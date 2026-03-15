@@ -39,6 +39,8 @@
       </div>
     </header>
 
+    <OffreBlock />
+
     <!-- Section projets vedette -->
     <section id="projets" class="mt-8 sm:mt-10 md:mt-12">
       <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-primary dark:text-accent-50">
@@ -87,12 +89,14 @@
 import projectsData from '@/data/projects.json'
 import MetaTags from '@/components/MetaTags.vue'
 import NasaBadge from '@/components/NasaBadge.vue'
+import OffreBlock from '@/components/OffreBlock.vue'
 
 export default {
   name: 'Home',
   components: {
     MetaTags,
-    NasaBadge
+    NasaBadge,
+    OffreBlock
   },
   data() {
     return {

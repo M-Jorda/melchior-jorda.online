@@ -23,6 +23,22 @@
       "subtitle": "Creo sitios claros y rápidos que atraen a tus clientes — presupuesto gratuito en 48h.",
       "ctaPrimary": "Ver mis proyectos",
       "ctaSecondary": "Presupuesto gratis"
+    },
+    "offreBlock": {
+      "title": "Lo que construyo",
+      "vitrine": {
+        "title": "Sitio vitrina",
+        "profiles": "Artesanos · Restauradores · Profesiones liberales"
+      },
+      "ecommerce": {
+        "title": "Sitio e-commerce",
+        "profiles": "Tiendas · Creadores · E-commerce local"
+      },
+      "multipage": {
+        "title": "Sitio multipágina",
+        "profiles": "Conserjerías · Portfolios · Servicios profesionales"
+      },
+      "cta": "Presupuesto gratis en 48h"
     }
   },
   "footer": {
