@@ -23,6 +23,9 @@ dist-ssr
 *.sln
 *.sw?
 
+# Environment variables (contains API keys)
+.env
+
 # EmailJS Configuration (contains API keys)
 src/config/emailjs.config.js
 

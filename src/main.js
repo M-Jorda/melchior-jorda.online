@@ -23,6 +23,10 @@ router.afterEach((to) => {
     ? i18n.global.t(key)
     : (to.meta && to.meta.title) || ''
   document.title = `${title} · Melchior JORDA`
+  // GA4 pageview tracking
+  if (typeof gtag !== 'undefined' && import.meta.env.VITE_GA_ID) {
+    gtag('event', 'page_view', { page_path: to.fullPath })
+  }
 })
 
 createApp(App).use(router).use(i18n).mount('#app')
