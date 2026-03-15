@@ -213,7 +213,7 @@
   },
   "about": {
     "title": "About Me",
-    "intro": "I'm Melchior JORDA, a Full-Stack Developer passionate about systems programming (C/C++) and web development (Vue.js, PHP, Symfony). With strong foundations in algorithms, multithreading, and application design acquired at École 42, I combine technical expertise with hands-on experience in web development and quality assurance testing.",
+    "intro": "I help craftspeople, restaurateurs and independent professionals stand out online with a fast, modern website built around their clients. Accessible rates, personal follow-up.",
     "experience_title": "Professional Experience",
     "experience": {
       "game_tester": {
@@ -253,6 +253,26 @@
       "eni": {
         "title": "ENI School — Web & Mobile Developer Degree (2023-2024)",
         "description": "PHP/Symfony, Angular, Java, MySQL, HTML/CSS. Projects: event management and full-stack auction platform."
+      }
+    },
+    "rates": "Accessible rates · Free quote within 48h",
+    "credentials": {
+      "title": "Training & achievements",
+      "fortyTwo": "Graduate of École 42 — intensive peer-to-peer programming school (C, C++, algorithms, Unix).",
+      "nasa": "1st place, NASA Space Apps Challenge, Málaga 2025 — selected for national qualification."
+    },
+    "additionalServices": {
+      "title": "Post-delivery services",
+      "subtitle": "Need help after launch? Two options to keep your site running strong.",
+      "adminPanel": {
+        "title": "Admin panel",
+        "description": "Update your text, images and menu yourself — no developer required.",
+        "cta": "Ask about this option"
+      },
+      "maintenance": {
+        "title": "Monthly maintenance",
+        "description": "Updates, security patches and support over several months.",
+        "cta": "Ask about this option"
       }
     }
   },

@@ -1,38 +1,52 @@
 <template>
   <section>
-    <MetaTags 
-      :title="$t('about.title')"
+    <MetaTags
+      :title="$t('about.title') + ' | Melchior JORDA'"
       :description="$t('about.intro')"
       keywords="Melchior JORDA, About, Skills, Experience, École 42, Web Developer, Software Developer, Vue.js, JavaScript, C Programming, Frontend, Backend, PHP, Symfony, Málaga, Spain"
       url="/about"
     />
-    
-    <!-- Titre responsive -->
+
     <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-primary dark:text-accent-50">
       {{ $t('about.title') }}
     </h1>
-    
-    <!-- Introduction Section -->
+
+    <!-- 1. Value proposition — client-first opening (AC: 1, 2) -->
     <div class="mt-6 sm:mt-8">
-      <div class="bg-accent-50 dark:bg-slate-800 p-6 sm:p-8 rounded-lg relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden">
-        <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
-        <div class="flex items-start">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-7 h-7 text-orange-500 dark:text-orange-400 mr-4 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
-            <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"/>
-          </svg>
-          <p class="text-base sm:text-lg text-slate-600 dark:text-accent-200 leading-relaxed">
-            {{ $t('about.intro') }}
-          </p>
-        </div>
+      <div class="bg-accent-50 dark:bg-slate-800 p-6 sm:p-8 rounded-lg">
+        <p class="text-base sm:text-lg text-slate-600 dark:text-accent-200 leading-relaxed">
+          {{ $t('about.intro') }}
+        </p>
+        <p class="mt-3 text-sm font-medium text-orange-500 dark:text-orange-400">
+          {{ $t('about.rates') }}
+        </p>
       </div>
     </div>
 
-    <!-- Skills Section -->
+    <!-- 2. Credentials — 42 + NASA proof-points (AC: 2, 3) -->
+    <div class="mt-8 sm:mt-10">
+      <h2 class="text-lg sm:text-xl font-semibold text-primary dark:text-accent-50 mb-4">
+        {{ $t('about.credentials.title') }}
+      </h2>
+      <div class="flex flex-col gap-3">
+        <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200">
+          {{ $t('about.credentials.fortyTwo') }}
+        </p>
+        <div>
+          <NasaBadge variant="sm" />
+        </div>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200">
+          {{ $t('about.credentials.nasa') }}
+        </p>
+      </div>
+    </div>
+
+    <!-- 3. Skills section — conservée telle quelle -->
     <div class="mt-10 sm:mt-12">
       <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-primary dark:text-accent-50 mb-6">
         {{ $t('about.skills_title') }}
       </h2>
-      
+
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
         <!-- Frontend Card -->
         <div class="bg-accent-50 dark:bg-slate-800 p-6 sm:p-8 rounded-lg relative group transition-shadow duration-300 hover:shadow-xl overflow-hidden">
@@ -115,16 +129,62 @@
         </div>
       </div>
     </div>
+
+    <!-- 4. Additional services (AC: 4, 5, 6, 7) -->
+    <div class="mt-10 sm:mt-12">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-primary dark:text-accent-50 mb-2">
+        {{ $t('about.additionalServices.title') }}
+      </h2>
+      <p class="text-sm text-slate-600 dark:text-accent-200 mb-6">
+        {{ $t('about.additionalServices.subtitle') }}
+      </p>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
+        <article
+          role="article"
+          class="bg-accent-50 dark:bg-slate-800 p-6 rounded-lg border border-transparent hover:border-orange-500 dark:hover:border-orange-400 hover:shadow-md transition-all duration-300"
+        >
+          <h3 class="text-base font-semibold text-primary dark:text-accent-50 mb-2">
+            {{ $t('about.additionalServices.adminPanel.title') }}
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-accent-200 mb-4">
+            {{ $t('about.additionalServices.adminPanel.description') }}
+          </p>
+          <router-link
+            to="/contact"
+            class="inline-block px-4 py-2 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium text-sm"
+          >
+            {{ $t('about.additionalServices.adminPanel.cta') }}
+          </router-link>
+        </article>
+
+        <article
+          role="article"
+          class="bg-accent-50 dark:bg-slate-800 p-6 rounded-lg border border-transparent hover:border-orange-500 dark:hover:border-orange-400 hover:shadow-md transition-all duration-300"
+        >
+          <h3 class="text-base font-semibold text-primary dark:text-accent-50 mb-2">
+            {{ $t('about.additionalServices.maintenance.title') }}
+          </h3>
+          <p class="text-sm text-slate-600 dark:text-accent-200 mb-4">
+            {{ $t('about.additionalServices.maintenance.description') }}
+          </p>
+          <router-link
+            to="/contact"
+            class="inline-block px-4 py-2 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium text-sm"
+          >
+            {{ $t('about.additionalServices.maintenance.cta') }}
+          </router-link>
+        </article>
+      </div>
+    </div>
   </section>
 </template>
 
 <script>
 import MetaTags from '@/components/MetaTags.vue'
+import NasaBadge from '@/components/NasaBadge.vue'
 
-export default { 
+export default {
   name: 'About',
-  components: {
-    MetaTags
-  }
+  components: { MetaTags, NasaBadge }
 }
 </script>
