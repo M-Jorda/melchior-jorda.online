@@ -61,8 +61,15 @@
     "placeholder_description": "Courte description du projet utilisant une stack web moderne.",
     "view_live": "Voir en direct",
     "try_replit": "Essayer sur Repl.it",
+    "contactCTA": "Me contacter pour un projet similaire",
+    "altSuffix": "réalisé pour client",
+    "status": {
+      "delivered": "Livré ✓",
+      "inProgress": "En cours"
+    },
     "categories": {
       "all": "Tous",
+      "clients": "Clients",
       "websites": "Sites Web",
       "school42": "Projets École 42",
       "applications": "Applications"
@@ -70,23 +77,39 @@
     "items": {
       "minata-portfolio": {
         "title": "From MY Window - Minata Sartori",
-        "description": "Site portfolio professionnel pour la photographe et réalisatrice Minata Sartori. Site multi-pages avec galeries photo, projets vidéo et travaux radio. Entièrement responsive avec lecteurs médias interactifs."
+        "description": "Site portfolio professionnel pour la photographe et réalisatrice Minata Sartori. Site multi-pages avec galeries photo, projets vidéo et travaux radio. Entièrement responsive avec lecteurs médias interactifs.",
+        "clientContext": "Photographe et réalisatrice ayant besoin d'un portfolio multi-pages pour présenter ses travaux photo et vidéo de façon professionnelle.",
+        "result": "Portfolio multi-pages responsive avec lecteurs médias interactifs — met en valeur photographies, films et productions radio."
       },
       "trixie-conciergerie": {
         "title": "Trixie Conciergerie",
-        "description": "Site de services de conciergerie de luxe pour Saint-Tropez. Système de réservation, gestion des services, nettoyage, jardinage et maintenance immobilière. Design moderne responsive optimisé pour le SEO."
+        "description": "Site de services de conciergerie de luxe pour Saint-Tropez. Système de réservation, gestion des services, nettoyage, jardinage et maintenance immobilière. Design moderne responsive optimisé pour le SEO.",
+        "clientContext": "Service de conciergerie de luxe à Saint-Tropez ayant besoin d'un site haut de gamme pour attirer une clientèle aisée et gérer les réservations.",
+        "result": "Site moderne et responsive avec système de réservation et optimisation SEO — présence en ligne à la hauteur du positionnement premium."
       },
       "miss-boat": {
         "title": "Miss Boat",
-        "description": "Site de location de bateaux pour Cavalaire-sur-Mer. Locations sans permis dès 16 ans. Construit avec Vue.js, Vue Router et Tailwind CSS. Pages tarifaires, galerie et contact, design responsive."
+        "description": "Site de location de bateaux pour Cavalaire-sur-Mer. Locations sans permis dès 16 ans. Construit avec Vue.js, Vue Router et Tailwind CSS. Pages tarifaires, galerie et contact, design responsive.",
+        "clientContext": "Société de location de bateaux à Cavalaire-sur-Mer proposant des locations sans permis dès 16 ans, cherchant une vitrine en ligne avec tarification.",
+        "result": "Site Vue.js avec Tailwind CSS, page tarifs et galerie — en cours de finalisation, livraison prévue prochainement."
       },
       "elsa-psychologue": {
         "title": "Elsa Psychologue",
-        "description": "Site professionnel pour la psychologue Elsa. Design épuré avec prise de rendez-vous, informations sur les thérapies et coordonnées. Hébergé sur Firebase."
+        "description": "Site professionnel pour la psychologue Elsa. Design épuré avec prise de rendez-vous, informations sur les thérapies et coordonnées. Hébergé sur Firebase.",
+        "clientContext": "Psychologue en cabinet individuel cherchant un site professionnel et rassurant pour gagner la confiance des patients en ligne.",
+        "result": "Site épuré et apaisant déployé sur Firebase — prise de rendez-vous en ligne et présentation claire des services thérapeutiques."
       },
       "les-planches": {
         "title": "Les Planches",
-        "description": "Site d'un restaurant méditerranéen à Cavalaire-sur-Mer. Galeries animées pour menu et boissons, effets de scroll fluides et design responsive."
+        "description": "Site d'un restaurant méditerranéen à Cavalaire-sur-Mer. Galeries animées pour menu et boissons, effets de scroll fluides et design responsive.",
+        "clientContext": "Restaurant de tapas méditerranéen à Cavalaire-sur-Mer souhaitant une présence en ligne pour attirer les touristes près de Saint-Tropez.",
+        "result": "Livré en 3 semaines avec galerie animée et scroll fluide — ouverture de saison opérationnelle."
+      },
+      "le-nain-vert": {
+        "title": "Le Nain Vert",
+        "description": "Plateforme e-commerce streetwear psychédélique avec inventaire temps réel, paiement sécurisé et tableau de bord admin par rôles.",
+        "clientContext": "Marque streetwear à identité forte cherchant une plateforme e-commerce complète avec gestion des stocks et panneau d'administration.",
+        "result": "Plateforme full-stack Vue.js + Firebase avec inventaire temps réel, paiement sécurisé et tableau de bord admin par rôles — en cours de développement."
       },
       "re-fresh-earth": {
         "title": "Re-Fresh Earth",

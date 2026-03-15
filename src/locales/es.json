@@ -61,8 +61,15 @@
     "placeholder_description": "Breve descripción del proyecto usando stack web moderno.",
     "view_live": "Ver en vivo",
     "try_replit": "Probar en Repl.it",
+    "contactCTA": "Contactarme por un proyecto similar",
+    "altSuffix": "realizado para cliente",
+    "status": {
+      "delivered": "Entregado ✓",
+      "inProgress": "En curso"
+    },
     "categories": {
       "all": "Todos",
+      "clients": "Clientes",
       "websites": "Sitios Web",
       "school42": "Proyectos Escuela 42",
       "applications": "Aplicaciones"
@@ -70,23 +77,39 @@
     "items": {
       "minata-portfolio": {
         "title": "From MY Window - Minata Sartori",
-        "description": "Sitio portfolio profesional para la fotógrafa y directora Minata Sartori. Sitio multipágina con galerías de fotos, proyectos de vídeo y trabajos de radio. Totalmente responsive con reproductores multimedia interactivos."
+        "description": "Sitio portfolio profesional para la fotógrafa y directora Minata Sartori. Sitio multipágina con galerías de fotos, proyectos de vídeo y trabajos de radio. Totalmente responsive con reproductores multimedia interactivos.",
+        "clientContext": "Fotógrafa y realizadora que necesitaba un portfolio multipágina para presentar sus trabajos foto y vídeo de forma profesional.",
+        "result": "Portfolio multipágina responsive con reproductores multimedia interactivos — muestra fotografía, cine y producciones de radio."
       },
       "trixie-conciergerie": {
         "title": "Trixie Conciergerie",
-        "description": "Sitio de servicios de conserjería de lujo para Saint-Tropez. Sistema de reservas, gestión de servicios, limpieza, jardinería y mantenimiento de propiedades. Diseño moderno responsive optimizado para SEO."
+        "description": "Sitio de servicios de conserjería de lujo para Saint-Tropez. Sistema de reservas, gestión de servicios, limpieza, jardinería y mantenimiento de propiedades. Diseño moderno responsive optimizado para SEO.",
+        "clientContext": "Servicio de conserjería de lujo en Saint-Tropez que necesitaba un sitio web de alto nivel para atraer clientes selectos y gestionar reservas.",
+        "result": "Sitio moderno y responsive con sistema de reservas y optimización SEO — presencia online acorde al posicionamiento premium."
       },
       "miss-boat": {
         "title": "Miss Boat",
-        "description": "Sitio de alquiler de barcos para Cavalaire-sur-Mer. Alquileres sin licencia desde 16 años. Construido con Vue.js, Vue Router y Tailwind CSS. Páginas de precios, galería y contacto, diseño responsive."
+        "description": "Sitio de alquiler de barcos para Cavalaire-sur-Mer. Alquileres sin licencia desde 16 años. Construido con Vue.js, Vue Router y Tailwind CSS. Páginas de precios, galería y contacto, diseño responsive.",
+        "clientContext": "Empresa de alquiler de barcos en Cavalaire-sur-Mer con alquileres sin licencia desde 16 años, buscando un escaparate online con precios.",
+        "result": "Sitio Vue.js con Tailwind CSS, página de precios y galería — actualmente en progreso, entrega prevista próximamente."
       },
       "elsa-psychologue": {
         "title": "Elsa Psychologue",
-        "description": "Sitio profesional para la psicóloga Elsa. Diseño limpio con reserva de citas, información sobre terapias y datos de contacto. Alojado en Firebase."
+        "description": "Sitio profesional para la psicóloga Elsa. Diseño limpio con reserva de citas, información sobre terapias y datos de contacto. Alojado en Firebase.",
+        "clientContext": "Psicóloga en consulta individual buscando un sitio web profesional y tranquilizador para generar confianza en pacientes online.",
+        "result": "Sitio limpio y calmante desplegado en Firebase — reserva de citas online y presentación clara de servicios terapéuticos."
       },
       "les-planches": {
         "title": "Les Planches",
-        "description": "Sitio de un restaurante mediterráneo en Cavalaire-sur-Mer. Galerías animadas para el menú y bebidas, efectos de desplazamiento suaves y diseño responsive."
+        "description": "Sitio de un restaurante mediterráneo en Cavalaire-sur-Mer. Galerías animadas para el menú y bebidas, efectos de desplazamiento suaves y diseño responsive.",
+        "clientContext": "Restaurante de tapas mediterráneo en Cavalaire-sur-Mer en busca de presencia online para atraer turistas cerca de Saint-Tropez.",
+        "result": "Entregado en 3 semanas con galería animada y desplazamiento fluido — apertura de temporada operativa."
+      },
+      "le-nain-vert": {
+        "title": "Le Nain Vert",
+        "description": "Plataforma de e-commerce streetwear psicodélico con inventario en tiempo real, pasarela de pago segura y panel de administración por roles.",
+        "clientContext": "Marca de streetwear con identidad audaz que busca una plataforma de e-commerce completa con gestión de inventario y panel de control.",
+        "result": "Plataforma full-stack Vue.js + Firebase con inventario en tiempo real, pago seguro y panel de administración por roles — en desarrollo."
       },
       "re-fresh-earth": {
         "title": "Re-Fresh Earth",

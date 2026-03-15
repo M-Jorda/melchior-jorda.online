@@ -32,6 +32,20 @@
       </button>
     </div>
 
+    <!-- Clients Section -->
+    <div v-show="selectedCategory === 'all' || selectedCategory === 'client'" class="mt-10">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-primary dark:text-accent-50 mb-4 border-b-2 border-primary dark:border-accent-100 pb-2">
+        {{ $t('projects.categories.clients') }}
+      </h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4 sm:gap-5 md:gap-6">
+        <ProjectCard
+          v-for="project in clientProjects"
+          :key="project.id"
+          :project="project"
+        />
+      </div>
+    </div>
+
     <!-- Websites Section -->
     <div v-show="selectedCategory === 'all' || selectedCategory === 'websites'" class="mt-10">
       <h2 class="text-lg sm:text-xl md:text-2xl font-bold text-primary dark:text-accent-50 mb-4 border-b-2 border-primary dark:border-accent-100 pb-2">
@@ -220,11 +234,13 @@
 <script>
 import projectsData from '@/data/projects.json'
 import MetaTags from '@/components/MetaTags.vue'
+import ProjectCard from '@/components/ProjectCard.vue'
 
 export default {
   name: 'Projects',
   components: {
-    MetaTags
+    MetaTags,
+    ProjectCard
   },
   data() {
     return {
@@ -236,10 +252,14 @@ export default {
     filterCategories() {
       return [
         { value: 'all', label: this.$t('projects.categories.all') },
+        { value: 'client', label: this.$t('projects.categories.clients') },
         { value: 'websites', label: this.$t('projects.categories.websites') },
         { value: '42', label: this.$t('projects.categories.school42') },
         { value: 'applications', label: this.$t('projects.categories.applications') }
       ]
+    },
+    clientProjects() {
+      return this.projects.filter(p => p.category === 'client')
     },
     websiteProjects() {
       return this.projects.filter(p => p.category === 'websites')

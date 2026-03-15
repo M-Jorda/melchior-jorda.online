@@ -1,0 +1,82 @@
+# generated: 2026-03-14
+# last_updated: 2026-03-14
+# project: melchior-jorda.online
+# project_key: NOKEY
+# tracking_system: file-system
+# story_location: _bmad-output/implementation-artifacts
+
+# STATUS DEFINITIONS:
+# ==================
+# Epic Status:
+#   - backlog: Epic not yet started
+#   - in-progress: Epic actively being worked on
+#   - done: All stories in epic completed
+#
+# Epic Status Transitions:
+#   - backlog → in-progress: Automatically when first story is created (via create-story)
+#   - in-progress → done: Manually when all stories reach 'done' status
+#
+# Story Status:
+#   - backlog: Story only exists in epic file
+#   - ready-for-dev: Story file created in stories folder
+#   - in-progress: Developer actively working on implementation
+#   - review: Ready for code review (via Dev's code-review workflow)
+#   - done: Story completed
+#
+# Retrospective Status:
+#   - optional: Can be completed but not required
+#   - done: Retrospective has been completed
+#
+# WORKFLOW NOTES:
+# ===============
+# - Epic transitions to 'in-progress' automatically when first story is created
+# - Stories can be worked in parallel if team capacity allows
+# - SM typically creates next story after previous one is 'done' to incorporate learnings
+# - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
+
+generated: 2026-03-14
+last_updated: 2026-03-15
+project: melchior-jorda.online
+project_key: NOKEY
+tracking_system: file-system
+story_location: _bmad-output/implementation-artifacts
+
+development_status:
+  # Epic 1: Découverte des projets clients enrichis
+  epic-1: in-progress
+  1-1-enrichissement-du-schema-projects-json-et-migration-des-donnees: done
+  1-2-extension-de-projectcard-vue-avec-les-champs-enrichis: done
+  1-3-creation-de-projectfilter-vue-onglets-clients-projets-42: backlog
+  1-4-creation-de-nasabadge-vue-composant-badge-de-credibilite: backlog
+  epic-1-retrospective: optional
+
+  # Epic 2: Page d'accueil — signal fort
+  epic-2: backlog
+  2-1-reformulation-du-hero-home-vue-avec-signal-de-credibilite-immediat: backlog
+  2-2-creation-de-offreblock-vue-section-offre-freelance: backlog
+  epic-2-retrospective: optional
+
+  # Epic 3: Contact accessible depuis n'importe quelle page
+  epic-3: backlog
+  3-1-cta-contact-persistant-depuis-toutes-les-pages: backlog
+  3-2-renforcement-du-formulaire-contact-vue-4-etats-rgpd: backlog
+  epic-3-retrospective: optional
+
+  # Epic 4: Vitrine technique pour recruteurs (Projets 42)
+  epic-4: backlog
+  4-1-creation-de-la-route-42-et-de-la-page-fortytwo-vue: backlog
+  4-2-creation-de-projectvideo-vue-lecteur-video-lazy: backlog
+  # Note: Story 4.3 (Viz42.vue) supprimée le 2026-03-14 — couverte par ProjectVideo.vue (Story 4.2)
+  epic-4-retrospective: optional
+
+  # Epic 5: Profil complet et services additionnels
+  epic-5: backlog
+  5-1-mise-a-jour-de-about-vue-ton-client-first-services-additionnels: backlog
+  epic-5-retrospective: optional
+
+  # Epic 6: Qualité, performance et tracking
+  epic-6: backlog
+  6-1-integration-google-analytics-4: backlog
+  6-2-mise-a-jour-seo-pour-la-route-42: backlog
+  6-3-audit-accessibilite-et-performance: backlog
+  epic-6-retrospective: optional
