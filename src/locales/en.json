@@ -5,6 +5,7 @@
   "nav": {
     "home": "Home",
     "projects": "Projects",
+    "fortyTwo": "42 Projects",
     "about": "About",
     "resume": "Resume",
     "contact": "Contact",
@@ -370,5 +371,11 @@
     "back_home": "Back to Home",
     "view_projects": "View Projects",
     "looking_for": "You might be looking for:"
+  },
+  "fortyTwo": {
+    "pageTitle": "École 42 Projects",
+    "pageSubtitle": "Explore the technical projects built at École 42 Málaga.",
+    "schoolTitle": "What is École 42?",
+    "schoolExplanation": "École 42 is a software engineering school with no lectures and no teachers. Projects are peer-validated, covering C/C++ systems, algorithms, Unix, networking, and graphics. Mel is at Circle 4."
   }
 }

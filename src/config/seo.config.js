@@ -68,6 +68,11 @@ export const SEO_CONFIG = {
       title: 'Contact',
       description: 'Get in touch with me for collaborations, job opportunities, or questions.',
       path: '/contact'
+    },
+    fortyTwo: {
+      title: '42 Projects | Melchior JORDA',
+      description: "Explore Mel's technical projects from École 42 Málaga: systems programming in C/C++, algorithms, Unix, and more.",
+      path: '/42'
     }
   }
 }

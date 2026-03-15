@@ -40,6 +40,7 @@
         <ul class="flex gap-4 xl:gap-6 items-center">
           <li><router-link class="nav-link" to="/">{{ $t('nav.home') }}</router-link></li>
           <li><router-link class="nav-link" to="/projects">{{ $t('nav.projects') }}</router-link></li>
+          <li><router-link class="nav-link" to="/42">{{ $t('nav.fortyTwo') }}</router-link></li>
           <li><router-link class="nav-link" to="/about">{{ $t('nav.about') }}</router-link></li>
           <li><router-link class="nav-link" to="/resume">{{ $t('nav.resume') }}</router-link></li>
           <li><router-link class="nav-link" to="/contact">{{ $t('nav.contact') }}</router-link></li>
@@ -135,18 +136,27 @@
               </router-link>
             </li>
             <li>
-              <router-link 
-                @click="closeMobileMenu" 
-                class="nav-link-mobile" 
+              <router-link
+                @click="closeMobileMenu"
+                class="nav-link-mobile"
                 to="/projects"
               >
                 {{ $t('nav.projects') }}
               </router-link>
             </li>
             <li>
-              <router-link 
-                @click="closeMobileMenu" 
-                class="nav-link-mobile" 
+              <router-link
+                @click="closeMobileMenu"
+                class="nav-link-mobile"
+                to="/42"
+              >
+                {{ $t('nav.fortyTwo') }}
+              </router-link>
+            </li>
+            <li>
+              <router-link
+                @click="closeMobileMenu"
+                class="nav-link-mobile"
                 to="/about"
               >
                 {{ $t('nav.about') }}

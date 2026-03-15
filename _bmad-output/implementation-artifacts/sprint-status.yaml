@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-03-14
-last_updated: 2026-03-15 # story 3.2 done
+last_updated: 2026-03-15 # story 4.1 done
 project: melchior-jorda.online
 project_key: NOKEY
 tracking_system: file-system
@@ -63,8 +63,8 @@ development_status:
   epic-3-retrospective: optional
 
   # Epic 4: Vitrine technique pour recruteurs (Projets 42)
-  epic-4: backlog
-  4-1-creation-de-la-route-42-et-de-la-page-fortytwo-vue: backlog
+  epic-4: in-progress
+  4-1-creation-de-la-route-42-et-de-la-page-fortytwo-vue: done
   4-2-creation-de-projectvideo-vue-lecteur-video-lazy: backlog
   # Note: Story 4.3 (Viz42.vue) supprimée le 2026-03-14 — couverte par ProjectVideo.vue (Story 4.2)
   epic-4-retrospective: optional

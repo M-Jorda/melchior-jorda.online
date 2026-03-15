@@ -5,6 +5,7 @@
   "nav": {
     "home": "Inicio",
     "projects": "Proyectos",
+    "fortyTwo": "Proyectos 42",
     "about": "Sobre mí",
     "resume": "CV",
     "contact": "Contacto",
@@ -370,5 +371,11 @@
     "back_home": "Volver al Inicio",
     "view_projects": "Ver Proyectos",
     "looking_for": "Quizás estés buscando:"
+  },
+  "fortyTwo": {
+    "pageTitle": "Proyectos École 42",
+    "pageSubtitle": "Descubre los proyectos técnicos realizados en École 42 Málaga.",
+    "schoolTitle": "¿Qué es la École 42?",
+    "schoolExplanation": "École 42 es una escuela de ingeniería de software sin clases ni profesores. Los proyectos son validados por pares y cubren sistemas C/C++, algoritmia, Unix, redes y programación gráfica. Mel está en el Círculo 4."
   }
 }

@@ -5,6 +5,7 @@
   "nav": {
     "home": "Accueil",
     "projects": "Projets",
+    "fortyTwo": "Projets 42",
     "about": "À propos",
     "resume": "CV",
     "contact": "Contact",
@@ -370,5 +371,11 @@
     "back_home": "Retour à l'Accueil",
     "view_projects": "Voir les Projets",
     "looking_for": "Vous cherchez peut-être :"
+  },
+  "fortyTwo": {
+    "pageTitle": "Projets École 42",
+    "pageSubtitle": "Découvre les projets techniques réalisés à l'École 42 Málaga.",
+    "schoolTitle": "C'est quoi l'École 42 ?",
+    "schoolExplanation": "L'École 42 est une formation en ingénierie logicielle sans cours magistraux ni professeurs. Les projets sont validés par les pairs, les cursus couvrent C/C++ systèmes, algorithmique, Unix, réseau et programmation graphique. Mel est au Cercle 4."
   }
 }
