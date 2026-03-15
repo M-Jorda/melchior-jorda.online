@@ -48,7 +48,7 @@ export default {
           return base + ' bg-orange-500 dark:bg-orange-400 text-white dark:text-primary border-transparent'
         }
         if (value === '42') {
-          return base + ' bg-indigo-600/20 text-indigo-400 border-indigo-500/40'
+          return base + ' bg-indigo-600/20 text-indigo-700 dark:text-indigo-400 border-indigo-500/40'
         }
       }
       return base + ' bg-accent-50 dark:bg-slate-800 text-primary dark:text-accent-100 border-transparent hover:bg-orange-100 dark:hover:bg-slate-700'

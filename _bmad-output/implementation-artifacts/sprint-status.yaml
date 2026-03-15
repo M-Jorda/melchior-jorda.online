@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-03-14
-last_updated: 2026-03-15 # story 6.2 done
+last_updated: 2026-03-15 # story 6.3 done
 project: melchior-jorda.online
 project_key: NOKEY
 tracking_system: file-system
@@ -78,5 +78,5 @@ development_status:
   epic-6: in-progress
   6-1-integration-google-analytics-4: done
   6-2-mise-a-jour-seo-pour-la-route-42: done
-  6-3-audit-accessibilite-et-performance: backlog
+  6-3-audit-accessibilite-et-performance: done
   epic-6-retrospective: optional

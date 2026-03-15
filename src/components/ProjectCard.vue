@@ -81,7 +81,7 @@
         target="_blank"
         rel="noopener noreferrer"
         :aria-label="$t('projects.view_live') + ' – ' + projectTitle"
-        class="text-sm px-4 py-2 bg-primary dark:bg-orange-400 dark:text-primary text-white rounded hover:opacity-80 transition-opacity"
+        class="text-sm px-4 py-2 bg-primary dark:bg-orange-400 dark:text-primary text-white rounded hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-orange-500"
       >
         {{ $t('projects.view_live') }}
       </a>
@@ -91,7 +91,7 @@
         target="_blank"
         rel="noopener noreferrer"
         :aria-label="'GitHub – ' + projectTitle"
-        class="text-sm px-4 py-2 border border-primary dark:border-accent-100 text-primary dark:text-accent-100 rounded hover:bg-primary/10 dark:hover:bg-accent-100/10 transition-colors"
+        class="text-sm px-4 py-2 border border-primary dark:border-accent-100 text-primary dark:text-accent-100 rounded hover:bg-primary/10 dark:hover:bg-accent-100/10 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
       >
         GitHub
       </a>
@@ -101,7 +101,7 @@
     <router-link
       v-if="project.category === 'client'"
       to="/contact"
-      class="text-sm text-orange-500 dark:text-orange-400 hover:underline mt-3 inline-block"
+      class="text-sm text-orange-500 dark:text-orange-400 hover:underline mt-3 inline-block focus:outline-none focus:ring-2 focus:ring-orange-500 rounded"
     >
       {{ $t('projects.contactCTA') }}
     </router-link>

@@ -10,7 +10,7 @@
     >
     <div class="container mx-auto px-4 flex items-center justify-between">
       <!-- Logo et titre -->
-      <router-link @click="closeMobileMenu" to="/" class="flex items-center gap-2 md:gap-3 cursor-pointer hover:opacity-80 transition-opacity">
+      <router-link @click="closeMobileMenu" to="/" class="flex items-center gap-2 md:gap-3 cursor-pointer hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-orange-500 rounded-lg">
         <img src="/favicon.png" alt="Melchior JORDA" class="w-8 h-8 md:w-10 md:h-10" />
         <div>
           <div class="text-sm md:text-lg font-semibold text-primary dark:text-accent-50">
@@ -108,7 +108,7 @@
           </li>
 
           <li>
-            <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="px-2 xl:px-3 py-1 text-sm rounded border border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300">
+            <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="px-2 xl:px-3 py-1 text-sm rounded border border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
               <span class="sr-only">Toggle theme</span>
               <span aria-hidden="true">{{ isDark ? $t('theme.dark') : $t('theme.light') }}</span>
             </button>
@@ -239,7 +239,7 @@
 
             <!-- Toggle theme -->
             <li class="py-3">
-              <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="w-full px-4 py-2 rounded border border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300">
+              <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="w-full px-4 py-2 rounded border border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
                 <span class="sr-only">Toggle theme</span>
                 <span aria-hidden="true">{{ isDark ? '🌙 ' + $t('theme.dark_mode') : '☀️ ' + $t('theme.light_mode') }}</span>
               </button>
@@ -469,6 +469,15 @@ export default {
   background-color: rgba(255, 159, 67, 0.1);
 }
 
+.nav-link:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff7a18;
+}
+
+.dark .nav-link:focus-visible {
+  box-shadow: 0 0 0 2px #ff9f43;
+}
+
 /* Style pour le lien actif - avec barre en dessous */
 .nav-link.router-link-active,
 .nav-link.router-link-exact-active {
@@ -527,6 +536,16 @@ export default {
   padding-left: 1.5rem;
 }
 
+.nav-link-mobile:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff7a18;
+  border-radius: 0.25rem;
+}
+
+.dark .nav-link-mobile:focus-visible {
+  box-shadow: 0 0 0 2px #ff9f43;
+}
+
 .dark .nav-link-mobile:hover {
   color: #ff9f43;
 }
@@ -581,6 +600,16 @@ export default {
 
 .flag-btn:hover {
   transform: scale(1.1);
+}
+
+.flag-btn:focus-visible {
+  outline: none;
+  box-shadow: 0 0 0 2px #ff7a18;
+  border-radius: 0.25rem;
+}
+
+.dark .flag-btn:focus-visible {
+  box-shadow: 0 0 0 2px #ff9f43;
 }
 
 .flag-btn.flag-active {
