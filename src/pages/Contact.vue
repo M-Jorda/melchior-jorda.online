@@ -1,12 +1,12 @@
 <template>
   <section>
-    <MetaTags 
+    <MetaTags
       title="Contact | Melchior JORDA"
       :description="$t('contact.subtitle')"
       keywords="Contact, Melchior JORDA, Web Developer, Get in Touch, Hire Developer, LinkedIn, Email, Remote Work, Freelance Developer"
       url="/contact"
     />
-    
+
     <!-- Titre responsive -->
     <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-primary dark:text-accent-50">
       {{ $t('contact.title') }}
@@ -18,8 +18,8 @@
     <!-- Contact Links Cards -->
     <div class="mt-6 sm:mt-8 grid grid-cols-1 md:grid-cols-3 gap-4">
       <!-- LinkedIn Card -->
-      <a 
-        :href="linkedinUrl" 
+      <a
+        :href="linkedinUrl"
         target="_blank"
         rel="noopener noreferrer"
         class="bg-accent-50 dark:bg-slate-800 p-5 rounded-lg relative group transition-all duration-300 hover:shadow-lg overflow-hidden block"
@@ -38,7 +38,7 @@
       </a>
 
       <!-- Email Card -->
-      <a 
+      <a
         :href="emailLink"
         @click.prevent="revealEmail"
         class="bg-accent-50 dark:bg-slate-800 p-5 rounded-lg relative group transition-all duration-300 hover:shadow-lg overflow-hidden block cursor-pointer"
@@ -57,7 +57,7 @@
       </a>
 
       <!-- Phone Card -->
-      <a 
+      <a
         :href="phoneLink"
         @click.prevent="revealPhone"
         class="bg-accent-50 dark:bg-slate-800 p-5 rounded-lg relative group transition-all duration-300 hover:shadow-lg overflow-hidden block cursor-pointer"
@@ -75,26 +75,6 @@
         </div>
       </a>
     </div>
-
-    <!-- Message de succès flottant (Teleport pour sortir du flux) -->
-    <Teleport to="body">
-      <div v-if="showSuccessMessage" class="notification-wrapper">
-        <div class="flex items-start notification-content">
-          <svg class="w-6 h-6 mr-3 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
-          </svg>
-          <div class="flex-1">
-            <h3 class="font-bold text-base notification-title">{{ $t('contact.success_title') }}</h3>
-            <p class="text-sm mt-1 notification-message">{{ $t('contact.success_message') }}</p>
-          </div>
-          <button @click="showSuccessMessage = false" class="ml-3 transition-colors flex-shrink-0 notification-close" aria-label="Close notification">
-            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
-            </svg>
-          </button>
-        </div>
-      </div>
-    </Teleport>
 
     <!-- Formulaire responsive avec max-width adaptative -->
     <div class="mt-8 sm:mt-10">
@@ -114,7 +94,8 @@
                 v-model="formData.name"
                 name="name"
                 :placeholder="$t('contact.form.name_placeholder')"
-                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none"
+                :disabled="formState === 'submitting'"
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                 required
               />
             </label>
@@ -129,7 +110,8 @@
                 name="email"
                 type="email"
                 :placeholder="$t('contact.form.email_placeholder')"
-                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none"
+                :disabled="formState === 'submitting'"
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed"
                 required
               />
             </label>
@@ -146,35 +128,67 @@
                 v-model="formData.message"
                 name="message"
                 :placeholder="$t('contact.form.message_placeholder')"
-                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-200 dark:focus:ring-orange-900 focus:outline-none resize-none flex-1"
+                :disabled="formState === 'submitting'"
+                class="block w-full border border-slate-300 dark:border-slate-600 rounded-lg p-2.5 sm:p-3 mt-1 text-sm sm:text-base bg-white dark:bg-slate-700 text-primary dark:text-accent-50 transition-colors duration-300 focus:border-orange-500 dark:focus:border-orange-400 focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 focus:outline-none resize-none flex-1 disabled:opacity-50 disabled:cursor-not-allowed"
                 required
               ></textarea>
             </label>
           </div>
         </div>
-        
+
         <!-- Honeypot anti-bot (champ invisible) -->
-        <input 
+        <input
           v-model="formData.website"
-          type="text" 
-          name="website" 
+          type="text"
+          name="website"
           class="hidden-field"
           tabindex="-1"
           autocomplete="off"
         />
-        
+
+        <!-- Mention RGPD -->
+        <p class="mt-3 text-xs text-slate-500 dark:text-slate-400">
+          {{ $t('contact.form.rgpd') }}
+        </p>
+
         <button
-          class="mt-4 sm:mt-5 w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium disabled:opacity-60 disabled:cursor-not-allowed flex items-center gap-2"
+          class="mt-4 sm:mt-5 w-full md:w-auto px-6 sm:px-8 py-2.5 sm:py-3 text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary rounded-lg hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium disabled:opacity-60 disabled:cursor-not-allowed focus:outline-none focus:ring-2 focus:ring-orange-500 dark:focus:ring-orange-400 flex items-center gap-2"
           type="submit"
-          :disabled="isLoading"
+          :disabled="formState === 'submitting'"
         >
-          <svg v-if="isLoading" class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+          <svg v-if="formState === 'submitting'" class="animate-spin h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
             <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z"></path>
           </svg>
-          {{ isLoading ? $t('contact.form.sending') : $t('contact.form.send') }}
+          {{ formState === 'submitting' ? $t('contact.form.sending') : $t('contact.form.send') }}
         </button>
       </form>
+
+      <!-- Zone de feedback inline -->
+      <div aria-live="polite" aria-atomic="true" class="mt-4">
+
+        <!-- État SUCCESS -->
+        <div v-if="formState === 'success'" class="flex items-center gap-3 p-4 rounded-lg bg-green-50 dark:bg-green-900/20 border border-green-200 dark:border-green-800">
+          <svg class="w-6 h-6 text-green-500 dark:text-green-400 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"/>
+          </svg>
+          <p class="text-sm text-green-700 dark:text-green-300 font-medium">{{ $t('contact.form.success') }}</p>
+        </div>
+
+        <!-- État ERROR -->
+        <div v-else-if="formState === 'error'" class="flex items-start gap-3 p-4 rounded-lg bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800">
+          <svg class="w-6 h-6 text-orange-500 dark:text-orange-400 flex-shrink-0 mt-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z"/>
+          </svg>
+          <div class="flex-1">
+            <p class="text-sm text-orange-700 dark:text-orange-300">{{ errorMessage }}</p>
+          </div>
+          <button @click="dismissError" class="text-orange-500 hover:text-orange-700 dark:text-orange-400 dark:hover:text-orange-200 text-xs underline flex-shrink-0">
+            {{ $t('contact.form.error_dismiss') }}
+          </button>
+        </div>
+
+      </div>
     </div>
   </section>
 </template>
@@ -184,7 +198,7 @@ import emailjs from '@emailjs/browser'
 import { emailjsConfig } from '../config/emailjs.config.js'
 import MetaTags from '@/components/MetaTags.vue'
 
-export default { 
+export default {
   name: 'Contact',
   components: {
     MetaTags
@@ -206,9 +220,9 @@ export default {
         message: '',
         website: '' // Honeypot - doit rester vide
       },
-      // Message de confirmation
-      showSuccessMessage: false,
-      isLoading: false
+      // Form state: 'idle' | 'submitting' | 'success' | 'error'
+      formState: 'idle',
+      errorMessage: null
     }
   },
   computed: {
@@ -250,13 +264,10 @@ export default {
         window.location.href = this.phoneLink
       })
     },
-    async handleSubmit(event) {
-      if (this.formData.website) {
-        console.warn('Bot detected - honeypot field filled')
-        return
-      }
+    async handleSubmit() {
+      if (this.formData.website) return
 
-      this.isLoading = true
+      this.formState = 'submitting'
 
       try {
         const templateParams = {
@@ -276,18 +287,20 @@ export default {
         this.formData.name = ''
         this.formData.email = ''
         this.formData.message = ''
-        this.showSuccessMessage = true
-
-        setTimeout(() => {
-          this.showSuccessMessage = false
-        }, 6000)
+        this.formData.website = ''
+        this.formState = 'success'
 
       } catch (error) {
         console.error('Erreur lors de l\'envoi:', error)
-        alert('Une erreur est survenue lors de l\'envoi du message. Veuillez réessayer.')
-      } finally {
-        this.isLoading = false
+        this.errorMessage = this.$t('contact.form.error', {
+          email: `${this.emailPart1}@${this.emailPart2}`
+        })
+        this.formState = 'error'
       }
+    },
+    dismissError() {
+      this.formState = 'idle'
+      this.errorMessage = null
     }
   }
 }
@@ -302,90 +315,5 @@ export default {
   height: 1px;
   opacity: 0;
   pointer-events: none;
-}
-
-/* Notification de succès flottante */
-.notification-wrapper {
-  position: fixed;
-  top: 80px;
-  right: 20px;
-  z-index: 9999;
-  max-width: 420px;
-  padding: 1rem 1.25rem;
-  background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 253, 244, 0.98));
-  border: 2px solid #10b981;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.5), 0 0 0 1px rgba(16, 185, 129, 0.1);
-  backdrop-filter: blur(10px);
-  animation: fadeInNotification 0.5s ease-out forwards;
-}
-
-/* Couleurs du contenu en light mode */
-.notification-content svg {
-  color: #15803d; /* green-700 */
-}
-
-.notification-title {
-  color: #14532d; /* green-900 */
-}
-
-.notification-message {
-  color: #166534; /* green-800 */
-}
-
-.notification-close {
-  color: #15803d; /* green-700 */
-}
-
-.notification-close:hover {
-  color: #14532d; /* green-900 */
-}
-
-@keyframes fadeInNotification {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
-}
-
-/* Dark mode (class-based) */
-:global(.dark) .notification-wrapper {
-  background: linear-gradient(135deg, rgba(6, 78, 59, 0.98), rgba(4, 120, 87, 0.98));
-  border-color: #059669;
-  box-shadow: 0 8px 24px rgba(16, 185, 129, 0.3);
-}
-
-/* Couleurs du contenu en dark mode */
-:global(.dark) .notification-content svg {
-  color: #4ade80; /* green-400 */
-}
-
-:global(.dark) .notification-title {
-  color: #bbf7d0; /* green-200 */
-}
-
-:global(.dark) .notification-message {
-  color: #86efac; /* green-300 */
-}
-
-:global(.dark) .notification-close {
-  color: #4ade80; /* green-400 */
-}
-
-:global(.dark) .notification-close:hover {
-  color: #bbf7d0; /* green-200 */
-}
-
-/* Responsive pour mobile */
-@media (max-width: 640px) {
-  .notification-wrapper {
-    top: 70px;
-    right: 16px;
-    left: 16px;
-    max-width: calc(100vw - 32px);
-    padding: 0.875rem 1rem;
-  }
 }
 </style>

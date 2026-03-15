@@ -64,8 +64,12 @@
       "email_placeholder": "jean{'@'}exemple.com",
       "message": "Message",
       "message_placeholder": "Parlez-moi de votre projet ou opportunité...",
-      "send": "Envoyer le Message",
-      "sending": "Envoi en cours..."
+      "send": "Envoyer mon message",
+      "sending": "Envoi en cours...",
+      "success": "Reçu ! Je te réponds sous 48h.",
+      "error": "Une erreur est survenue. Écris-moi directement à {email}.",
+      "error_dismiss": "Fermer",
+      "rgpd": "Tes données sont utilisées uniquement pour te répondre."
     },
     "links": {
       "linkedin": "LinkedIn"

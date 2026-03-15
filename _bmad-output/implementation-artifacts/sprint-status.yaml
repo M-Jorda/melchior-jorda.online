@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-03-14
-last_updated: 2026-03-15 # story 3.1 done
+last_updated: 2026-03-15 # story 3.2 done
 project: melchior-jorda.online
 project_key: NOKEY
 tracking_system: file-system
@@ -59,7 +59,7 @@ development_status:
   # Epic 3: Contact accessible depuis n'importe quelle page
   epic-3: in-progress
   3-1-cta-contact-persistant-depuis-toutes-les-pages: done
-  3-2-renforcement-du-formulaire-contact-vue-4-etats-rgpd: backlog
+  3-2-renforcement-du-formulaire-contact-vue-4-etats-rgpd: done
   epic-3-retrospective: optional
 
   # Epic 4: Vitrine technique pour recruteurs (Projets 42)

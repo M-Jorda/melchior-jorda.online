@@ -64,8 +64,12 @@
       "email_placeholder": "juan{'@'}ejemplo.com",
       "message": "Mensaje",
       "message_placeholder": "Cuéntame sobre tu proyecto u oportunidad...",
-      "send": "Enviar Mensaje",
-      "sending": "Enviando..."
+      "send": "Enviar mi mensaje",
+      "sending": "Enviando...",
+      "success": "¡Recibido! Te responderé en 48h.",
+      "error": "Ha ocurrido un error. Escríbeme directamente a {email}.",
+      "error_dismiss": "Cerrar",
+      "rgpd": "Tus datos solo se usan para responderte."
     },
     "links": {
       "linkedin": "LinkedIn"

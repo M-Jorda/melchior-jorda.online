@@ -64,8 +64,12 @@
       "email_placeholder": "john{'@'}example.com",
       "message": "Message",
       "message_placeholder": "Tell me about your project or opportunity...",
-      "send": "Send Message",
-      "sending": "Sending..."
+      "send": "Send my message",
+      "sending": "Sending...",
+      "success": "Received! I'll reply within 48h.",
+      "error": "An error occurred. Email me directly at {email}.",
+      "error_dismiss": "Close",
+      "rgpd": "Your data is used only to reply to you."
     },
     "links": {
       "linkedin": "LinkedIn"
