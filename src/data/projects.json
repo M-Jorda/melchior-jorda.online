@@ -117,7 +117,9 @@
     "description": "Sorting algorithm project that sorts data on a stack with a limited set of instructions. Implements efficient algorithms to sort integers using two stacks and specific operations.",
     "technologies": ["C", "Algorithms"],
     "category": "42",
-    "github": "https://github.com/M-Jorda/push_swap"
+    "github": "https://github.com/M-Jorda/push_swap",
+    "video": "assets/videos/push-swap/demo.mp4",
+    "poster": "assets/videos/push-swap/poster.webp"
   },
   {
     "id": "so-long",

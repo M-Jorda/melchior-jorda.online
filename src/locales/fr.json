@@ -376,6 +376,7 @@
     "pageTitle": "Projets École 42",
     "pageSubtitle": "Découvre les projets techniques réalisés à l'École 42 Málaga.",
     "schoolTitle": "C'est quoi l'École 42 ?",
-    "schoolExplanation": "L'École 42 est une formation en ingénierie logicielle sans cours magistraux ni professeurs — les projets sont validés par les pairs. Je suis dans l'ancien cursus, axé sur C/C++ systèmes, algorithmique, Unix, réseau et programmation graphique, et j'en suis au Cercle 4."
+    "schoolExplanation": "L'École 42 est une formation en ingénierie logicielle sans cours magistraux ni professeurs — les projets sont validés par les pairs. Je suis dans l'ancien cursus, axé sur C/C++ systèmes, algorithmique, Unix, réseau et programmation graphique, et j'en suis au Cercle 4.",
+    "videoUnavailable": "Vidéo non disponible"
   }
 }

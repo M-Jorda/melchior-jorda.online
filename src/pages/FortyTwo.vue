@@ -23,10 +23,25 @@
       </p>
     </div>
 
-    <!-- Grille projets 42 -->
+    <!-- Projets avec vidéo — layout 2 colonnes (vidéo + carte) -->
+    <div
+      v-for="project in projectsWithVideo"
+      :key="project.id + '-featured'"
+      class="mt-8 grid grid-cols-1 lg:grid-cols-2 gap-6 items-start"
+    >
+      <ProjectVideo
+        :src="project.video"
+        :srcWebm="project.video.replace('.mp4', '.webm')"
+        :poster="project.poster || ''"
+        :title="$t('projects.items.' + project.id + '.title')"
+      />
+      <ProjectCard :project="project" />
+    </div>
+
+    <!-- Projets sans vidéo — grille standard -->
     <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
       <ProjectCard
-        v-for="project in fortyTwoProjects"
+        v-for="project in projectsWithoutVideo"
         :key="project.id"
         :project="project"
       />
@@ -37,14 +52,21 @@
 <script>
 import MetaTags from '@/components/MetaTags.vue'
 import ProjectCard from '@/components/ProjectCard.vue'
+import ProjectVideo from '@/components/ProjectVideo.vue'
 import projectsData from '../data/projects.json'
 
 export default {
   name: 'FortyTwo',
-  components: { MetaTags, ProjectCard },
+  components: { MetaTags, ProjectCard, ProjectVideo },
   computed: {
     fortyTwoProjects() {
       return projectsData.filter(p => p.category === '42')
+    },
+    projectsWithVideo() {
+      return this.fortyTwoProjects.filter(p => p.video)
+    },
+    projectsWithoutVideo() {
+      return this.fortyTwoProjects.filter(p => !p.video)
     }
   }
 }
