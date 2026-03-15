@@ -74,6 +74,11 @@
       "school42": "Proyectos Escuela 42",
       "applications": "Aplicaciones"
     },
+    "filter": {
+      "clients": "Clientes",
+      "projets42": "Proyectos 42"
+    },
+    "emptyTab": "Proyectos en preparación — vuelve pronto.",
     "items": {
       "minata-portfolio": {
         "title": "From MY Window - Minata Sartori",
