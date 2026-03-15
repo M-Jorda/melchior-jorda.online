@@ -57,5 +57,16 @@
     <xhtml:link rel="alternate" hreflang="fr" href="https://melchior-jorda.online/projects" />
     <xhtml:link rel="alternate" hreflang="es" href="https://melchior-jorda.online/projects" />
   </url>
-  
+
+  <!-- 42 Projects Page -->
+  <url>
+    <loc>https://melchior-jorda.online/42</loc>
+    <lastmod>2026-03-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://melchior-jorda.online/42" />
+    <xhtml:link rel="alternate" hreflang="fr" href="https://melchior-jorda.online/42" />
+    <xhtml:link rel="alternate" hreflang="es" href="https://melchior-jorda.online/42" />
+  </url>
+
 </urlset>
