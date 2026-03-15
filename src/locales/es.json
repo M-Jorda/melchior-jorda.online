@@ -17,6 +17,12 @@
     "nasaBadge": {
       "title": "1er puesto · NASA Space Apps Challenge · Málaga 2025",
       "aria": "NASA Space Apps Challenge Málaga 2025 — 1er puesto"
+    },
+    "hero": {
+      "title": "Sitios web para artesanos, restauradores y profesiones liberales",
+      "subtitle": "Creo sitios claros y rápidos que atraen a tus clientes — presupuesto gratuito en 48h.",
+      "ctaPrimary": "Ver mis proyectos",
+      "ctaSecondary": "Presupuesto gratis"
     }
   },
   "footer": {

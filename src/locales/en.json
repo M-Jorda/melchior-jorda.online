@@ -17,6 +17,12 @@
     "nasaBadge": {
       "title": "1st place · NASA Space Apps Challenge · Málaga 2025",
       "aria": "NASA Space Apps Challenge Málaga 2025 — 1st place"
+    },
+    "hero": {
+      "title": "Websites for craftspeople, restaurateurs and independent professionals",
+      "subtitle": "I build clean, fast websites that attract your clients — free quote within 48h.",
+      "ctaPrimary": "See my projects",
+      "ctaSecondary": "Free quote"
     }
   },
   "footer": {

@@ -16,31 +16,31 @@
       </div>
 
       <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary dark:text-accent-50">
-        {{ $t('home.title') }}
+        {{ $t('home.hero.title') }}
       </h1>
       <p class="mt-3 sm:mt-4 text-base sm:text-lg md:text-xl text-slate-600 dark:text-accent-200 px-4">
-        {{ $t('home.subtitle') }}
+        {{ $t('home.hero.subtitle') }}
       </p>
-      
+
       <!-- Boutons responsive: empilés sur mobile, côte à côte sur tablette+ -->
       <div class="mt-5 sm:mt-6 flex flex-col sm:flex-row justify-center gap-3 sm:gap-4 px-4">
-        <router-link 
-          to="/projects" 
+        <a
+          href="#projets"
           class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base bg-orange-500 dark:bg-orange-400 text-white dark:text-primary hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium"
         >
-          {{ $t('home.see_projects') }}
-        </router-link>
-        <router-link 
-          to="/contact" 
+          {{ $t('home.hero.ctaPrimary') }}
+        </a>
+        <router-link
+          to="/contact"
           class="px-5 sm:px-6 py-2.5 sm:py-3 rounded-lg text-sm sm:text-base border-2 border-orange-500 dark:border-orange-400 text-orange-500 dark:text-orange-300 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300 font-medium"
         >
-          {{ $t('home.contact_me') }}
+          {{ $t('home.hero.ctaSecondary') }}
         </router-link>
       </div>
     </header>
 
     <!-- Section projets vedette -->
-    <section class="mt-8 sm:mt-10 md:mt-12">
+    <section id="projets" class="mt-8 sm:mt-10 md:mt-12">
       <h2 class="text-xl sm:text-2xl md:text-3xl font-semibold text-primary dark:text-accent-50">
         {{ $t('projects.featured') }}
       </h2>
@@ -96,7 +96,7 @@ export default {
   },
   data() {
     return {
-  featuredIds: ['re-fresh-earth', 'minata-portfolio', 'so-long'],
+      featuredIds: ['re-fresh-earth', 'minata-portfolio', 'so-long'],
       projects: projectsData
     }
   },
