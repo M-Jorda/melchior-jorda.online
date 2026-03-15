@@ -13,7 +13,11 @@
     "title": "Melchior JORDA — Desarrollador Full-Stack",
     "subtitle": "Apasionado por la programación de sistemas (C/C++) y el desarrollo web (Vue.js, PHP, Symfony). Sólidas bases en algoritmia, multithreading y diseño de aplicaciones adquiridas en École 42.",
     "see_projects": "Ver proyectos",
-    "contact_me": "Contactarme"
+    "contact_me": "Contactarme",
+    "nasaBadge": {
+      "title": "1er puesto · NASA Space Apps Challenge · Málaga 2025",
+      "aria": "NASA Space Apps Challenge Málaga 2025 — 1er puesto"
+    }
   },
   "footer": {
     "download_cv": "Descargar CV",

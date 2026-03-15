@@ -9,6 +9,12 @@
     
     <!-- Hero section responsive -->
     <header class="text-center py-8 sm:py-10 md:py-12 bg-accent-100 dark:bg-slate-800 rounded-lg p-4 sm:p-6 transition-colors duration-300">
+
+      <!-- Badge NASA — crédibilité immédiate -->
+      <div class="flex justify-center mb-4">
+        <NasaBadge variant="md" />
+      </div>
+
       <h1 class="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-primary dark:text-accent-50">
         {{ $t('home.title') }}
       </h1>
@@ -80,11 +86,13 @@
 <script>
 import projectsData from '@/data/projects.json'
 import MetaTags from '@/components/MetaTags.vue'
+import NasaBadge from '@/components/NasaBadge.vue'
 
 export default {
   name: 'Home',
   components: {
-    MetaTags
+    MetaTags,
+    NasaBadge
   },
   data() {
     return {

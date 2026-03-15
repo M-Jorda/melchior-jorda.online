@@ -35,7 +35,7 @@
 # - Dev moves story to 'review', then runs code-review (fresh context, different LLM recommended)
 
 generated: 2026-03-14
-last_updated: 2026-03-15 # code review
+last_updated: 2026-03-15 # story 1.4 done (code review passed)
 project: melchior-jorda.online
 project_key: NOKEY
 tracking_system: file-system
@@ -47,7 +47,7 @@ development_status:
   1-1-enrichissement-du-schema-projects-json-et-migration-des-donnees: done
   1-2-extension-de-projectcard-vue-avec-les-champs-enrichis: done
   1-3-creation-de-projectfilter-vue-onglets-clients-projets-42: done
-  1-4-creation-de-nasabadge-vue-composant-badge-de-credibilite: backlog
+  1-4-creation-de-nasabadge-vue-composant-badge-de-credibilite: done
   epic-1-retrospective: optional
 
   # Epic 2: Page d'accueil — signal fort
