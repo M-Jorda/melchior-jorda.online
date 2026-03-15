@@ -43,6 +43,14 @@
           <li><router-link class="nav-link" to="/about">{{ $t('nav.about') }}</router-link></li>
           <li><router-link class="nav-link" to="/resume">{{ $t('nav.resume') }}</router-link></li>
           <li><router-link class="nav-link" to="/contact">{{ $t('nav.contact') }}</router-link></li>
+          <li>
+            <router-link
+              to="/contact"
+              class="px-4 py-1.5 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary hover:bg-orange-600 dark:hover:bg-orange-500 font-medium text-sm transition-colors duration-300 focus:ring-2 focus:ring-orange-500"
+            >
+              {{ $t('nav.cta') }}
+            </router-link>
+          </li>
 
           <li class="relative">
             <div class="lang-dropdown">
@@ -153,13 +161,13 @@
                 {{ $t('nav.resume') }}
               </router-link>
             </li>
-            <li>
-              <router-link 
-                @click="closeMobileMenu" 
-                class="nav-link-mobile" 
+            <li class="pt-2">
+              <router-link
+                @click="closeMobileMenu"
                 to="/contact"
+                class="block w-full text-center px-4 py-3 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary font-medium hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 focus:ring-2 focus:ring-orange-500"
               >
-                {{ $t('nav.contact') }}
+                {{ $t('nav.cta') }}
               </router-link>
             </li>
 
