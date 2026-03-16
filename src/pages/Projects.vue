@@ -7,7 +7,6 @@
       url="/projects"
     />
 
-    <!-- Titre et description responsive -->
     <h1 class="text-xl sm:text-2xl md:text-3xl font-bold text-primary dark:text-accent-50">
       {{ $t('projects.title') }}
     </h1>
@@ -15,7 +14,6 @@
       {{ $t('projects.description') }}
     </p>
 
-    <!-- Tab Filter -->
     <ProjectFilter @tab-change="onTabChange" />
 
     <!-- Clients Section -->
@@ -47,48 +45,71 @@
           <article
             v-for="project in school42Projects"
             :key="project.id"
-            class="card bg-accent-50 dark:bg-slate-800 rounded-lg p-5 sm:p-6 relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden flex flex-col"
+            class="card bg-accent-50 dark:bg-slate-800 rounded-lg p-5 sm:p-6 relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden flex flex-col cursor-pointer select-none"
+            @click="toggleExpand42(project.id)"
+            :aria-expanded="!!expanded42[project.id]"
           >
             <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
-            <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
-              {{ $te(`projects.items.${project.id}.title`) ? $t(`projects.items.${project.id}.title`) : project.title }}
-            </h3>
-            <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2 flex-grow">
+
+            <!-- Title + chevron -->
+            <div class="flex items-start justify-between gap-2">
+              <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
+                {{ $te(`projects.items.${project.id}.title`) ? $t(`projects.items.${project.id}.title`) : project.title }}
+              </h3>
+              <svg
+                class="w-4 h-4 text-orange-500 dark:text-orange-400 flex-shrink-0 mt-1 transition-transform duration-200"
+                :class="{ 'rotate-180': expanded42[project.id] }"
+                fill="none" stroke="currentColor" viewBox="0 0 24 24"
+              >
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+              </svg>
+            </div>
+
+            <!-- Description tronquée -->
+            <p
+              class="text-sm sm:text-base text-slate-600 dark:text-accent-200 mt-2"
+              :class="expanded42[project.id] ? 'flex-grow' : 'line-clamp-2'"
+            >
               {{ $te(`projects.items.${project.id}.description`) ? $t(`projects.items.${project.id}.description`) : project.description }}
             </p>
 
-            <div class="flex flex-wrap gap-2 mt-3">
-              <span
-                v-for="tech in project.technologies"
-                :key="tech"
-                class="text-xs px-2 py-1 bg-primary/10 dark:bg-accent-100/10 text-primary dark:text-accent-100 rounded"
-              >
-                {{ tech }}
-              </span>
-            </div>
+            <!-- Contenu expanded -->
+            <transition name="card-expand">
+              <div v-if="expanded42[project.id]">
+                <div class="flex flex-wrap gap-2 mt-3">
+                  <span
+                    v-for="tech in project.technologies"
+                    :key="tech"
+                    class="text-xs px-2 py-1 bg-primary/10 dark:bg-accent-100/10 text-primary dark:text-accent-100 rounded"
+                  >
+                    {{ tech }}
+                  </span>
+                </div>
 
-            <div class="flex gap-3 mt-4">
-              <a
-                v-if="project.live"
-                :href="project.live"
-                target="_blank"
-                rel="noopener noreferrer"
-                :aria-label="$t('projects.try_replit') + ' – ' + ($t(`projects.items.${project.id}.title`) || project.title)"
-                class="text-sm px-4 py-2 bg-primary dark:bg-orange-400 dark:text-primary text-white rounded hover:opacity-80 transition-opacity"
-              >
-                {{ $t('projects.try_replit') }}
-              </a>
-              <a
-                v-if="project.github"
-                :href="project.github"
-                target="_blank"
-                rel="noopener noreferrer"
-                :aria-label="'GitHub – ' + ($t(`projects.items.${project.id}.title`) || project.title)"
-                class="text-sm px-4 py-2 border border-primary dark:border-accent-100 text-primary dark:text-accent-100 rounded hover:bg-primary/10 dark:hover:bg-accent-100/10 transition-colors"
-              >
-                GitHub
-              </a>
-            </div>
+                <div class="flex gap-3 mt-4" @click.stop>
+                  <a
+                    v-if="project.live"
+                    :href="project.live"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    :aria-label="$t('projects.try_replit') + ' – ' + ($t(`projects.items.${project.id}.title`) || project.title)"
+                    class="text-sm px-4 py-2 bg-primary dark:bg-orange-400 dark:text-primary text-white rounded hover:opacity-80 transition-opacity focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  >
+                    {{ $t('projects.try_replit') }}
+                  </a>
+                  <a
+                    v-if="project.github"
+                    :href="project.github"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    :aria-label="'GitHub – ' + ($t(`projects.items.${project.id}.title`) || project.title)"
+                    class="text-sm px-4 py-2 border border-primary dark:border-accent-100 text-primary dark:text-accent-100 rounded hover:bg-primary/10 dark:hover:bg-accent-100/10 transition-colors focus:outline-none focus:ring-2 focus:ring-orange-500"
+                  >
+                    GitHub
+                  </a>
+                </div>
+              </div>
+            </transition>
           </article>
         </div>
         <p v-else class="text-center text-gray-500 dark:text-gray-400 mt-10">
@@ -115,7 +136,8 @@ export default {
   data() {
     return {
       projects: projectsData,
-      activeTab: 'client'
+      activeTab: 'client',
+      expanded42: {}
     }
   },
   computed: {
@@ -129,6 +151,9 @@ export default {
   methods: {
     onTabChange(tab) {
       this.activeTab = tab
+    },
+    toggleExpand42(id) {
+      this.expanded42 = { ...this.expanded42, [id]: !this.expanded42[id] }
     }
   }
 }
@@ -141,6 +166,14 @@ export default {
 }
 .fade-enter-from,
 .fade-leave-to {
+  opacity: 0;
+}
+.card-expand-enter-active,
+.card-expand-leave-active {
+  transition: opacity 0.2s ease;
+}
+.card-expand-enter-from,
+.card-expand-leave-to {
   opacity: 0;
 }
 </style>
