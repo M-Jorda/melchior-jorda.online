@@ -271,6 +271,8 @@ export default {
 
       try {
         const templateParams = {
+          name: this.formData.name,
+          email: this.formData.email,
           from_name: this.formData.name,
           from_email: this.formData.email,
           message: this.formData.message,
