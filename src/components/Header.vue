@@ -122,7 +122,7 @@
   <transition name="mobile-menu">
     <div
       v-if="isMobileMenuOpen"
-      class="lg:hidden fixed inset-0 top-[73px] bg-[#ffedd5] dark:bg-[#0f172a] z-[100] overflow-y-auto"
+      class="lg:hidden fixed inset-0 top-[73px] bg-[#ffedd5] dark:bg-[#0f172a] z-[100] overflow-hidden"
     >
       <nav class="container mx-auto px-4 py-4">
 
@@ -669,7 +669,7 @@ export default {
 .lang-dropdown-mobile .flex {
   position: absolute;
   top: calc(100% + 0.5rem);
-  left: 0;
+  right: 0;
   background: rgba(255, 237, 213, 0.95);
   backdrop-filter: blur(12px);
   padding: 0.5rem;
