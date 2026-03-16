@@ -35,12 +35,12 @@
             {{ $t('footer.download_cv') }}
           </a>
           <a
-            :href="mailtoObfuscated"
+            href="#"
             @click.prevent="openMail"
-            class="text-neutral dark:text-accent-50 hover:text-orange-200 dark:hover:text-orange-300 transition-colors duration-300"
+            class="text-orange-200 dark:text-orange-400 hover:text-orange-300 dark:hover:text-orange-300 transition-colors duration-300"
             aria-label="Send email"
           >
-            Email
+            {{ displayEmail }}
           </a>
         </nav>
       </div>
@@ -56,7 +56,8 @@ export default {
       linkedin: 'https://www.linkedin.com/in/melchior-jorda-354a31270',
       github: 'https://github.com/M-Jorda',
       mailUser: 'jorda.j.fr',
-      mailHost: 'gmail.com'
+      mailHost: 'gmail.com',
+      emailRevealed: false
     }
   },
   computed: {
@@ -72,11 +73,17 @@ export default {
     },
     mailtoObfuscated() {
       return `mailto:${this.mailUser}@${this.mailHost}`
+    },
+    displayEmail() {
+      return this.emailRevealed ? `${this.mailUser}@${this.mailHost}` : 'Email'
     }
   },
   methods: {
     openMail() {
-      window.location.href = this.mailtoObfuscated
+      this.emailRevealed = true
+      this.$nextTick(() => {
+        window.location.href = this.mailtoObfuscated
+      })
     }
   }
 }

@@ -54,7 +54,7 @@
           </li>
 
           <li class="relative">
-            <div class="lang-dropdown">
+            <div class="lang-dropdown" @click.stop>
               <!-- Drapeau actif (toujours visible) -->
               <button @click.prevent="toggleLangMenu" class="flag-btn flag-active" :title="currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'Français' : 'Español'" :aria-label="'Current language: ' + (currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'French' : 'Spanish') + '. Click to change'" aria-haspopup="true" :aria-expanded="langMenuOpen">
                 <svg v-if="currentLang === 'en'" width="20" height="14" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
@@ -120,134 +120,128 @@
 
   <!-- Menu mobile (overlay) - En dehors du header pour z-index correct -->
   <transition name="mobile-menu">
-    <div 
-      v-if="isMobileMenuOpen" 
+    <div
+      v-if="isMobileMenuOpen"
       class="lg:hidden fixed inset-0 top-[73px] bg-[#ffedd5] dark:bg-[#0f172a] z-[100] overflow-y-auto"
     >
-        <nav class="container mx-auto px-4 py-6">
-          <ul class="flex flex-col gap-4">
-            <li>
-              <router-link 
-                @click="closeMobileMenu" 
-                class="nav-link-mobile" 
-                to="/"
-              >
-                {{ $t('nav.home') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                @click="closeMobileMenu"
-                class="nav-link-mobile"
-                to="/projects"
-              >
-                {{ $t('nav.projects') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                @click="closeMobileMenu"
-                class="nav-link-mobile"
-                to="/42"
-              >
-                {{ $t('nav.fortyTwo') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link
-                @click="closeMobileMenu"
-                class="nav-link-mobile"
-                to="/about"
-              >
-                {{ $t('nav.about') }}
-              </router-link>
-            </li>
-            <li>
-              <router-link 
-                @click="closeMobileMenu" 
-                class="nav-link-mobile" 
-                to="/resume"
-              >
-                {{ $t('nav.resume') }}
-              </router-link>
-            </li>
-            <li class="pt-2">
-              <router-link
-                @click="closeMobileMenu"
-                to="/contact"
-                class="block w-full text-center px-4 py-3 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary font-medium hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 focus:ring-2 focus:ring-orange-500"
-              >
-                {{ $t('nav.cta') }}
-              </router-link>
-            </li>
+      <nav class="container mx-auto px-4 py-4">
 
-            <!-- Langues -->
-            <li class="py-3 border-b border-slate-200 dark:border-slate-700">
-              <div class="text-sm text-slate-500 dark:text-accent-200 mb-2">Language</div>
-              <div class="lang-dropdown-mobile">
-                <!-- Drapeau actif (toujours visible) -->
-                <button @click.prevent="toggleLangMenuMobile" class="flag-btn flag-active mb-2" :aria-label="'Current language: ' + (currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'French' : 'Spanish') + '. Click to change language'">
-                  <svg v-if="currentLang === 'en'" width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                    <clipPath id="t-mobile"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+        <!-- Barre utilitaire : thème + langue (toujours visible en haut) -->
+        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200 dark:border-slate-700">
+          <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="flex items-center gap-2 px-3 py-1.5 rounded border border-orange-500 text-orange-500 text-sm hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
+            <span class="sr-only">Toggle theme</span>
+            <span aria-hidden="true">{{ isDark ? '🌙 ' + $t('theme.dark_mode') : '☀️ ' + $t('theme.light_mode') }}</span>
+          </button>
+          <div class="lang-dropdown-mobile" @click.stop>
+            <button @click.prevent.stop="toggleLangMenuMobile" class="flag-btn flag-active" :aria-label="'Current language: ' + (currentLang === 'en' ? 'English' : currentLang === 'fr' ? 'French' : 'Spanish') + '. Click to change language'">
+              <svg v-if="currentLang === 'en'" width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <clipPath id="t-mobile"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
+                <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
+                <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t-mobile)" stroke="#C8102E" stroke-width="4"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
+                <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
+              </svg>
+              <svg v-else-if="currentLang === 'fr'" width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+                <rect width="6.66" height="14" x="0" fill="#0b5fff" />
+                <rect width="6.66" height="14" x="6.66" fill="#fff" />
+                <rect width="6.68" height="14" x="13.32" fill="#ff4b3e" />
+              </svg>
+              <svg v-else width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+                <rect width="20" height="14" fill="#ffdd00" />
+                <rect y="3" width="20" height="8" fill="#c60b1e" />
+              </svg>
+            </button>
+            <transition name="lang-menu">
+              <div v-if="langMenuOpenMobile" class="flex gap-3">
+                <button v-if="currentLang !== 'en'" @click.prevent="onLang('en')" class="flag-btn" aria-label="Switch to English">
+                  <svg width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                    <clipPath id="t-mobile2"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
                     <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
                     <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                    <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t-mobile)" stroke="#C8102E" stroke-width="4"/>
+                    <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t-mobile2)" stroke="#C8102E" stroke-width="4"/>
                     <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
                     <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
                   </svg>
-                  <svg v-else-if="currentLang === 'fr'" width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+                </button>
+                <button v-if="currentLang !== 'fr'" @click.prevent="onLang('fr')" class="flag-btn" aria-label="Passer en Français">
+                  <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                     <rect width="6.66" height="14" x="0" fill="#0b5fff" />
                     <rect width="6.66" height="14" x="6.66" fill="#fff" />
                     <rect width="6.68" height="14" x="13.32" fill="#ff4b3e" />
                   </svg>
-                  <svg v-else width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
+                </button>
+                <button v-if="currentLang !== 'es'" @click.prevent="onLang('es')" class="flag-btn" aria-label="Cambiar a Español">
+                  <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
                     <rect width="20" height="14" fill="#ffdd00" />
                     <rect y="3" width="20" height="8" fill="#c60b1e" />
                   </svg>
                 </button>
-                
-                <!-- Menu déroulant avec les autres drapeaux -->
-                <transition name="lang-menu">
-                  <div v-if="langMenuOpenMobile" class="flex gap-3">
-                    <button v-if="currentLang !== 'en'" @click.prevent="onLang('en')" class="flag-btn" aria-label="Switch to English">
-                      <svg width="24" height="17" viewBox="0 0 60 30" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                        <clipPath id="t-mobile2"><path d="M30,15 h30 v15 z v15 h-30 z h-30 v-15 z v-15 h30 z"/></clipPath>
-                        <path d="M0,0 v30 h60 v-30 z" fill="#012169"/>
-                        <path d="M0,0 L60,30 M60,0 L0,30" stroke="#fff" stroke-width="6"/>
-                        <path d="M0,0 L60,30 M60,0 L0,30" clip-path="url(#t-mobile2)" stroke="#C8102E" stroke-width="4"/>
-                        <path d="M30,0 v30 M0,15 h60" stroke="#fff" stroke-width="10"/>
-                        <path d="M30,0 v30 M0,15 h60" stroke="#C8102E" stroke-width="6"/>
-                      </svg>
-                    </button>
-                    <button v-if="currentLang !== 'fr'" @click.prevent="onLang('fr')" class="flag-btn" aria-label="Passer en Français">
-                      <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
-                        <rect width="6.66" height="14" x="0" fill="#0b5fff" />
-                        <rect width="6.66" height="14" x="6.66" fill="#fff" />
-                        <rect width="6.68" height="14" x="13.32" fill="#ff4b3e" />
-                      </svg>
-                    </button>
-                    <button v-if="currentLang !== 'es'" @click.prevent="onLang('es')" class="flag-btn" aria-label="Cambiar a Español">
-                      <svg width="24" height="17" viewBox="0 0 20 14" xmlns="http://www.w3.org/2000/svg" fill="none" aria-hidden="true">
-                        <rect width="20" height="14" fill="#ffdd00" />
-                        <rect y="3" width="20" height="8" fill="#c60b1e" />
-                      </svg>
-                    </button>
-                  </div>
-                </transition>
               </div>
-            </li>
+            </transition>
+          </div>
+        </div>
 
-            <!-- Toggle theme -->
-            <li class="py-3">
-              <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="w-full px-4 py-2 rounded border border-orange-500 text-orange-500 hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
-                <span class="sr-only">Toggle theme</span>
-                <span aria-hidden="true">{{ isDark ? '🌙 ' + $t('theme.dark_mode') : '☀️ ' + $t('theme.light_mode') }}</span>
-              </button>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </transition>
+        <!-- Liens de navigation -->
+        <ul class="flex flex-col gap-4">
+          <li>
+            <router-link
+              @click="closeMobileMenu"
+              class="nav-link-mobile"
+              to="/"
+            >
+              {{ $t('nav.home') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              @click="closeMobileMenu"
+              class="nav-link-mobile"
+              to="/projects"
+            >
+              {{ $t('nav.projects') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              @click="closeMobileMenu"
+              class="nav-link-mobile"
+              to="/42"
+            >
+              {{ $t('nav.fortyTwo') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              @click="closeMobileMenu"
+              class="nav-link-mobile"
+              to="/about"
+            >
+              {{ $t('nav.about') }}
+            </router-link>
+          </li>
+          <li>
+            <router-link
+              @click="closeMobileMenu"
+              class="nav-link-mobile"
+              to="/resume"
+            >
+              {{ $t('nav.resume') }}
+            </router-link>
+          </li>
+          <li class="pt-2">
+            <router-link
+              @click="closeMobileMenu"
+              to="/contact"
+              class="block w-full text-center px-4 py-3 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary font-medium hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 focus:ring-2 focus:ring-orange-500"
+            >
+              {{ $t('nav.cta') }}
+            </router-link>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </transition>
   </div>
 </template>
 
@@ -294,17 +288,14 @@ export default {
     if (this.isDark) document.documentElement.classList.add('dark')
   },
   mounted() {
-    // Obtenir l'élément #app qui est le conteneur scrollable
     this.scrollContainer = document.getElementById('app')
-    
     if (this.scrollContainer) {
       this.lastScrollPosition = this.scrollContainer.scrollTop
-      // Écouter le scroll sur #app
       this.scrollContainer.addEventListener('scroll', this.handleScroll, { passive: true })
     } else {
-      // Fallback sur window si #app n'est pas trouvé
       window.addEventListener('scroll', this.handleScroll, { passive: true })
     }
+    document.addEventListener('click', this.closeLangMenus)
   },
   beforeUnmount() {
     if (this.scrollContainer) {
@@ -312,7 +303,7 @@ export default {
     } else {
       window.removeEventListener('scroll', this.handleScroll)
     }
-    // Nettoyer le style du body si le composant est détruit
+    document.removeEventListener('click', this.closeLangMenus)
     document.body.style.overflow = ''
   },
   methods: {
@@ -366,6 +357,10 @@ export default {
     toggleLangMenuMobile() {
       this.langMenuOpenMobile = !this.langMenuOpenMobile
     },
+    closeLangMenus() {
+      this.langMenuOpen = false
+      this.langMenuOpenMobile = false
+    },
     toggleTheme() {
       this.isDark = !this.isDark
       if (this.isDark) {
@@ -375,8 +370,6 @@ export default {
         document.documentElement.classList.remove('dark')
         localStorage.setItem('theme', 'light')
       }
-      // Fermer le menu mobile après changement de thème
-      this.closeMobileMenu()
     },
     toggleMobileMenu() {
       this.isMobileMenuOpen = !this.isMobileMenuOpen
