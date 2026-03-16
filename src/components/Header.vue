@@ -124,10 +124,10 @@
       v-if="isMobileMenuOpen"
       class="lg:hidden fixed inset-0 top-[73px] bg-[#ffedd5] dark:bg-[#0f172a] z-[100] overflow-hidden"
     >
-      <nav class="container mx-auto px-4 py-4">
+      <nav class="container mx-auto px-4 py-2">
 
         <!-- Barre utilitaire : thème + langue (toujours visible en haut) -->
-        <div class="flex items-center justify-between mb-4 pb-3 border-b border-slate-200 dark:border-slate-700">
+        <div class="flex items-center justify-between mb-2 pb-2 border-b border-slate-200 dark:border-slate-700">
           <button @click.prevent="toggleTheme" :aria-pressed="isDark" class="flex items-center gap-2 px-3 py-1.5 rounded border border-orange-500 text-orange-500 text-sm hover:bg-orange-50 dark:hover:bg-slate-700 transition-colors duration-300 focus:outline-none focus:ring-2 focus:ring-orange-500">
             <span class="sr-only">Toggle theme</span>
             <span aria-hidden="true">{{ isDark ? '🌙 ' + $t('theme.dark_mode') : '☀️ ' + $t('theme.light_mode') }}</span>
@@ -183,7 +183,7 @@
         </div>
 
         <!-- Liens de navigation -->
-        <ul class="flex flex-col gap-4">
+        <ul class="flex flex-col gap-1">
           <li>
             <router-link
               @click="closeMobileMenu"
@@ -229,11 +229,11 @@
               {{ $t('nav.resume') }}
             </router-link>
           </li>
-          <li class="pt-2">
+          <li class="mt-2">
             <router-link
               @click="closeMobileMenu"
               to="/contact"
-              class="block w-full text-center px-4 py-3 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary font-medium hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 focus:ring-2 focus:ring-orange-500"
+              class="block w-full text-center px-4 py-2.5 rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary font-medium hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 focus:ring-2 focus:ring-orange-500"
             >
               {{ $t('nav.cta') }}
             </router-link>
@@ -510,7 +510,7 @@ export default {
 /* Styles pour les liens de navigation mobile */
 .nav-link-mobile {
   display: block;
-  padding: 0.75rem 0;
+  padding: 0.5rem 0;
   font-size: 1.125rem;
   color: var(--color-primary);
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
