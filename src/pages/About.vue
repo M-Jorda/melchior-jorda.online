@@ -23,7 +23,7 @@
       </div>
     </div>
 
-    <!-- 2. Credentials — 42 + NASA proof-points (AC: 2, 3) -->
+    <!-- 2. Credentials — 42 + NASA + NEXUS proof-points (AC: 2, 3) -->
     <div class="mt-8 sm:mt-10">
       <h2 class="text-lg sm:text-xl font-semibold text-primary dark:text-accent-50 mb-4">
         {{ $t('about.credentials.title') }}
@@ -37,6 +37,9 @@
         </div>
         <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200">
           {{ $t('about.credentials.nasa') }}
+        </p>
+        <p class="text-sm sm:text-base text-slate-600 dark:text-accent-200">
+          {{ $t('about.credentials.nexus') }}
         </p>
       </div>
     </div>

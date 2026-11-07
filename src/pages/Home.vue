@@ -97,7 +97,7 @@ export default {
   },
   data() {
     return {
-      featuredIds: ['re-fresh-earth', 'minata-portfolio', 'so-long'],
+      featuredIds: ['nexus', 're-fresh-earth', 'minata-portfolio'],
       projects: projectsData,
       selectedProject: null
     }

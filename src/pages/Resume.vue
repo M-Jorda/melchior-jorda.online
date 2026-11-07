@@ -17,14 +17,46 @@
       {{ $t('resume.download') }}
     </p>
 
-    <!-- Download button -->
-    <a
-      class="inline-block mt-3 sm:mt-4 px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium"
-      :href="cvPath"
-      :download="cvFilename"
-    >
-      {{ $t('resume.download_link') }}
-    </a>
+    <!-- Actions -->
+    <div class="mt-3 sm:mt-4 flex flex-wrap gap-3">
+      <a
+        class="inline-block px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg bg-orange-500 dark:bg-orange-400 text-white dark:text-primary hover:bg-orange-600 dark:hover:bg-orange-500 transition-colors duration-300 font-medium"
+        :href="cvPath"
+        :download="cvFilename"
+      >
+        {{ $t('resume.download_link') }}
+      </a>
+      <a
+        class="inline-block px-4 sm:px-5 py-2 sm:py-2.5 text-sm sm:text-base rounded-lg border-2 border-orange-500 dark:border-orange-400 text-orange-600 dark:text-orange-400 hover:bg-orange-50 dark:hover:bg-slate-800 transition-colors duration-300 font-medium"
+        :href="cvPath"
+        target="_blank"
+        rel="noopener"
+      >
+        {{ $t('resume.open_link') }}
+      </a>
+    </div>
+
+    <!-- PDF viewer -->
+    <div class="mt-4 sm:mt-6 rounded-lg overflow-hidden border border-slate-200 dark:border-slate-700 bg-accent-50 dark:bg-slate-800">
+      <object
+        :data="`${cvPath}#view=FitH`"
+        type="application/pdf"
+        class="w-full h-[75vh] min-h-[480px]"
+        :aria-label="$t('resume.viewer_title')"
+      >
+        <div class="p-6 text-center text-sm sm:text-base text-slate-600 dark:text-accent-200">
+          <p>{{ $t('resume.viewer_fallback') }}</p>
+          <a
+            class="inline-block mt-3 text-orange-600 dark:text-orange-400 underline font-medium"
+            :href="cvPath"
+            target="_blank"
+            rel="noopener"
+          >
+            {{ $t('resume.open_link') }}
+          </a>
+        </div>
+      </object>
+    </div>
 
     <!-- Profile Section -->
     <div class="mt-6 sm:mt-8 md:mt-10">
@@ -42,6 +74,36 @@
           </p>
         </div>
       </div>
+    </div>
+
+    <!-- Featured Project Section (NEXUS) -->
+    <div class="mt-6 sm:mt-8">
+      <h2 class="text-lg sm:text-xl md:text-2xl font-semibold text-primary dark:text-accent-50 border-b-2 border-primary dark:border-accent-100 pb-2">
+        {{ $t('resume.featured.title') }}
+      </h2>
+      <article class="mt-4 bg-accent-50 dark:bg-slate-800 p-4 rounded-lg relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden">
+        <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
+        <div class="flex items-start">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-orange-500 dark:text-orange-400 mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+            <path d="M17 1H7c-1.1 0-2 .9-2 2v18c0 1.1.9 2 2 2h10c1.1 0 2-.9 2-2V3c0-1.1-.9-2-2-2zm0 18H7V5h10v14z"/>
+          </svg>
+          <div>
+            <h3 class="text-base sm:text-lg font-semibold text-primary dark:text-accent-50">
+              {{ $t('resume.featured.nexus.title') }}
+            </h3>
+            <p class="text-xs sm:text-sm text-slate-500 dark:text-accent-300 mt-1">{{ $t('resume.featured.nexus.date') }}</p>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-accent-200">
+              {{ $t('resume.featured.nexus.description') }}
+            </p>
+            <p class="mt-2 text-sm sm:text-base text-slate-600 dark:text-accent-200">
+              {{ $t('resume.featured.nexus.points') }}
+            </p>
+            <p class="mt-2 text-xs sm:text-sm font-medium text-orange-600 dark:text-orange-400">
+              {{ $t('resume.featured.nexus.stats') }}
+            </p>
+          </div>
+        </div>
+      </article>
     </div>
 
     <!-- Experience Section -->
@@ -173,6 +235,20 @@
               <h3 class="text-base font-semibold text-primary dark:text-accent-50">{{ $t('resume.projects.cpp_modules.title') }}</h3>
               <p class="text-xs text-slate-500 dark:text-accent-300 mt-1">{{ $t('resume.projects.cpp_modules.date') }}</p>
               <p class="mt-2 text-sm text-slate-600 dark:text-accent-200">{{ $t('resume.projects.cpp_modules.description') }}</p>
+            </div>
+          </div>
+        </article>
+        <!-- C++ Advanced Modules -->
+        <article class="bg-accent-50 dark:bg-slate-800 p-4 rounded-lg relative group transition-shadow duration-300 hover:shadow-lg overflow-hidden">
+          <div class="absolute left-0 top-0 bottom-0 w-1 pointer-events-none bg-gradient-to-b from-orange-400 via-orange-300 to-transparent opacity-0 transition-opacity duration-300 group-hover:opacity-100 dark:from-orange-500 dark:via-orange-400"></div>
+          <div class="flex items-start">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6 text-orange-500 dark:text-orange-400 mr-3 flex-shrink-0 transition-transform duration-300 group-hover:scale-110">
+              <path d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z"/>
+            </svg>
+            <div>
+              <h3 class="text-base font-semibold text-primary dark:text-accent-50">{{ $t('resume.projects.cpp_advanced.title') }}</h3>
+              <p class="text-xs text-slate-500 dark:text-accent-300 mt-1">{{ $t('resume.projects.cpp_advanced.date') }}</p>
+              <p class="mt-2 text-sm text-slate-600 dark:text-accent-200">{{ $t('resume.projects.cpp_advanced.description') }}</p>
             </div>
           </div>
         </article>
@@ -375,15 +451,15 @@ export default {
     MetaTags
   },
   computed: {
-    cvPath() {
+    cvLang() {
       const map = { fr: 'FR', en: 'EN', es: 'ES' }
-      const code = map[this.$i18n.locale] || 'EN'
-      return `/assets/Melchior_Jorda_FullStack_${code}.pdf`
+      return map[this.$i18n.locale] || 'EN'
+    },
+    cvPath() {
+      return `/assets/Melchior_Jorda_FullStack_${this.cvLang}.pdf`
     },
     cvFilename() {
-      const map = { fr: 'FR', en: 'EN', es: 'ES' }
-      const code = map[this.$i18n.locale] || 'EN'
-      return `Melchior_Jorda_FullStack_${code}.pdf`
+      return `Melchior_Jorda_FullStack_${this.cvLang}.pdf`
     }
   }
 }

@@ -13,7 +13,7 @@
   },
   "home": {
     "title": "Melchior JORDA — Desarrollador Full-Stack",
-    "subtitle": "Apasionado por la programación de sistemas (C/C++) y el desarrollo web (Vue.js, PHP, Symfony). Sólidas bases en algoritmia, multithreading y diseño de aplicaciones adquiridas en École 42.",
+    "subtitle": "Desarrollador full-stack: aplicaciones móviles y web en TypeScript, con sólidas bases de sistemas en C/C++ adquiridas en École 42. Creador de NEXUS, un asistente personal con IA autoalojado para Android.",
     "see_projects": "Ver proyectos",
     "contact_me": "Contactarme",
     "nasaBadge": {
@@ -81,8 +81,7 @@
     "email_hidden": "Haz clic para revelar",
     "success_title": "¡Mensaje enviado con éxito!",
     "success_message": "Tu mensaje ha sido enviado. ¡Te responderé lo antes posible!"
-  }
-  ,
+  },
   "projects": {
     "title": "Proyectos",
     "description": "Explora mi portfolio de proyectos de desarrollo web, desde sitios web profesionales para clientes hasta desafíos técnicos y aplicaciones. Cada proyecto demuestra diferentes habilidades y tecnologías.",
@@ -188,8 +187,7 @@
       "random-password": {
         "title": "Random Password",
         "description": "Generador de contraseñas aleatorias, configurable en longitud, mayúsculas/minúsculas, números y caracteres especiales."
-      }
-      ,
+      },
       "philosophers": {
         "title": "Philosophers",
         "description": "El clásico problema de los filósofos comensales en C: N hilos comparten tenedores (mutexes) y deben comer, dormir y pensar sin entrar en deadlock ni morir de inanición. La dificultad está en ajustar el timing y la sincronización para pasar los tests automatizados."
@@ -209,6 +207,10 @@
       "portfolio-v034": {
         "title": "Portfolio v0.3.4",
         "description": "Versión anterior de este portfolio. La iteración anterior de mi portfolio personal mostrando mi evolución como desarrollador."
+      },
+      "nexus": {
+        "title": "NEXUS",
+        "description": "Asistente personal con IA autoalojado para Android, en alfa. Aplicación React Native offline-first y API Fastify: registro de comidas por foto y por voz, seguimiento del peso y la energía, entrenador de musculación, notas y grafo de conocimiento. Coaching con IA mediante Gemini y Claude, dictado con Whisper autoalojado, integración con Health Connect."
       }
     }
   },
@@ -230,15 +232,15 @@
     "skills": {
       "frontend": {
         "title": "Desarrollo Frontend",
-        "description": "Vue.js, Angular, JavaScript (ES6+, async/await), TypeScript, HTML5/CSS3, Bootstrap, APIs RESTful"
+        "description": "Vue.js, React Native (Expo), Angular, TypeScript, JavaScript (ES6+, async/await), HTML5/CSS3, Bootstrap, APIs RESTful"
       },
       "backend": {
         "title": "Backend & Sistemas",
-        "description": "C, C++ (STL, templates, POO), PHP, Symfony (Doctrine, Twig, Security), Node.js, Threads POSIX, sincronización mutex, llamadas al sistema Unix"
+        "description": "Node.js (Fastify), C, C++ (STL, templates, POO), PHP, Symfony (Doctrine, Twig, Security), integración de APIs de LLM (Gemini, Claude), Threads POSIX, llamadas al sistema Unix"
       },
       "tools": {
         "title": "Herramientas & Bases de Datos",
-        "description": "Git/GitHub, Docker, nociones de AWS, Valgrind, GDB, Firebase, MySQL, PostgreSQL, Firestore (NoSQL)"
+        "description": "Git/GitHub, Docker Compose, Claude Code, Valgrind, GDB, Firebase, PostgreSQL (Prisma), Neo4j, Redis, MySQL, Firestore (NoSQL)"
       },
       "languages": {
         "title": "Idiomas",
@@ -260,7 +262,8 @@
     "credentials": {
       "title": "Formación y logros",
       "fortyTwo": "Graduado en École 42 — escuela de programación intensiva por pares (C, C++, algoritmos, Unix).",
-      "nasa": "1er lugar, NASA Space Apps Challenge, Málaga 2025 — clasificado a nivel nacional."
+      "nasa": "1er lugar, NASA Space Apps Challenge, Málaga 2025 — clasificado a nivel nacional.",
+      "nexus": "Creador de NEXUS — un asistente personal con IA autoalojado para Android (React Native + Fastify), en alfa: más de 400 commits, ~120 000 líneas de TypeScript."
     },
     "additionalServices": {
       "title": "Servicios post-entrega",
@@ -279,11 +282,24 @@
   },
   "resume": {
     "title": "CV",
-    "download": "Descarga mi CV o consulta los puntos destacados a continuación.",
+    "download": "Consulta mi CV a continuación o descárgalo en PDF.",
     "download_link": "Descargar CV (PDF)",
+    "open_link": "Abrir en una pestaña nueva",
+    "viewer_fallback": "Tu navegador no puede mostrar el PDF aquí.",
+    "viewer_title": "Vista previa del CV de Melchior JORDA",
     "profile": {
       "title": "Perfil",
-      "description": "Desarrollador full-stack apasionado por la programación de sistemas (C/C++) y el desarrollo web (Vue.js, PHP, Symfony). Sólidas bases en algoritmia, multithreading y diseño de aplicaciones adquiridas en École 42. Buscando oportunidades en desarrollo de software."
+      "description": "Desarrollador full-stack que crea aplicaciones móviles y web en TypeScript, con sólidas bases de sistemas en C/C++ adquiridas en École 42. Creador de NEXUS, un asistente personal con IA autoalojado para Android (React Native + Fastify), actualmente en alfa. Con base en Málaga, abierto a oportunidades en Francia y España."
+    },
+    "featured": {
+      "title": "Proyecto Destacado",
+      "nexus": {
+        "title": "NEXUS – Asistente personal con IA autoalojado (Android)",
+        "date": "Jun 2026 – Presente (Alfa) · Proyecto personal",
+        "description": "Aplicación Android offline-first (React Native/Expo, TypeScript) y su API (Node.js/Fastify), desarrolladas con asistencia de IA (Claude Code): registro de comidas por foto y por voz, seguimiento del peso y la energía, entrenador de musculación, notas y grafo de conocimiento.",
+        "points": "Sincronización offline-first: base de datos local WatermelonDB con cola de sincronización hacia un servidor autoalojado (PostgreSQL/Prisma, Neo4j, Redis, Docker Compose). Funciones de IA: reconocimiento de comidas en fotos, dictado por voz (Whisper autoalojado), coaching mediante las APIs de Gemini y Claude con salvaguardas en temas de salud. Integración con Health Connect (entrenamientos, pasos, báscula inteligente) que alimenta un modelo de gasto energético.",
+        "stats": "Localización FR/EN/ES, registro solo por invitación, eliminación de cuenta según el RGPD · 400+ commits · ~120 000 líneas de TypeScript · 90 archivos de tests"
+      }
     },
     "experience": {
       "title": "Experiencia Profesional",
@@ -324,6 +340,11 @@
         "title": "Módulos POO C++ (CPP00-04)",
         "date": "Dic 2025 – Ene 2026",
         "description": "Dominio de fundamentos C++: herencia, polimorfismo, templates, STL, manejo de excepciones y patrones de diseño."
+      },
+      "cpp_advanced": {
+        "title": "Módulos C++ avanzados (CPP05-09)",
+        "date": "Jun – Sep 2026",
+        "description": "C++98 avanzado: excepciones, conversiones de tipos, serialización, templates, contenedores STL, iteradores y algoritmos."
       }
     },
     "hackathons": {
@@ -338,15 +359,15 @@
       "title": "Habilidades Técnicas",
       "languages_prog": {
         "title": "Lenguajes de Programación",
-        "description": "C, C++ (STL, templates, POO), JavaScript (ES6+, async/await), PHP, TypeScript, Java"
+        "description": "TypeScript, JavaScript (ES6+, async/await), C, C++ (STL, templates, POO), PHP, Java"
       },
       "web": {
         "title": "Tecnologías Web",
-        "description": "Vue.js, Angular, Symfony (Doctrine, Twig, Security), Node.js, HTML5, CSS3, Bootstrap, APIs RESTful"
+        "description": "React Native (Expo), Vue.js, Angular, Node.js (Fastify), Symfony (Doctrine, Twig, Security), HTML5, CSS3, APIs RESTful · IA: integración de LLM (Gemini, Claude), prompt engineering, salidas JSON estructuradas"
       },
       "databases": {
         "title": "Bases de Datos",
-        "description": "Firestore (NoSQL), MySQL, PostgreSQL, optimización de bases de datos, diseño de esquemas"
+        "description": "PostgreSQL (Prisma), Neo4j, Redis, WatermelonDB (offline-first), Firestore (NoSQL), MySQL"
       },
       "systems": {
         "title": "Programación de Sistemas",
@@ -354,7 +375,7 @@
       },
       "tools": {
         "title": "Herramientas de Desarrollo",
-        "description": "Git, GitHub, Docker, nociones de AWS, Valgrind, GDB, Apache, Firebase, Bitbucket, Trello, Figma"
+        "description": "Git, GitHub, Docker Compose, Claude Code, Gradle (builds de Android), Tailscale, Valgrind, GDB, Firebase, Bitbucket, Trello, Figma"
       },
       "languages": {
         "title": "Idiomas",

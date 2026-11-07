@@ -13,7 +13,7 @@
   },
   "home": {
     "title": "Melchior JORDA — Développeur Full-Stack",
-    "subtitle": "Passionné par la programmation systèmes (C/C++) et le développement web (Vue.js, PHP, Symfony). Solides bases en algorithmique, multithreading et conception d'applications acquises à l'École 42.",
+    "subtitle": "Développeur full-stack : applications mobiles et web en TypeScript, avec de solides bases systèmes en C/C++ acquises à l'École 42. Créateur de NEXUS, un assistant personnel IA auto-hébergé pour Android.",
     "see_projects": "Voir les projets",
     "contact_me": "Me contacter",
     "nasaBadge": {
@@ -81,8 +81,7 @@
     "email_hidden": "Cliquez pour révéler",
     "success_title": "Message envoyé avec succès !",
     "success_message": "Votre message a bien été envoyé. Je vous répondrai dès que possible !"
-  }
-  ,
+  },
   "projects": {
     "title": "Projets",
     "description": "Explorez mon portfolio de projets de développement web, des sites clients professionnels aux défis techniques et applications. Chaque projet démontre différentes compétences et technologies.",
@@ -188,8 +187,7 @@
       "random-password": {
         "title": "Random Password",
         "description": "Générateur de mots de passe aléatoires, configurable en longueur, majuscules/minuscules, chiffres et caractères spéciaux."
-      }
-      ,
+      },
       "philosophers": {
         "title": "Philosophers",
         "description": "Le problème classique des philosophes dînants en C : N threads partagent des fourchettes (mutex) et doivent manger, dormir et penser sans jamais se retrouver en deadlock ou en famine. La difficulté : avoir un timing et une synchronisation suffisamment précis pour passer les tests automatisés."
@@ -209,6 +207,10 @@
       "portfolio-v034": {
         "title": "Portfolio v0.3.4",
         "description": "Version précédente de ce portfolio. L'ancienne itération de mon portfolio personnel montrant mon évolution en tant que développeur."
+      },
+      "nexus": {
+        "title": "NEXUS",
+        "description": "Assistant personnel IA auto-hébergé pour Android, en alpha. Application React Native offline-first et API Fastify : suivi des repas par photo et par la voix, suivi du poids et de l'énergie, coach de musculation, notes et graphe de connaissances. Coaching IA via Gemini et Claude, dictée Whisper auto-hébergée, intégration Health Connect."
       }
     }
   },
@@ -230,15 +232,15 @@
     "skills": {
       "frontend": {
         "title": "Développement Frontend",
-        "description": "Vue.js, Angular, JavaScript (ES6+, async/await), TypeScript, HTML5/CSS3, Bootstrap, API RESTful"
+        "description": "Vue.js, React Native (Expo), Angular, TypeScript, JavaScript (ES6+, async/await), HTML5/CSS3, Bootstrap, API RESTful"
       },
       "backend": {
         "title": "Backend & Systèmes",
-        "description": "C, C++ (STL, templates, POO), PHP, Symfony (Doctrine, Twig, Security), Node.js, Threads POSIX, synchronisation mutex, appels systèmes Unix"
+        "description": "Node.js (Fastify), C, C++ (STL, templates, POO), PHP, Symfony (Doctrine, Twig, Security), intégration d'API LLM (Gemini, Claude), Threads POSIX, appels systèmes Unix"
       },
       "tools": {
         "title": "Outils & Bases de données",
-        "description": "Git/GitHub, Docker, notions AWS, Valgrind, GDB, Firebase, MySQL, PostgreSQL, Firestore (NoSQL)"
+        "description": "Git/GitHub, Docker Compose, Claude Code, Valgrind, GDB, Firebase, PostgreSQL (Prisma), Neo4j, Redis, MySQL, Firestore (NoSQL)"
       },
       "languages": {
         "title": "Langues",
@@ -260,7 +262,8 @@
     "credentials": {
       "title": "Formation & réalisations",
       "fortyTwo": "Diplômé de l'École 42 — école de programmation intensive par les pairs (C, C++, algorithmique, Unix).",
-      "nasa": "1ère place, NASA Space Apps Challenge, Málaga 2025 — qualifié au niveau national."
+      "nasa": "1ère place, NASA Space Apps Challenge, Málaga 2025 — qualifié au niveau national.",
+      "nexus": "Créateur de NEXUS — un assistant personnel IA auto-hébergé pour Android (React Native + Fastify), en alpha : plus de 400 commits, ~120 000 lignes de TypeScript."
     },
     "additionalServices": {
       "title": "Services post-livraison",
@@ -279,11 +282,24 @@
   },
   "resume": {
     "title": "CV",
-    "download": "Télécharge mon CV ou consulte les points saillants ci-dessous.",
+    "download": "Consulte mon CV ci-dessous ou télécharge-le en PDF.",
     "download_link": "Télécharger le CV (PDF)",
+    "open_link": "Ouvrir dans un nouvel onglet",
+    "viewer_fallback": "Ton navigateur ne peut pas afficher le PDF ici.",
+    "viewer_title": "Aperçu du CV de Melchior JORDA",
     "profile": {
       "title": "Profil",
-      "description": "Développeur full-stack passionné par la programmation systèmes (C/C++) et le développement web (Vue.js, PHP, Symfony). Solides bases en algorithmique, multithreading et conception d'applications acquises à l'École 42. À la recherche d'opportunités en développement logiciel."
+      "description": "Développeur full-stack concevant des applications mobiles et web en TypeScript, avec de solides bases systèmes en C/C++ acquises à l'École 42. Créateur de NEXUS, un assistant personnel IA auto-hébergé pour Android (React Native + Fastify), actuellement en alpha. Basé à Málaga, ouvert aux opportunités en France et en Espagne."
+    },
+    "featured": {
+      "title": "Projet Phare",
+      "nexus": {
+        "title": "NEXUS – Assistant personnel IA auto-hébergé (Android)",
+        "date": "Juin 2026 – Présent (Alpha) · Projet personnel",
+        "description": "Application Android offline-first (React Native/Expo, TypeScript) et son API (Node.js/Fastify), conçues avec un développement assisté par IA (Claude Code) : suivi des repas par photo et par la voix, suivi du poids et de l'énergie, coach de musculation, notes et graphe de connaissances.",
+        "points": "Synchronisation offline-first : base locale WatermelonDB avec file de synchronisation vers un serveur auto-hébergé (PostgreSQL/Prisma, Neo4j, Redis, Docker Compose). Fonctions IA : reconnaissance des repas sur photo, dictée vocale (Whisper auto-hébergé), coaching via les API Gemini et Claude avec garde-fous sur les sujets de santé. Intégration Health Connect (séances, pas, balance connectée) alimentant un modèle de dépense énergétique.",
+        "stats": "Localisation FR/EN/ES, inscription sur invitation, suppression de compte RGPD · 400+ commits · ~120 000 lignes de TypeScript · 90 fichiers de tests"
+      }
     },
     "experience": {
       "title": "Expérience Professionnelle",
@@ -324,6 +340,11 @@
         "title": "Modules POO C++ (CPP00-04)",
         "date": "Déc 2025 – Jan 2026",
         "description": "Maîtrise des fondamentaux C++ : héritage, polymorphisme, templates, STL, gestion des exceptions et patrons de conception."
+      },
+      "cpp_advanced": {
+        "title": "Modules C++ avancés (CPP05-09)",
+        "date": "Juin – Sep 2026",
+        "description": "C++98 avancé : exceptions, conversions de types, sérialisation, templates, conteneurs STL, itérateurs et algorithmes."
       }
     },
     "hackathons": {
@@ -338,15 +359,15 @@
       "title": "Compétences Techniques",
       "languages_prog": {
         "title": "Langages de Programmation",
-        "description": "C, C++ (STL, templates, POO), JavaScript (ES6+, async/await), PHP, TypeScript, Java"
+        "description": "TypeScript, JavaScript (ES6+, async/await), C, C++ (STL, templates, POO), PHP, Java"
       },
       "web": {
         "title": "Technologies Web",
-        "description": "Vue.js, Angular, Symfony (Doctrine, Twig, Security), Node.js, HTML5, CSS3, Bootstrap, API RESTful"
+        "description": "React Native (Expo), Vue.js, Angular, Node.js (Fastify), Symfony (Doctrine, Twig, Security), HTML5, CSS3, API RESTful · IA : intégration de LLM (Gemini, Claude), prompt engineering, sorties JSON structurées"
       },
       "databases": {
         "title": "Bases de Données",
-        "description": "Firestore (NoSQL), MySQL, PostgreSQL, optimisation de bases de données, conception de schémas"
+        "description": "PostgreSQL (Prisma), Neo4j, Redis, WatermelonDB (offline-first), Firestore (NoSQL), MySQL"
       },
       "systems": {
         "title": "Programmation Systèmes",
@@ -354,7 +375,7 @@
       },
       "tools": {
         "title": "Outils de Développement",
-        "description": "Git, GitHub, Docker, notions AWS, Valgrind, GDB, Apache, Firebase, Bitbucket, Trello, Figma"
+        "description": "Git, GitHub, Docker Compose, Claude Code, Gradle (builds Android), Tailscale, Valgrind, GDB, Firebase, Bitbucket, Trello, Figma"
       },
       "languages": {
         "title": "Langues",

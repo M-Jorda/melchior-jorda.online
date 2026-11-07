@@ -70,6 +70,22 @@
     "featured": false
   },
   {
+    "id": "nexus",
+    "title": "NEXUS",
+    "description": "Self-hosted AI personal assistant for Android, in alpha. Offline-first React Native app and Fastify API: meal logging by photo and voice, weight and energy tracking, strength-training coach, notes and knowledge graph.",
+    "technologies": [
+      "React Native",
+      "TypeScript",
+      "Fastify",
+      "PostgreSQL",
+      "Neo4j",
+      "Docker",
+      "Gemini / Claude"
+    ],
+    "category": "applications",
+    "status": "in-progress"
+  },
+  {
     "id": "re-fresh-earth",
     "title": "Re-Fresh Earth",
     "description": "Environmental platform fighting urban heat islands using AI and satellite data. NASA Space Apps Challenge project featuring predictive machine learning, real-time thermal mapping with Landsat/Sentinel-2/MODIS, and intuitive dashboard for urban planners. Case study: Málaga.",
