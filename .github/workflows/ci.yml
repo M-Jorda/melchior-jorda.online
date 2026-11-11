@@ -2,44 +2,63 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [ main, master ]
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  build:
+  build_and_deploy:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
+
       - name: Install
         run: npm ci
+
+      # src/config/emailjs.config.js est ignoré par git (clés locales) mais
+      # importé par Contact.vue : on le génère à partir des secrets.
+      - name: Write EmailJS config
+        env:
+          EMAILJS_SERVICE_ID: ${{ secrets.EMAILJS_SERVICE_ID }}
+          EMAILJS_TEMPLATE_ID: ${{ secrets.EMAILJS_TEMPLATE_ID }}
+          EMAILJS_PUBLIC_KEY: ${{ secrets.EMAILJS_PUBLIC_KEY }}
+        run: |
+          if [ -z "$EMAILJS_SERVICE_ID" ] || [ -z "$EMAILJS_TEMPLATE_ID" ] || [ -z "$EMAILJS_PUBLIC_KEY" ]; then
+            if [ "$GITHUB_EVENT_NAME" = "push" ]; then
+              echo "::error::Secrets EMAILJS_SERVICE_ID / EMAILJS_TEMPLATE_ID / EMAILJS_PUBLIC_KEY manquants : le formulaire de contact serait cassé en production."
+              exit 1
+            fi
+            echo "::warning::Secrets EmailJS absents : config factice pour ce build de vérification."
+          fi
+          node -e '
+            const c = {
+              serviceID: process.env.EMAILJS_SERVICE_ID || "",
+              templateID: process.env.EMAILJS_TEMPLATE_ID || "",
+              publicKey: process.env.EMAILJS_PUBLIC_KEY || ""
+            };
+            require("fs").writeFileSync("src/config/emailjs.config.js",
+              "export const emailjsConfig = " + JSON.stringify(c, null, 2) + "\n");
+          '
+
       - name: Lint
         run: npm run lint
+
       - name: Build
+        env:
+          VITE_GA_ID: ${{ secrets.VITE_GA_ID }}
         run: npm run build
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
-    # Le contexte `secrets` n'est pas utilisable dans un `if` de step :
-    # on l'expose en variable d'environnement et on teste celle-ci.
-    env:
-      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
-    steps:
-      - uses: actions/checkout@v4
-      - name: Use Node.js
-        uses: actions/setup-node@v4
+      - name: Deploy to Firebase Hosting
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+        uses: FirebaseExtended/action-hosting-deploy@v0
         with:
-          node-version: '22'
-      - name: Install
-        run: npm ci
-      - name: Build
-        run: npm run build
-      - name: Deploy to Firebase
-        if: env.FIREBASE_TOKEN != ''
-        run: |
-          npm install -g firebase-tools
-          firebase deploy --only hosting --token "$FIREBASE_TOKEN"
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_MELCHIOR_75A9E }}
+          projectId: melchior-75a9e
+          channelId: live

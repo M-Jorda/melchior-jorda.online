@@ -35,28 +35,24 @@ Strategy: Long cache for hashed static assets, no-cache for the HTML entry point
 ## CI/CD: GitHub Actions
 
 **Config file:** `.github/workflows/ci.yml`
-**Triggers:** Push to `main` or `master` branches
+**Triggers:** push to `main` (build + deploy), pull requests to `main` (build only)
 
-### Workflow Jobs
-
-#### `build` job (runs on every push)
+### `build_and_deploy` job
 1. Checkout code
-2. Setup Node.js 18
-3. `npm ci` (clean install)
-4. `npm run build` (Vite build → `dist/`)
+2. Setup Node.js 22 (Vite 7 requires Node ≥ 20.19)
+3. `npm ci`
+4. Generate `src/config/emailjs.config.js` from secrets (the file is gitignored)
+5. `npm run lint`
+6. `npm run build` with `VITE_GA_ID` (Vite build → `dist/`, including the static blog)
+7. On push to `main` only: deploy to the `live` channel of Firebase project
+   `melchior-75a9e` with `FirebaseExtended/action-hosting-deploy` (service account)
 
-#### `deploy` job (only on `main`/`master`, needs `build`)
-1. Checkout code
-2. `npm ci`
-3. `npm run build`
-4. Install `firebase-tools` globally
-5. `firebase deploy --only hosting --token "$FIREBASE_TOKEN"`
-   - Only runs if `secrets.FIREBASE_TOKEN` is set in GitHub repository secrets
-
-### Required GitHub Secret
+### Required GitHub Secrets
 | Secret | Description |
 |---|---|
-| `FIREBASE_TOKEN` | Firebase CI token (obtain via `firebase login:ci`) |
+| `FIREBASE_SERVICE_ACCOUNT_MELCHIOR_75A9E` | JSON key of a Google Cloud service account with the **Firebase Hosting Admin** role |
+| `VITE_GA_ID` | Google Analytics 4 measurement ID |
+| `EMAILJS_SERVICE_ID`, `EMAILJS_TEMPLATE_ID`, `EMAILJS_PUBLIC_KEY` | Values from the local `src/config/emailjs.config.js` (required on `main`, the deploy fails without them) |
 
 ---
 
