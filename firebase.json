@@ -2,10 +2,14 @@
   "hosting": {
     "public": "dist",
     "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "trailingSlash": false,
+    "redirects": [
+      { "source": "/blog", "destination": "/blog/en", "type": 301 }
+    ],
     "rewrites": [
       { "source": "/nexus", "destination": "/nexus/index.html" },
       { "source": "/nexus/**", "destination": "/nexus/index.html" },
-      { "source": "**", "destination": "/index.html" }
+      { "regex": "^/(?:.{0,3}|(?:[^b]|b[^l]|bl[^o]|blo[^g]).*|blog[^/].*)$", "destination": "/index.html" }
     ],
     "headers": [
       {
@@ -34,6 +38,18 @@
       },
       {
         "source": "/index.html",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache" }
+        ]
+      },
+      {
+        "source": "/blog/**",
+        "headers": [
+          { "key": "Cache-Control", "value": "no-cache" }
+        ]
+      },
+      {
+        "source": "/@(sitemap.xml|404.html)",
         "headers": [
           { "key": "Cache-Control", "value": "no-cache" }
         ]

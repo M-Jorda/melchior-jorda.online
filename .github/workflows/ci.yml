@@ -12,9 +12,11 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: '18'
+          node-version: '22'
       - name: Install
         run: npm ci
+      - name: Lint
+        run: npm run lint
       - name: Build
         run: npm run build
 
@@ -22,16 +24,22 @@ jobs:
     needs: build
     runs-on: ubuntu-latest
     if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    # Le contexte `secrets` n'est pas utilisable dans un `if` de step :
+    # on l'expose en variable d'environnement et on teste celle-ci.
+    env:
+      FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
     steps:
       - uses: actions/checkout@v4
+      - name: Use Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
       - name: Install
         run: npm ci
       - name: Build
         run: npm run build
       - name: Deploy to Firebase
-        if: secrets.FIREBASE_TOKEN
-        env:
-          FIREBASE_TOKEN: ${{ secrets.FIREBASE_TOKEN }}
+        if: env.FIREBASE_TOKEN != ''
         run: |
           npm install -g firebase-tools
           firebase deploy --only hosting --token "$FIREBASE_TOKEN"

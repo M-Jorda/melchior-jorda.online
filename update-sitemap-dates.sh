@@ -1,36 +1,28 @@
 #!/bin/bash
 
-# Script to update lastmod dates in sitemap.xml
+# Met à jour les dates lastmod des pages statiques de la SPA dans le sitemap.
+# Le sitemap est désormais généré au build (build/blog/site.js) : les dates
+# des pages statiques vivent dans STATIC_PAGES (build/blog/config.js), celles
+# des articles viennent de leur frontmatter.
 # Usage: ./update-sitemap-dates.sh
 
-SITEMAP_FILE="public/sitemap.xml"
+CONFIG_FILE="build/blog/config.js"
 CURRENT_DATE=$(date +%Y-%m-%d)
 
-echo "🔄 Updating sitemap.xml with current date: $CURRENT_DATE"
+echo "🔄 Updating static page lastmod dates to: $CURRENT_DATE"
 
-# Check if sitemap exists
-if [ ! -f "$SITEMAP_FILE" ]; then
-    echo "❌ Error: $SITEMAP_FILE not found!"
+if [ ! -f "$CONFIG_FILE" ]; then
+    echo "❌ Error: $CONFIG_FILE not found!"
     exit 1
 fi
 
-# Backup original sitemap
-cp "$SITEMAP_FILE" "${SITEMAP_FILE}.backup"
-echo "✅ Backup created: ${SITEMAP_FILE}.backup"
+sed -i "s|lastmod: '[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}'|lastmod: '$CURRENT_DATE'|g" "$CONFIG_FILE"
 
-# Update all lastmod dates
-sed -i "s|<lastmod>[0-9]\{4\}-[0-9]\{2\}-[0-9]\{2\}</lastmod>|<lastmod>$CURRENT_DATE</lastmod>|g" "$SITEMAP_FILE"
-
-echo "✅ Sitemap dates updated successfully!"
-echo "📅 All <lastmod> tags now set to: $CURRENT_DATE"
-
-# Show changes
-echo ""
-echo "Updated entries:"
-grep "<lastmod>" "$SITEMAP_FILE" | head -n 5
+echo "✅ Dates updated:"
+grep "lastmod:" "$CONFIG_FILE"
 
 echo ""
 echo "🎉 Done! Don't forget to:"
-echo "   1. Build the project: npm run build"
+echo "   1. Build the project: npm run build (generates dist/sitemap.xml)"
 echo "   2. Deploy to production"
 echo "   3. Resubmit sitemap in Google Search Console"

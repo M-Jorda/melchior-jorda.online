@@ -124,3 +124,23 @@
 		}
 	}
 
+
+/* Corps des articles du blog statique (HTML issu du Markdown, build/blog/) */
+@layer components {
+	.blog-prose { @apply text-base sm:text-lg leading-relaxed text-slate-800 dark:text-accent-50; }
+	.blog-prose > * + * { @apply mt-5; }
+	.blog-prose h2 { @apply mt-10 text-xl sm:text-2xl font-bold text-primary dark:text-accent-50; }
+	.blog-prose h3 { @apply mt-8 text-lg sm:text-xl font-semibold text-primary dark:text-accent-50; }
+	.blog-prose h4, .blog-prose h5, .blog-prose h6 { @apply mt-6 font-semibold; }
+	.blog-prose a { @apply underline decoration-orange-500 dark:decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-900 dark:hover:text-orange-300 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500; }
+	.blog-prose ul { @apply list-disc pl-6 space-y-2; }
+	.blog-prose ol { @apply list-decimal pl-6 space-y-2; }
+	.blog-prose blockquote { @apply border-l-4 border-orange-500 pl-4 italic text-slate-600 dark:text-accent-200; }
+	.blog-prose code { @apply px-1.5 py-0.5 rounded bg-accent-100 dark:bg-slate-800 text-[0.9em] font-mono; }
+	.blog-prose pre { @apply p-4 rounded-lg overflow-x-auto bg-primary text-accent-50 text-sm; }
+	.blog-prose pre code { @apply p-0 bg-transparent text-inherit; }
+	.blog-prose img { @apply max-w-full h-auto rounded-lg; }
+	.blog-prose hr { @apply my-10 border-orange-500/30; }
+	.blog-prose table { @apply w-full text-sm border-collapse; }
+	.blog-prose th, .blog-prose td { @apply border border-slate-300 dark:border-slate-700 px-3 py-2 text-left; }
+}
