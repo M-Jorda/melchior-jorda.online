@@ -37,13 +37,15 @@
 
       <!-- Navigation desktop (cachée sur mobile/tablette) -->
       <nav class="hidden lg:block">
-        <ul class="flex gap-4 xl:gap-6 items-center">
+        <ul class="flex gap-1 xl:gap-3 items-center whitespace-nowrap">
           <li><router-link class="nav-link" to="/">{{ $t('nav.home') }}</router-link></li>
           <li><router-link class="nav-link" to="/projects">{{ $t('nav.projects') }}</router-link></li>
           <li><router-link class="nav-link" to="/42">{{ $t('nav.fortyTwo') }}</router-link></li>
           <li><router-link class="nav-link" to="/about">{{ $t('nav.about') }}</router-link></li>
           <li><router-link class="nav-link" to="/resume">{{ $t('nav.resume') }}</router-link></li>
           <li><router-link class="nav-link" to="/contact">{{ $t('nav.contact') }}</router-link></li>
+          <!-- Blog statique hors SPA : lien HTML classique, pas router-link -->
+          <li><a class="nav-link" :href="blogHref">{{ $t('nav.blog') }}</a></li>
           <li>
             <router-link
               to="/contact"
@@ -229,6 +231,9 @@
               {{ $t('nav.resume') }}
             </router-link>
           </li>
+          <li>
+            <a class="nav-link-mobile" :href="blogHref">{{ $t('nav.blog') }}</a>
+          </li>
           <li class="mt-2">
             <router-link
               @click="closeMobileMenu"
@@ -249,7 +254,7 @@
 import i18n from '../i18n'
 
 export default {
-  name: 'Header',
+  name: 'SiteHeader',
   data() {
     const savedTheme = typeof localStorage !== 'undefined' ? localStorage.getItem('theme') : null
     return {
@@ -265,6 +270,10 @@ export default {
     }
   },
   computed: {
+    // Le blog existe en français et en anglais ; l'espagnol renvoie vers l'anglais.
+    blogHref() {
+      return this.currentLang === 'fr' ? '/blog/fr' : '/blog/en'
+    },
     headerStyle() {
       const baseOpacity = this.lastScrollPosition > this.scrollThreshold ? 0.90 : 0.75
       const blurAmount = this.lastScrollPosition > this.scrollThreshold ? '20px' : '16px'
