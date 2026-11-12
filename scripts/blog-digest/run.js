@@ -206,8 +206,12 @@ async function main() {
   }
 
   if (config.deploy && !opts.noDeploy) {
+    // Un compte ouvert par `firebase login` passe avant GOOGLE_APPLICATION_CREDENTIALS :
+    // un dossier de configuration vide force la CLI à utiliser le compte de service.
+    const firebaseConfigHome = path.join(STATE_DIR, 'firebase-config')
+    fs.mkdirSync(firebaseConfigHome, { recursive: true })
     run(config.firebaseBin, ['deploy', '--only', 'hosting', '--project', config.firebaseProject, '--non-interactive'],
-      { env: { GOOGLE_APPLICATION_CREDENTIALS: config.credentials } })
+      { env: { GOOGLE_APPLICATION_CREDENTIALS: config.credentials, XDG_CONFIG_HOME: firebaseConfigHome } })
     fs.rmSync(PENDING, { force: true })
     log('✓ déployé')
   } else {

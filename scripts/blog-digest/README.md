@@ -61,8 +61,14 @@ votre compte principal, pour limiter l'accès du script à cette seule boîte.
 1. Ouvrez https://console.cloud.google.com/iam-admin/serviceaccounts?project=melchior-75a9e
    puis cliquez sur **Create service account**. Nom : `blog-digest-deploy`.
    Cliquez sur **Create and continue**.
-2. Dans **Role**, choisissez **Firebase Hosting Admin**, puis cliquez sur
-   **Continue** et **Done**.
+2. Dans **Role**, choisissez **Firebase Hosting Admin**, ajoutez un second rôle
+   **Service Usage Consumer** (sans condition IAM), puis cliquez sur
+   **Continue** et **Done**. Sans ce second rôle, la CLI répond
+   « Failed to get Firebase project ». Les droits peuvent mettre quelques
+   minutes à s'appliquer.
+   Le compte doit être créé dans le projet `melchior-75a9e` : une clé issue
+   d'un autre projet est refusée. Le publieur ignore un éventuel
+   `firebase login` et déploie toujours avec cette clé.
 3. Ouvrez le compte, onglet **Keys**, puis **Add key**, **Create new key**,
    **JSON**. Un fichier `.json` est téléchargé.
 4. Déplacez-le dans WSL et protégez-le :
