@@ -76,7 +76,7 @@ function validUrl(v) {
   }
 }
 
-function validate(file, lang, raw) {
+export function validatePost(file, lang, raw) {
   const errors = []
   const fail = (msg) => errors.push(`${file} : ${msg}`)
   const name = path.basename(file)
@@ -236,7 +236,7 @@ export function loadPosts(contentDir) {
         continue
       }
       const rel = `content/blog/${lang}/${name}`
-      const res = validate(rel, lang, fs.readFileSync(full, 'utf8'))
+      const res = validatePost(rel, lang, fs.readFileSync(full, 'utf8'))
       errors.push(...res.errors)
       if (!res.post) continue
       if (bySlug.has(res.post.slug)) {

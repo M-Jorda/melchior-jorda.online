@@ -12,6 +12,16 @@ Respectez donc strictement ce document.
 > Ce fichier `README.md` est ignoré par le générateur. Ne placez aucun autre
 > fichier à la racine de `content/blog/`.
 
+> **Publication automatique.** Les articles sont produits par le publieur Dev
+> Digest (`scripts/blog-digest/`, voir son README) à partir des e-mails
+> « Dev Digest ». Ses conventions :
+> - un quotidien par jour, `AAAA-MM-JJ-dev-digest-AAAA-MM-JJ.md`, `type: daily`,
+>   `indexable: false` ;
+> - un hebdomadaire par semaine ISO, daté du dimanche,
+>   `AAAA-MM-JJ-<mots-cles>-week-<n>-<annee>.md`, `type: weekly`, `indexable: true`.
+>
+> Un fichier ajouté à la main en respectant ce format est publié de la même façon.
+
 ---
 
 ## 1. Structure des dossiers
@@ -147,8 +157,8 @@ lang: fr
   automatiquement `rel="noopener noreferrer external"`.
 - N'ajoutez **pas** de section « Sources » ni de mention IA dans le contenu :
   la page les génère à partir de `sources`, et la mention
-  « Résumé assisté par IA à partir des sources citées. » (en anglais :
-  « AI-assisted summary based on the cited sources. ») est ajoutée
+  « Article rédigé par IA à partir des sources citées. » (en anglais :
+  « Article written by AI from the cited sources. ») est ajoutée
   automatiquement sous chaque article.
 
 ---
