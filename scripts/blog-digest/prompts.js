@@ -94,6 +94,8 @@ export function dailyPrompt({ date, digests, allowedUrls }) {
   const docs = digests.map((d, i) => `=== Document ${i + 1} : « ${d.subject} » ===\n${d.content.trim()}`).join('\n\n')
   return `Rédige l'article QUOTIDIEN du ${date} à partir des digests ci-dessous (tous du même jour ; un digest
 complémentaire n'a aucun sujet en commun avec le premier).
+Un digest daté du ${date} est envoyé à l'aube et couvre l'actualité de la VEILLE : ne présente pas ces
+nouvelles comme datant « d'aujourd'hui » ; préfère « hier » ou une formulation sans date relative.
 Longueur visée : 500 à 900 mots par langue, 3 à 6 sujets.
 
 URL sources autorisées :

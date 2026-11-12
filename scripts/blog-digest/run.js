@@ -17,7 +17,7 @@ import { simpleParser } from 'mailparser'
 import { LANGS } from '../../build/blog/config.js'
 import { loadConfig, STATE_DIR } from './config.js'
 import { fetchDigests } from './mail.js'
-import { groupByDate, todayIn, addDays, isoWeek } from './digest.js'
+import { groupByDate, todayIn, timeIn, addDays, isoWeek } from './digest.js'
 import { loadProfile, dailyPrompt, weeklyPrompt } from './prompts.js'
 import { generateArticle } from './generate.js'
 
@@ -122,7 +122,13 @@ async function main() {
     const groups = groupByDate(messages)
     for (const [date, digests] of groups) {
       if (date < since) continue
-      if (date >= today) { log(`${date} : journée en cours, article quotidien reporté`); continue }
+      if (date > today) { log(`${date} : date future, ignorée`); continue }
+      // Le digest du jour (envoyé à l'aube, nouvelles de la veille) est publié
+      // le jour même, à partir de PUBLISH_AFTER.
+      if (date === today && timeIn(config.timezone) < config.publishAfter) {
+        log(`${date} : article du jour publié à partir de ${config.publishAfter}`)
+        continue
+      }
       const fileName = `${date}-dev-digest-${date}.md`
       if (fs.existsSync(path.join(repoContent, refLang, fileName)) ||
           fs.existsSync(path.join(outContent, refLang, fileName))) continue

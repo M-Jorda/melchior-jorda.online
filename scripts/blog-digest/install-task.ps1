@@ -10,7 +10,8 @@ param(
   [string]$Distro = "Ubuntu",
   # Chemin Linux du lanceur dans le clone de publication.
   [string]$Script = "~/blog-publisher/scripts/blog-digest/run.sh",
-  [string]$Time = "20:00",
+  # Aligné sur PUBLISH_AFTER (config.env) : publie l'article du jour.
+  [string]$Time = "07:00",
   [string]$TaskName = "Blog Dev Digest"
 )
 
