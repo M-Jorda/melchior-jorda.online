@@ -7,15 +7,18 @@ Actions.
 
 ## Fonctionnement
 
-À chaque exécution (ouverture de session, puis chaque jour à 20:00), le script :
+À chaque exécution (ouverture de session, puis chaque jour à 07:00), le script :
 
 1. **Lit les e-mails** dont le sujet est `Dev Digest - AAAA-MM-JJ` ou
    `Dev Digest - AAAA-MM-JJ (n/m)`, reçus pendant les `LOOKBACK_DAYS` derniers
    jours, via IMAP en lecture seule. Les variantes `TEST`, `échec` et les
    anciens formats sont ignorés.
-2. **Génère un article quotidien par journée terminée**, en regroupant tous les
-   digests du jour. Il est publié en `noindex`, avec le slug
-   `dev-digest-AAAA-MM-JJ`.
+2. **Génère un article quotidien par date de digest**, en regroupant tous les
+   digests de cette date. Le digest arrive vers 5 h 55 avec les nouvelles de la
+   veille : l'article du jour est publié le jour même, par le premier run après
+   `PUBLISH_AFTER` (07:00 par défaut). Un digest complémentaire reçu après cette
+   publication n'est pas intégré. L'article est en `noindex`, avec le slug
+   `dev-digest-AAAA-MM-JJ` (date du digest).
 3. **Génère un récapitulatif hebdomadaire par semaine terminée** (du lundi au
    dimanche, daté du dimanche), à partir des articles quotidiens de la semaine,
    s'il y en a au moins `WEEKLY_MIN_DAILIES`. Il est indexable.

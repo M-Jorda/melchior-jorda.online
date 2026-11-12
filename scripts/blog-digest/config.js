@@ -27,6 +27,11 @@ function parseEnvFile(file) {
 
 const bool = (v, d) => (v === undefined || v === '' ? d : /^(1|true|yes|oui)$/i.test(v))
 const int = (v, d) => (v === undefined || v === '' ? d : Number.parseInt(v, 10))
+// « H:MM » ou « HH:MM » → « HH:MM » ; valeur invalide → défaut.
+const hhmm = (v, d) => {
+  const m = /^([01]?\d|2[0-3]):([0-5]\d)$/.exec(String(v ?? '').trim())
+  return m ? `${m[1].padStart(2, '0')}:${m[2]}` : d
+}
 
 export function loadConfig({ needImap = true, needDeploy = true } = {}) {
   const env = { ...parseEnvFile(CONFIG_FILE), ...process.env }
@@ -41,6 +46,9 @@ export function loadConfig({ needImap = true, needDeploy = true } = {}) {
     },
     digestFrom: env.DIGEST_FROM || '',
     timezone: env.TIMEZONE || 'Europe/Madrid',
+    // Heure locale à partir de laquelle l'article du jour est publié
+    // (le digest arrive vers 5 h 55 avec les nouvelles de la veille).
+    publishAfter: hhmm(env.PUBLISH_AFTER, '07:00'),
     lookbackDays: int(env.LOOKBACK_DAYS, 14),
     weeklyMinDailies: int(env.WEEKLY_MIN_DAILIES, 3),
     claudeBin: env.CLAUDE_BIN || 'claude',
