@@ -142,7 +142,8 @@ Options : `-Time "07:30"` pour changer l'heure quotidienne, `-Distro` et
 - **Journaux** : `~/.local/state/blog-digest/logs/AAAA-MM.log`. Le dernier code
   de retour est aussi visible dans le Planificateur de tâches.
 - **Options de `run.js`** : `--dry-run`, `--no-deploy`, `--only daily|weekly`,
-  `--lookback N` (rattraper plus loin), `--eml fichier.eml ...` (tester à partir
+  `--lookback N` (rattraper plus loin), `--date AAAA-MM-JJ` (une seule date ; avec
+  `--dry-run`, régénère même une date déjà publiée), `--eml fichier.eml ...` (tester à partir
   d'e-mails enregistrés, sans IMAP).
 - **Supprimer un article** : supprimez le fichier dans les deux langues sur
   `main`, poussez, puis relancez `run.sh` (ou `firebase deploy`). Pour qu'il ne

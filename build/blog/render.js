@@ -33,6 +33,11 @@ const MUTED = 'text-slate-600 dark:text-accent-200'
 const THEME_HEAD = `(function(){try{var t=localStorage.getItem('theme');if(t==='dark'||(t===null&&window.matchMedia('(prefers-color-scheme: dark)').matches))document.documentElement.classList.add('dark')}catch(e){}})();`
 const THEME_BODY = `(function(){var b=document.getElementById('theme-toggle');if(!b)return;var r=document.documentElement;function s(){b.setAttribute('aria-pressed',r.classList.contains('dark')?'true':'false')}b.hidden=false;s();b.addEventListener('click',function(){var d=r.classList.toggle('dark');try{localStorage.setItem('theme',d?'dark':'light')}catch(e){}s()})})();`
 
+// Blocs repliables des articles : bouton « Tout déplier / Tout replier » et
+// ouverture du bloc visé par l'ancre de l'URL. Sans JavaScript, le bouton
+// reste caché et les <details> fonctionnent seuls.
+const DETAILS_BODY = `(function(){var ds=document.querySelectorAll('details.blog-details');if(!ds.length)return;var b=document.getElementById('details-toggle');function allOpen(){for(var i=0;i<ds.length;i++)if(!ds[i].open)return false;return true}function s(){if(!b)return;var o=allOpen();b.textContent=o?b.getAttribute('data-close'):b.getAttribute('data-open');b.setAttribute('aria-expanded',o?'true':'false')}if(b){b.hidden=false;s();b.addEventListener('click',function(){var o=!allOpen();for(var i=0;i<ds.length;i++)ds[i].open=o;s()})}document.addEventListener('toggle',s,true);function h(){var id='';try{id=decodeURIComponent(location.hash.slice(1))}catch(e){}if(!id)return;var el=document.getElementById(id);if(el&&el.tagName==='DETAILS'){el.open=true;el.scrollIntoView()}}h();window.addEventListener('hashchange',h)})();`
+
 function jsonLd(data) {
   // Empêche toute sortie prématurée du bloc <script>.
   return JSON.stringify(data).replace(/</g, '\\u003c')
@@ -157,7 +162,7 @@ export function layout({ meta, switchHref, cssHref, main }) {
       </main>
       ${footer(meta.lang)}
     </div>
-    <script>${THEME_BODY}</script>
+    <script>${THEME_BODY}${DETAILS_BODY}</script>
   </body>
 </html>
 `
@@ -243,6 +248,12 @@ export function tagsIndexMain({ lang, h1, intro, allTags }) {
       : `<p class="mt-8 ${MUTED}">${esc(UI[lang].empty)}</p>`}`
 }
 
+// Temps de lecture estimé à 220 mots par minute, à partir du HTML rendu.
+function readingMinutes(html) {
+  const words = html.replace(/<[^>]+>/g, ' ').split(/\s+/).filter(Boolean).length
+  return Math.max(1, Math.round(words / 220))
+}
+
 export function postMain({ post, prev, next, related }) {
   const t = UI[post.lang]
   const lang = post.lang
@@ -266,9 +277,13 @@ export function postMain({ post, prev, next, related }) {
         <div class="flex flex-wrap items-center gap-3 text-sm ${MUTED}">
           <time datetime="${post.date}">${formatDate(post.date, lang)}</time>
           ${typeBadge(post.type, lang)}
+          <span>${esc(t.readingTime(readingMinutes(post.html)))}</span>
         </div>
         ${tagList(post.tags, lang, t.tags)}
       </header>
+      ${post.html.includes('class="blog-details"')
+        ? `<p class="mt-6 flex justify-end"><button id="details-toggle" type="button" hidden aria-expanded="false" data-open="${esc(t.expandAll)}" data-close="${esc(t.collapseAll)}" class="px-3 py-1.5 rounded border border-orange-500 text-sm font-semibold text-orange-900 dark:text-orange-300 hover:bg-orange-500/10 ${FOCUS}">${esc(t.expandAll)}</button></p>`
+        : ''}
       <div class="blog-prose mt-8">${post.html}</div>
       <section aria-labelledby="sources-title" class="mt-10 p-5 rounded-lg bg-white/70 dark:bg-slate-800 border-l-4 border-orange-500">
         <h2 id="sources-title" class="text-lg font-semibold text-primary dark:text-accent-50">${esc(t.sources)}</h2>

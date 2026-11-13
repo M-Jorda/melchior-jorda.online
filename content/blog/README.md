@@ -151,6 +151,18 @@ lang: fr
   Commencez à `##` et respectez la hiérarchie (`##` puis `###`).
 - **Le HTML brut est désactivé** : les balises HTML s'affichent comme du texte.
   N'utilisez que la syntaxe Markdown.
+- **Blocs repliables** : le texte de la ligne d'ouverture reste visible, le
+  contenu ne s'affiche que si le lecteur déplie le bloc. Le blog les rend en
+  `<details>` natif, avec un bouton « Tout déplier » et une ancre tirée du
+  sujet (le texte avant « : », ici `#rust-1-100`) :
+
+  ```markdown
+  ::: details **Rust 1.100** : le type `!` devient stable.
+  Contenu détaillé en Markdown (paragraphes, listes, liens, encadré `>`).
+  :::
+  ```
+
+  Un bloc doit avoir un titre et ne peut pas en contenir un autre (erreur de build).
 - **Toute image doit avoir un texte alternatif** : `![description](url)`.
   `![](url)` provoque une erreur.
 - Les URL nues sont transformées en liens. Les liens externes reçoivent

@@ -135,7 +135,19 @@
 	.blog-prose a { @apply underline decoration-orange-500 dark:decoration-orange-400 decoration-2 underline-offset-4 hover:text-orange-900 dark:hover:text-orange-300 rounded-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500; }
 	.blog-prose ul { @apply list-disc pl-6 space-y-2; }
 	.blog-prose ol { @apply list-decimal pl-6 space-y-2; }
-	.blog-prose blockquote { @apply border-l-4 border-orange-500 pl-4 italic text-slate-600 dark:text-accent-200; }
+	.blog-prose blockquote { @apply border-l-4 border-orange-500 rounded-r-lg bg-orange-500/10 dark:bg-slate-800 px-4 py-3 text-base text-slate-800 dark:text-accent-50; }
+	.blog-prose blockquote > * + * { @apply mt-2; }
+	.blog-prose .blog-details { @apply rounded-lg border border-orange-500/25 dark:border-slate-700 bg-white/60 dark:bg-slate-800/60; }
+	.blog-prose .blog-details + .blog-details { @apply mt-3; }
+	.blog-prose .blog-details > summary { @apply relative block cursor-pointer list-none py-3 pl-10 pr-4 rounded-lg font-medium break-words hover:bg-orange-500/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-orange-500; }
+	.blog-prose .blog-details code { @apply break-words; }
+	.blog-prose .blog-details > summary::-webkit-details-marker { display: none; }
+	.blog-prose .blog-details > summary::before { content: '\25B8'; @apply absolute left-4 top-3 text-orange-700 dark:text-orange-300 transition-transform motion-reduce:transition-none; }
+	.blog-prose .blog-details[open] > summary::before { transform: rotate(90deg); }
+	.blog-prose .blog-details[open] > summary { @apply border-b border-orange-500/20 dark:border-slate-700 rounded-b-none; }
+	.blog-prose .blog-details-body { @apply px-4 pb-4 pt-1 text-base; }
+	.blog-prose .blog-details-body > * + * { @apply mt-4; }
+	.blog-prose .blog-details-body > :first-child { @apply mt-3; }
 	.blog-prose code { @apply px-1.5 py-0.5 rounded bg-accent-100 dark:bg-slate-800 text-[0.9em] font-mono; }
 	.blog-prose pre { @apply p-4 rounded-lg overflow-x-auto bg-primary text-accent-50 text-sm; }
 	.blog-prose pre code { @apply p-0 bg-transparent text-inherit; }

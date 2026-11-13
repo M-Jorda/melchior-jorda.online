@@ -7,6 +7,7 @@
 //
 // Usage : node scripts/blog-digest/run.js [--dry-run] [--no-deploy]
 //         [--only daily|weekly] [--lookback N] [--eml fichier.eml ...]
+//         [--date AAAA-MM-JJ]  (avec --dry-run : régénère cette date même si elle est publiée)
 
 import fs from 'node:fs'
 import path from 'node:path'
@@ -28,17 +29,19 @@ const PUBLISH_BRANCH = 'main'
 const log = (msg) => console.log(`[${new Date().toISOString()}] ${msg}`)
 
 function parseArgs(argv) {
-  const opts = { dryRun: false, noDeploy: false, only: null, lookback: null, eml: [] }
+  const opts = { dryRun: false, noDeploy: false, only: null, lookback: null, eml: [], date: null }
   for (let i = 0; i < argv.length; i++) {
     const a = argv[i]
     if (a === '--dry-run') opts.dryRun = true
     else if (a === '--no-deploy') opts.noDeploy = true
     else if (a === '--only') opts.only = argv[++i]
     else if (a === '--lookback') opts.lookback = Number(argv[++i])
+    else if (a === '--date') opts.date = argv[++i]
     else if (a === '--eml') { while (argv[i + 1] && !argv[i + 1].startsWith('--')) opts.eml.push(argv[++i]) }
     else throw new Error(`option inconnue : ${a}`)
   }
   if (opts.only && !['daily', 'weekly'].includes(opts.only)) throw new Error('--only attend daily ou weekly')
+  if (opts.date && !/^\d{4}-\d{2}-\d{2}$/.test(opts.date)) throw new Error('--date attend AAAA-MM-JJ')
   return opts
 }
 
@@ -121,6 +124,7 @@ async function main() {
     const messages = await loadMessages(config, opts, since)
     const groups = groupByDate(messages)
     for (const [date, digests] of groups) {
+      if (opts.date && date !== opts.date) continue
       if (date < since) continue
       if (date > today) { log(`${date} : date future, ignorée`); continue }
       // Le digest du jour (envoyé à l'aube, nouvelles de la veille) est publié
@@ -130,8 +134,11 @@ async function main() {
         continue
       }
       const fileName = `${date}-dev-digest-${date}.md`
-      if (fs.existsSync(path.join(repoContent, refLang, fileName)) ||
-          fs.existsSync(path.join(outContent, refLang, fileName))) continue
+      // En dry-run, --date régénère une date déjà publiée (pour comparer) ; une
+      // publication réelle ne remplace jamais un article existant.
+      const regenerate = opts.dryRun && opts.date === date
+      if (!regenerate && (fs.existsSync(path.join(repoContent, refLang, fileName)) ||
+          fs.existsSync(path.join(outContent, refLang, fileName)))) continue
       const allowedUrls = [...new Set(digests.flatMap((d) => d.links))]
       log(`${date} : ${digests.length} digest(s), ${allowedUrls.length} lien(s)`)
       try {
