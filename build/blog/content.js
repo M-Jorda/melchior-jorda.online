@@ -5,6 +5,7 @@ import fs from 'node:fs'
 import path from 'node:path'
 import matter from 'gray-matter'
 import MarkdownIt from 'markdown-it'
+import markdownItContainer from 'markdown-it-container'
 import { LANGS, TYPES, RESERVED_SLUGS, SITE } from './config.js'
 
 const FILE_RE = /^(\d{4}-\d{2}-\d{2})-([a-z0-9]+(?:-[a-z0-9]+)*)\.md$/
@@ -33,6 +34,26 @@ md.renderer.rules.link_open = (tokens, idx, options, env, self) => {
   if (isExternal(href)) tokens[idx].attrSet('rel', 'noopener noreferrer external')
   return defaultLinkOpen(tokens, idx, options, env, self)
 }
+
+// Blocs repliables : « ::: details Titre » … « ::: », rendus en <details>
+// natif (aucun JavaScript requis). Le titre est du Markdown en ligne, donc
+// échappé comme le reste ; l'ancre vient du sujet (texte avant « : »).
+const DETAILS_RE = /^details\s+(.+)$/
+const detailsTitle = (info) => (DETAILS_RE.exec(info.trim()) || [])[1]?.trim() || ''
+md.use(markdownItContainer, 'details', {
+  validate: (params) => /^details(\s|$)/.test(params.trim()),
+  render(tokens, idx, _options, env) {
+    if (tokens[idx].nesting !== 1) return '</div></details>\n'
+    const title = detailsTitle(tokens[idx].info)
+    const topic = title.replace(/[*_`]/g, '').split(/\s:\s|:\s/)[0]
+    const base = slugify(topic) || 'sujet'
+    env.detailsIds = env.detailsIds || new Map()
+    const n = (env.detailsIds.get(base) || 0) + 1
+    env.detailsIds.set(base, n)
+    const id = n === 1 ? base : `${base}-${n}`
+    return `<details class="blog-details" id="${id}"><summary>${md.renderInline(title)}</summary><div class="blog-details-body">\n`
+  }
+})
 
 export function isExternal(href) {
   return /^https?:\/\//i.test(href) && !href.startsWith(SITE.url)
@@ -171,8 +192,17 @@ export function validatePost(file, lang, raw) {
   let html = ''
   if (!body) fail('le contenu de l’article est vide')
   else {
-    const tokens = md.parse(body, {})
+    const env = {}
+    const tokens = md.parse(body, env)
+    let detailsDepth = 0
     for (const t of tokens) {
+      if (t.type === 'container_details_open') {
+        const line = t.map ? t.map[0] + 1 : '?'
+        if (!detailsTitle(t.info)) fail(`bloc « ::: details » sans titre (ligne ${line}) : écrire « ::: details Titre »`)
+        if (detailsDepth > 0) fail(`bloc « ::: details » imbriqué dans un autre (ligne ${line})`)
+        detailsDepth++
+      }
+      if (t.type === 'container_details_close') detailsDepth--
       if (t.type === 'heading_open' && t.tag === 'h1') {
         fail(`titre de niveau 1 interdit dans le contenu (ligne ${t.map ? t.map[0] + 1 : '?'}) : le titre de la page vient de « title », commencer à ##`)
       }
@@ -184,7 +214,7 @@ export function validatePost(file, lang, raw) {
         }
       }
     }
-    html = md.renderer.render(tokens, md.options, {})
+    html = md.renderer.render(tokens, md.options, env)
   }
 
   if (errors.length) return { errors }
